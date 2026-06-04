@@ -1,28 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
+
+<!-- tab title -->
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Amanda Cleary - Resume</title>
+  <title>Cleary Resume</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display+SC:wght@400;700&display=swap" rel="stylesheet">
+
 </head>
+
+<!-- content -->
+
 <body>
   <header>
     <h1>Amanda Cleary</h1>
-    <p>
-      Email: <a href="mailto:amanda@example.com">amanda@example.com</a> |
-      Phone: <a href="tel:+15555555555">(555) 555-5555</a> |
-      Location: City, State
-    </p>
+    <nav>
+      <a href="#meetme" class="nav-btn">Meet Me</a>
+      <a href="#experiences" class="nav-btn">Experiences</a>
+      <a href="#portfolio" class="nav-btn">Portfolio</a>
+    </nav>
   </header>
 
   <main>
-    <section>
-      <h2>Summary</h2>
+
+    <div class="grid">
+      <div class="primary-content">
+        <div class="greeting-card">
+          <div class="profile-pic">
+            <img src="images/profile.jpeg" alt="Profile Picture">
+          </div>
+          <div class="greeting-content">
+          <h1 class="greeting">Hello!</h1>
+          <p>Biography goes here.</p>
+          </div>
+        </div>
+      </div>
+      <div class="side-panel">
+        <div>
+          <h2>Meet Me at a Glance</h2>
+          <div class="glance-row">
+            <i class="fa-solid fa-graduation-cap"></i>
+            <div class="glance-text">
+              <h3>HBS Computer Science</h3>
+              <p class="glance-subtitle">minor in Russian</p>
+            </div>
+          </div>
+          <div class="glance-row">
+            <i class="fa-solid fa-award"></i>
+            <div class="glance-text">
+              <h3>Dean's List Student</h3>
+              <p class="glance-subtitle">8 consecutive semesters</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <section id="skills">
+      <h1>SKILLS</h1>
       <p>Detail-oriented professional with experience in project coordination, communication, and problem solving.</p>
     </section>
 
-    <section>
-      <h2>Experience</h2>
+    <section id="experiences">
+      <h2>Experiences</h2>
       <article>
         <h3>Project Coordinator - Example Company</h3>
         <p>2022 - Present</p>
@@ -33,20 +76,7 @@
         </ul>
       </article>
     </section>
-
-    <section>
-      <h2>Education</h2>
-      <p>Bachelor of Arts, Example University (2022)</p>
-    </section>
-
-    <section>
-      <h2>Skills</h2>
-      <ul>
-        <li>Project Management</li>
-        <li>Written and Verbal Communication</li>
-        <li>Organization and Planning</li>
-      </ul>
-    </section>
   </main>
 </body>
+
 </html>
