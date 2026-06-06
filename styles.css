@@ -13,7 +13,7 @@ nav {
 
 /* Button-style nav items */
 .nav-btn {
-  background-color: teal;
+  background-color: #642e7d;
   color: white;
   padding: 8px 16px;
   border-radius: 12px;
@@ -24,7 +24,7 @@ nav {
 
 /* Hover animation */
 .nav-btn:hover {
-  background-color: #008b8b;
+  background-color: #642e7d;
   transform: scale(1.08);
   cursor: pointer;
 }
@@ -37,7 +37,8 @@ main {
 /* Subsection rectangle block */
 section {
   position: relative;        /* allows absolute positioning inside */
-  border: 2px solid #ccc;
+  border: 2px solid #642e7d;
+  border-radius: 12px;
   padding: 30px 20px 20px;   /* extra top padding so content doesn’t collide with the label */
   margin-bottom: 20px;
 }
@@ -63,8 +64,17 @@ section h1 {
     margin-bottom: 20px;
 }
 
+.colored-card h2 {
+  text-align: center;
+  margin: 20px 0;
+}
+
+.colored-card h3 {
+  margin: 10px 0;
+}
+
 .greeting-card {
-  border: 2px solid #ccc;
+  border: 2px solid #642e7d;
   border-radius: 12px;
   padding: 10px 20px;
   background: white;
@@ -81,6 +91,7 @@ section h1 {
   border-radius: 50%;
   overflow: hidden;
   flex-shrink: 0;
+  border: 2px solid #ccc;
 }
 
 .profile-pic img {
@@ -144,6 +155,12 @@ section h1 {
     justify-content: center;
 }
 
+.even-split {
+    flex: 1 1 0;
+    display: flex;
+    justify-content: center;
+}
+
 /* Glance callouts */
 .glance-title {
   font-size: 1.8em;
@@ -162,7 +179,7 @@ section h1 {
   font-size: 28px;
   width: 32px;               /* forces all icons to align in a column */
   text-align: center;
-  color: teal;           
+  color: #642e7d;           
 }
 
 .glance-text {
@@ -181,5 +198,48 @@ section h1 {
   font-style: italic;
   font-size: 0.9em;
   color: #555;
+}
+
+.skill-row {
+  display: flex;
+  align-items: center;   /* vertical alignment */
+  width: 100%;
+  font-size: clamp(1rem, 1.4vw, 1.6rem);
+  margin-bottom: 12px;
+}
+
+/* Skill name: 3/4 width */
+.skill-row h3 {
+  flex: 3 1 0;
+  margin: 0;
+
+  white-space: nowrap;        /* never wrap */
+  overflow: hidden;           /* prevent overflow */
+  text-overflow: ellipsis;    /* optional */
+
+  /* Much less aggressive scaling */
+  font-size: 1em;
+  line-height: 1.1;
+}
+
+.skill-level {
+  flex: 1 1 0;
+  height: 0.6em;   /* scales with font size */
+  background: #e0e0e0;
+  border-radius: 0.3em;
+  overflow: hidden;
+  position: relative;
+}
+
+.skill-level::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: var(--level, 50%);
+  background: linear-gradient(90deg, #8e4caf, #642e7d);
+  border-radius: inherit;
+  transition: width 0.3s ease;
 }
 
