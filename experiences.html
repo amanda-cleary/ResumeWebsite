@@ -1,31 +1,160 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <title>Cleary Resume</title>
-  <link rel="stylesheet" href="styles.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
-  <link
-    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Outfit:wght@100..900&display=swap"
-    rel="stylesheet">
+    <title>Cleary Resume</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Outfit:wght@100..900&display=swap"
+        rel="stylesheet">
 </head>
 
 <body>
-  <header>
-    <h1>Amanda Cleary</h1>
-    <nav>
-      <a href="index.html" class="nav-btn">Meet Me</a>
-      <a href="experiences.html" class="nav-btn">Experiences</a>
-      <a href="portfolio.html" class="nav-btn">Portfolio</a>
-    </nav>
-  </header>
+    <header>
+        <h1>Amanda Cleary</h1>
+        <nav>
+            <a href="index.html" class="nav-btn">Meet Me</a>
+            <a href="experiences.html" class="nav-btn">Experiences</a>
+            <a href="portfolio.html" class="nav-btn">Portfolio</a>
+        </nav>
+    </header>
 
-  <main>
-    <section id="experiences">
-      <h1>EXPERIENCES</h1>
+    <main>
+        <div class="centered">
+            <h1>EXPERIENCES</h1>
+        </div>
+        <div class="experience-grid">
+            <div class="interact-card" data-experience="ai">
+                <h2>Responsible A.I.</h2>
+                <div class="image-wrapper">
+                    <img src="images/experience1.png">
+                </div>
+            </div>
+            <div class="interact-card" data-experience="dci">
+                <h2>D.C.I.</h2>
+                <div class="image-wrapper">
+                    <img src="images/experience2.jpg">
+                </div>
+            </div>
+            <div class="interact-card" data-experience="camp">
+                <h2>High Point Camp</h2>
+                <div class="image-wrapper">
+                    <img src="images/experience3.jpg">
+                </div>
+            </div>
+            <div class="interact-card" data-experience="bishkek">
+                <h2>SRAS: Bishkek</h2>
+                <div class="image-wrapper">
+                    <img src="images/experience4.png">
+                </div>
+            </div>
+        </div>
+        <div id="experience-content">
+        </div>
 
-      <!-- Your experience cards go here -->
-    </section>
-  </main>
+    </main>
 </body>
+
 </html>
+
+<script>
+    const content = {
+        ai: `
+        <section>
+        <h1>Responsible A.I.</h1>
+        <h2 class="centered">University of Utah Honors Praxis Lab 2023-2024</h2>
+        <p>The university's honors college sponsored a small cohort of honors students 
+            to examine the developments of artificial intelligence through multidisciplinary
+            lens. As a participant, I contributed to discussions and research efforts, as well
+            as the following:</p>
+            <ul>
+                <li>Audited the algorithm behind Spotify's AI-generated daylist feature.</li>
+                <li>Developed public-facing AI literacy resources.</li>
+                <li>Presented findings at the end-of-year symposium.</li>
+            </ul>
+        <p>In addition to exposing me to real-world applications of AI technologies, 
+            these experiences have deepened my understanding of the ethical and social 
+            implications of artificial intelligence and have prepared me to contribute 
+            meaningfully to the field.</p>
+        </section>
+    `,
+        dci: `
+        <section>
+        <h1>Drum Corps International</h1>
+        <h2 class="centered">The Battalion Drum & Bugle Corps 2023</h2>
+        <p>Called "Marching Music's Major League", DCI offers a unique opportunity for 
+            musicians to compete and perform at the highest level of the marching arts
+            over the course of a summer season. Corps members dedicate themselves to 
+            rigorous practice and performance, fostering a strong sense of community 
+            and teamwork. Rehearsals are often 12 hours per day,  requiring tireless
+            attention to detail and a commitment to excellence. As a 2024 soloist and
+            section leader for the mellophones, I performed the following responsibilities:</p>
+            <ul>
+                <li>Dedicated additional rehearsal time to individual performance of the solo.</li>
+                <li>Collaborated with other performers to strive for a consistently excellent performance.</li>
+                <li>Guided and mentored younger members of the corps.</li>
+                <li>Responded to and implemented feedback from directors.</li>
+            </ul>
+            <p>As a beginning member of the corps myself, the unusual circumstance of being a 
+                soloist and section leader was both challenging and rewarding. It allowed me to 
+                grow as a musician and a leader in a demanding environment, which has 
+                strengthened my resolve and commitment to everyday excellence both as an 
+                individual and as a member of a team.</p>
+        </section>
+    `,
+        camp: `
+        <section>
+        <h1>High Point Camp</h1>
+        <h2 class="centered">Overnight Counselor 2024</h2>
+        <p>I had the opportunity to serve as an overnight counselor at the same overnight camp I
+            grew up spending my summers at. Camp staff, from kitchen to counselors, all worked 
+            together to create a safe, clean, and fun environment for the campers. We spent weekends
+            cleaning and preparing the campgrounds while I spent weekdays leading activities, 
+            interacting with campers from all different backgrounds and ages, and providing support 
+            and guidance as needed. Further responsibilities included:</p>
+            <ul>
+                <li>Maintaining safety protocols as a Red Cross certified lifeguard.</li>
+                <li>Resolving interpersonal conflicts between campers.</li>
+                <li>Supporting the emotional and social needs of the campers.</li>
+                <li>Operating activity stations and ensuring proper supervision.</li>
+            </ul>
+        <p>My experience working at High Point Camp reinforced my commitment to dedicating 100%
+            effort to every task and responsibility I undertake. It has made me a more cognizant 
+            and proactive individual in all aspects of my life. More than that, it has taught me
+            the value of having fun and supporting each other in a team.</p>
+        </section>
+    `,
+        bishkek: `
+        <section>
+        <h1>SRAS: Bishkek</h1>
+        <h2 class="centered">Study Abroad in Kyrgyzstan 2025</h2>
+        <p>I spent 8 weeks in the summer of 2025 living and studying abroad in Bishkek, Kyrgyzstan.
+            I immersed myself in the local culture, as I moved into a  local host family's home and 
+            commuted daily to classes in the city. Additionally, I had the opportunity to participate 
+            in various cultural excursions that exposed me to Kyrgyz culture, tradition, and history. 
+            Throughout my time in Kyrgyzstan, I built the following skills:</p>
+            <ul>
+                <li>Improved my communication and interpersonal skills through daily interactions with locals.</li>
+                <li>Developed a greater appreciation for different cultures and ways of life.</li>
+                <li>Adapted to new and unfamiliar environments.</li>
+                <li>Enhanced my problem-solving and critical thinking abilities through real-world challenges.</li>
+            </ul>
+            <p>I have countless stories to share about my study abroad experience in Bishkek, but the most 
+                important thing I learned is the value of stepping outside of my comfort zone and embracing 
+                new experiences. I had never traveled abroad before, let alone to the opposite side of the world, 
+                and the new environments I found myself in encouraged everyday growth, especially fostering 
+                my adaptability and communication skills.</p>
+        </section>
+    `
+    };
+
+    document.querySelectorAll('.interact-card').forEach(card => {
+        card.addEventListener('click', () => {
+            const key = card.dataset.experience;
+            document.getElementById('experience-content').innerHTML = content[key];
+            document.getElementById('experiences').scrollIntoView({ behavior: 'smooth' });
+        });
+    });
+</script>
