@@ -1,8 +1,8 @@
 /* Header layout */
 header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 header h1 {
@@ -12,64 +12,188 @@ header h1 {
 
 /* Nav container */
 nav {
-  display: flex;
-  gap: 8px;
+    display: flex;
+    gap: 8px;
 }
 
 body {
-  background-color: #f5f5f5; /* or any color you want */
+    background-color: #f5f5f5;
+    /* or any color you want */
 }
 
 /* Button-style nav items */
 .nav-btn {
-  background-color: #7d2e3b;
-  color: white;
-  padding: 8px 12px;
-  border-radius: 12px;
-  text-decoration: none;
-  font-family: "Mulish", serif;
-  font-weight: bold;
-  transition: transform 0.2s ease, background-color 0.2s ease;
+    background-color: #7d2e3b;
+    color: white;
+    padding: 8px 12px;
+    border-radius: 12px;
+    text-decoration: none;
+    font-family: "Mulish", serif;
+    font-weight: bold;
+    transition: transform 0.2s ease, background-color 0.2s ease;
 }
 
 /* Hover animation */
 .nav-btn:hover {
-  background-color: #5a202a;
-  transform: scale(1.08);
-  cursor: pointer;
+    background-color: #5a202a;
+    transform: scale(1.08);
+    cursor: pointer;
 }
 
 /* Main content spacing */
 main {
-  padding: 20px;
+    padding: 20px;
+}
+
+.portfolio-layout {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+}
+
+.portfolio-intro {
+    flex: 0 0 min(360px, 35%);
+}
+
+.portfolio-intro .centered {
+    text-align: center;
+}
+
+.portfolio-header {
+    text-align: left;
+    margin-bottom: 10px;
+}
+
+.portfolio-header h1 {
+    margin: 0;
 }
 
 /* Subsection rectangle block */
 section {
-  position: relative;        /* allows absolute positioning inside */
-  border: 2px solid #7d2e3b;
-  border-radius: 12px;
-  padding: 30px 20px 20px;   /* extra top padding so content doesn’t collide with the label */
-  margin-bottom: 20px;
+    position: relative;
+    /* allows absolute positioning inside */
+    border: 2px solid #7d2e3b;
+    border-radius: 12px;
+    padding: 30px 20px 20px;
+    /* extra top padding so content doesn’t collide with the label */
+    margin-bottom: 20px;
 }
 
 section h1 {
-  position: absolute;
-  top: -14px;                /* pulls the heading upward to overlap the border */
-  left: 50%;
-  transform: translateX(-50%);
-  background: #f5f5f5;         /* covers the border behind the text */
-  padding: 0 12px;           /* adds spacing between border line and text */
-  font-size: 1.3em;
-  margin: 0;
-  font-family: "Outfit", serif;
+    position: absolute;
+    top: -14px;
+    /* pulls the heading upward to overlap the border */
+    left: 50%;
+    transform: translateX(-50%);
+    background: #f5f5f5;
+    /* covers the border behind the text */
+    padding: 0 12px;
+    /* adds spacing between border line and text */
+    font-size: 1.3em;
+    margin: 0;
+    font-family: "Outfit", serif;
 }
 
-p, h1, h2, h3, h4, h5, h6 {
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     font-family: "Mulish", serif;
 }
 
+.row {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    margin-bottom: 10px;
+    flex: row;
+    justify-content: center;
+}
+
+.button {
+    background-color: #7d2e3b;
+    color: white;
+    padding: 8px 12px;
+    border-radius: 12px;
+    text-decoration: none;
+    font-family: "Mulish", serif;
+    font-weight: bold;
+    transition: transform 0.2s ease, background-color 0.2s ease;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.button:hover {
+    background-color: #5a202a;
+    transform: scale(1.04);
+    cursor: pointer;
+}
+
+.image-button {
+    height: 35px;
+    width: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s ease, background-color 0.2s ease;
+    border-radius: 8px;
+}
+
+.image-button:hover {
+    background-color: #5a202a;
+    transform: scale(1.1);
+    cursor: pointer;
+    border-radius: 8px;
+}
+
+.image-button img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.vertical-spacer {
+    height: 20px;
+}
+
 /* Rounded-edged cards */
+.hugged-card {
+    background-color: #c7c7c7;
+    padding: 0px 10px;
+    border-radius: 10px;
+    width: fit-content;
+    max-width: 100%;
+    box-sizing: border-box;
+    margin: 0 auto 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.hugged-card h3 {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    font-family: "Mulish", serif;
+    font-weight: bold;
+    font-size: 1.1em;
+    text-align: center;
+}
+
+.hugged-card p {
+    margin-top: 0;
+    margin-bottom: 5px;
+    font-family: "Mulish", serif;
+    font-size: 1em;
+    text-align: center;
+}
+
 .colored-card {
     background-color: white;
     padding: 0px 10px;
@@ -91,26 +215,29 @@ p, h1, h2, h3, h4, h5, h6 {
 
 .colored-card i {
     font-size: 24px;
-    width: 32px;               /* forces all icons to align in a column */
+    width: 32px;
+    /* forces all icons to align in a column */
     text-align: center;
-    color: #7d2e3b; 
+    color: #7d2e3b;
     margin: 5px;
 }
 
 .colored-card h2 {
-  text-align: center;
-  margin: 20px 0;
-  font-family: "Outfit", serif;
+    text-align: center;
+    margin: 20px 0;
+    font-family: "Outfit", serif;
 }
 
 .colored-card h3 {
-  margin: 10px 0;
-  font-family: "Mulish", serif;
+    margin: 10px 0;
+    font-family: "Mulish", serif;
 }
 
 .colored-card.primary-content {
-    flex-direction: row;      /* image left, text right */
-    align-items: center;      /* optional: vertical alignment */
+    flex-direction: row;
+    /* image left, text right */
+    align-items: center;
+    /* optional: vertical alignment */
     gap: 12px;
 }
 
@@ -127,7 +254,8 @@ p, h1, h2, h3, h4, h5, h6 {
     flex: 1;
     display: flex;
     flex-direction: column;
-    justify-content: center; /* vertical centering */
+    justify-content: center;
+    /* vertical centering */
 }
 
 .centered {
@@ -135,17 +263,18 @@ p, h1, h2, h3, h4, h5, h6 {
 }
 
 .experience-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr); /* 4x1 on large screens */
-  gap: 20px;
-  margin-bottom: 40px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    /* 4x1 on large screens */
+    gap: 20px;
+    margin-bottom: 40px;
 }
 
 /* Switch to 2x2 on smaller screens */
 @media (max-width: 900px) {
-  .experience-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
+    .experience-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
 
 .icon-wrapper {
@@ -154,20 +283,20 @@ p, h1, h2, h3, h4, h5, h6 {
 }
 
 .interact-card {
-  background-color: white;
-  color: black;
-  padding: 8px 12px;
-  border-radius: 12px;
-  text-decoration: none;
-  font-family: "Mulish", serif;
-  font-weight: bold;
-  transition: transform 0.2s ease, background-color 0.2s ease;
+    background-color: white;
+    color: black;
+    padding: 8px 12px;
+    border-radius: 12px;
+    text-decoration: none;
+    font-family: "Mulish", serif;
+    font-weight: bold;
+    transition: transform 0.2s ease, background-color 0.2s ease;
 }
 
 .interact-card:hover {
-  background-color: #726466;
-  transform: scale(1.08);
-  cursor: pointer;
+    background-color: #726466;
+    transform: scale(1.08);
+    cursor: pointer;
 }
 
 .interact-card img {
@@ -178,15 +307,22 @@ p, h1, h2, h3, h4, h5, h6 {
 }
 
 .image-wrapper-phone {
-  float: right;
-  width: 40%;            /* adjust to taste */
-  margin: 0 0 10px 0px; /* spacing around the image */
+    float: right;
+    width: min(40%, 320px);
+    margin: 0 0 12px 20px;
 }
 
 .image-wrapper-phone img {
-  width: 100%;
-  height: auto;
-  border-radius: 10px;
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    border: 2px solid #000;
+}
+
+.locked::after {
+    content: "";
+    display: block;
+    clear: both;
 }
 
 .interact-card .image-wrapper {
@@ -198,95 +334,116 @@ p, h1, h2, h3, h4, h5, h6 {
 }
 
 .interact-card h2 {
-  text-align: center;
-  margin: 20px 0;
-  font-family: "Outfit", serif;
+    text-align: center;
+    margin: 20px 0;
+    font-family: "Outfit", serif;
 }
 
 .greeting-card {
-  border: 2px solid #7d2e3b;
-  border-radius: 12px;
-  padding: 10px 20px;
-  background: white;
-  margin-bottom: 20px;
-  display: flex;
-  align-items: center;
-  gap: 20px;              /* cleaner than margin-right */
+    border: 2px solid #7d2e3b;
+    border-radius: 12px;
+    padding: 10px 20px;
+    background: white;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    /* cleaner than margin-right */
 }
 
 /* Profile picture stays fixed on the left */
 .profile-pic {
-  width: clamp(120px, 20vw, 250px);
-  height: clamp(120px, 20vw, 250px);
-  border-radius: 50%;
-  overflow: hidden;
-  flex-shrink: 0;
-  border: 2px solid #ccc;
+    width: clamp(120px, 20vw, 250px);
+    height: clamp(120px, 20vw, 250px);
+    border-radius: 50%;
+    overflow: hidden;
+    flex-shrink: 0;
+    border: 2px solid #ccc;
 }
 
 .profile-pic img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 .greeting-content {
-  flex: 1;                /* takes up all remaining space */
-  display: flex;
-  flex-direction: column;
-  align-items: center;    /* centers horizontally */
+    flex: 1;
+    /* takes up all remaining space */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* centers horizontally */
 }
 
 /* Greeting title */
 .greeting {
-  font-size: 4vw;
-  text-wrap: balance;
-  margin: 0;
-  font-family: "Outfit", serif;
+    font-size: 4vw;
+    text-wrap: balance;
+    margin: 0;
+    font-family: "Outfit", serif;
 }
 
 @media (max-width: 700px) {
-  .greeting-card {
-    flex-direction: column;
-    text-align: center;     /* centers the greeting text */
-  }
+    .greeting-card {
+        flex-direction: column;
+        text-align: center;
+        /* centers the greeting text */
+    }
 
-  .profile-pic {
-    margin-right: 0;    /* remove right margin */
-  }
+    .profile-pic {
+        margin-right: 0;
+        /* remove right margin */
+    }
 
-  .greeting-content {
-    align-items: center;    /* keep the text centered */
-  }
+    .greeting-content {
+        align-items: center;
+        /* keep the text centered */
+    }
 }
 
 
 /* Grid layout (side by side on large screens, vertically stacked on small screens) */
 .grid {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  width: 100%;        /* ensures it spans the full row */
-  box-sizing: border-box;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    width: 100%;
+    /* ensures it spans the full row */
+    box-sizing: border-box;
 }
 
 .locked {
     display: block !important;
 }
 
-.grid > * {
-    flex: 1 1 0;        /* allows items to grow and shrink equally */
+@media (max-width: 900px) {
+    .portfolio-layout {
+        flex-direction: column;
+    }
+
+    .portfolio-intro {
+        flex-basis: auto;
+        width: 100%;
+    }
+}
+
+.grid>* {
+    flex: 1 1 0;
+    /* allows items to grow and shrink equally */
 }
 
 .grid.no-wrap {
-  flex-wrap: nowrap;
-  margin-bottom: 20px;
+    flex-wrap: nowrap;
+    margin-bottom: 20px;
 }
 
 .interest-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr); /* 2 columns */
-  gap: 10px; /* adjust spacing as needed */
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    /* 2 columns */
+    gap: 10px;
+    /* adjust spacing as needed */
 }
 
 .interest-grid .colored-card {
@@ -294,22 +451,23 @@ p, h1, h2, h3, h4, h5, h6 {
 }
 
 .interest-container {
-  flex: 0 0 33%; /* takes up exactly 1/3 of the width */
+    flex: 0 0 33%;
+    /* takes up exactly 1/3 of the width */
 }
 
 .primary-content {
     flex: 2 1 0;
 }
 
-.primary-content.text-content{
-  flex-shrink: 1;
-  padding: 0 10px;
+.primary-content.text-content {
+    flex-shrink: 1;
+    padding: 0 10px;
 }
 
 .primary-content.text-content h3 {
     margin: 0 0 10px 0;
     font-size: 1.2em;
-    display: inline-block; 
+    display: inline-block;
 }
 
 .primary-content.text-content p {
@@ -323,9 +481,9 @@ p, h1, h2, h3, h4, h5, h6 {
 }
 
 .side-panel img {
-  max-width: 100%;
-  height: auto;
-  object-fit: contain;
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
 }
 
 .even-split {
@@ -343,80 +501,86 @@ p, h1, h2, h3, h4, h5, h6 {
 
 /* Glance callouts */
 .glance-title {
-  font-size: 1.8em;
-  margin-bottom: 20px;
-  text-align: center;
+    font-size: 1.8em;
+    margin-bottom: 20px;
+    text-align: center;
 }
 
 .glance-row {
-  display: flex;
-  align-items: flex-start;   /* aligns tops of icon + text */
-  gap: 12px;
-  margin-bottom: 16px;
+    display: flex;
+    align-items: flex-start;
+    /* aligns tops of icon + text */
+    gap: 12px;
+    margin-bottom: 16px;
 }
 
 .glance-row i {
-  font-size: 28px;
-  width: 32px;               /* forces all icons to align in a column */
-  text-align: center;
-  color: #7d2e3b;           
+    font-size: 28px;
+    width: 32px;
+    /* forces all icons to align in a column */
+    text-align: center;
+    color: #7d2e3b;
 }
 
 .glance-text {
-  display: flex;
-  flex-direction: column;
-  line-height: 1.2;
+    display: flex;
+    flex-direction: column;
+    line-height: 1.2;
 }
 
 .glance-text h3 {
-  margin: 0;
-  font-size: 1.1em;
+    margin: 0;
+    font-size: 1.1em;
 }
 
 .glance-subtitle {
-  margin: 2px 0 0;
-  font-style: italic;
-  font-size: 0.9em;
-  color: #555;
+    margin: 2px 0 0;
+    font-style: italic;
+    font-size: 0.9em;
+    color: #555;
 }
 
 .skill-row {
-  display: flex;
-  align-items: center;   /* vertical alignment */
-  width: 100%;
-  font-size: clamp(1rem, 1.4vw, 1.6rem);
-  margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    /* vertical alignment */
+    width: 100%;
+    font-size: clamp(1rem, 1.4vw, 1.6rem);
+    margin-bottom: 12px;
 }
 
 /* Skill name: 3/4 width */
 .skill-row h3 {
-  flex: 3 1 0;
-  margin: 0;
-  white-space: nowrap;        /* never wrap */
-  overflow: hidden;           /* prevent overflow */
-  text-overflow: ellipsis;    /* optional */
-  font-size: 1em;
-  line-height: 1.2;
+    flex: 3 1 0;
+    margin: 0;
+    white-space: nowrap;
+    /* never wrap */
+    overflow: hidden;
+    /* prevent overflow */
+    text-overflow: ellipsis;
+    /* optional */
+    font-size: 1em;
+    line-height: 1.2;
 }
 
 .skill-level {
-  flex: 1 1 0;
-  height: 0.6em;   /* scales with font size */
-  background: #e0e0e0;
-  border-radius: 0.3em;
-  overflow: hidden;
-  position: relative;
+    flex: 1 1 0;
+    height: 0.6em;
+    /* scales with font size */
+    background: #e0e0e0;
+    border-radius: 0.3em;
+    overflow: hidden;
+    position: relative;
 }
 
 .skill-level::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: var(--level, 50%);
-  background: linear-gradient(90deg, #af4c4e, #7d2e3b);
-  border-radius: inherit;
-  transition: width 0.3s ease;
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: var(--level, 50%);
+    background: linear-gradient(90deg, #af4c4e, #7d2e3b);
+    border-radius: inherit;
+    transition: width 0.3s ease;
 }
-
