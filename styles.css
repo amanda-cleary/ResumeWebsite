@@ -104,6 +104,11 @@ h6 {
     font-family: "Mulish", serif;
 }
 
+ul li {
+    margin-bottom: 5px;
+    font-family: "Mulish", serif;
+}
+
 .row {
     display: flex;
     gap: 10px;
@@ -132,6 +137,15 @@ h6 {
     background-color: #5a202a;
     transform: scale(1.04);
     cursor: pointer;
+}
+
+.button-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    margin-bottom: 10px;
+    margin-top: 10px;
 }
 
 .image-button {
@@ -549,6 +563,21 @@ h6 {
     margin-bottom: 12px;
 }
 
+.skill-row:hover {
+    background: #f0f0f0;
+    border-radius: 0.3em;
+    padding: 0 2px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    transition: border-radius 0.3s ease;
+    transition: cursor 0.3s ease;
+}
+
+.skill-row:hover::after {
+    opacity: 1;
+    transform: translateY(0);
+}   
+
 /* Skill name: 3/4 width */
 .skill-row h3 {
     flex: 3 1 0;
@@ -583,4 +612,23 @@ h6 {
     background: linear-gradient(90deg, #af4c4e, #7d2e3b);
     border-radius: inherit;
     transition: width 0.3s ease;
+}
+
+.skill-level::after {
+    content: attr(data-level);
+    position: absolute;
+    top: 50%;
+    left: calc(var(--level, 50%) / 2);
+    transform: translate(-50%, -50%);
+    font-size: 0.65em;
+    color: white;
+    font-weight: 600;
+    white-space: nowrap;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+}
+
+.skill-row:hover .skill-level::after {
+    opacity: 1;
 }
