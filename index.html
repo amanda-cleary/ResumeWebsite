@@ -330,7 +330,7 @@
           <div class="colored-card">
             <h2>Resources</h2>
             <div class="button-list">
-              <a href="" class="button">Recipe Book</a>
+                <button type="button" class="button" id="recipe-book-button">Recipe Book</button>
               <a href="" class="button">Recommendations</a>
             </div>
           </div>
@@ -349,6 +349,59 @@
       </div>
     </section>
   </main>
+
+  <dialog id="recipe-dialog" class="recipe-dialog">
+    <div class="recipe-dialog-header">
+      <div>
+        <h2>Recipe Book</h2>
+        <p>Choose a recipe to open its full page.</p>
+      </div>
+      <button type="button" class="recipe-dialog-close" id="close-recipe-dialog" aria-label="Close recipe book dialog">x</button>
+    </div>
+    <div class="recipe-grid">
+      <a class="recipe-card" href="recipes/pancakecookies.html" style="--recipe-accent: #846b77;">
+        <div class="recipe-card-media" aria-hidden="true">
+          <i class="fa-solid fa-stroopwafel"></i>
+        </div>
+        <span>Pancake Cookies</span>
+      </a>
+      <a class="recipe-card" href="recipes/cakecookies.html" style="--recipe-accent: #8f4c6c;">
+        <div class="recipe-card-media" aria-hidden="true">
+          <i class="fa-solid fa-cookie"></i>
+        </div>
+        <span>Cake Cookies</span>
+      </a>
+      <a class="recipe-card" href="recipes/peachdumplings.html" style="--recipe-accent: #bc7c95;">
+        <div class="recipe-card-media" aria-hidden="true">
+          <i class="fa-solid fa-apple-alt"></i>
+        </div>
+        <span>Peach Croissant Dumplings</span>
+      </a>
+    </div>
+  </dialog>
+
+  <script>
+    const recipeBookButton = document.getElementById('recipe-book-button');
+    const recipeDialog = document.getElementById('recipe-dialog');
+    const closeRecipeDialog = document.getElementById('close-recipe-dialog');
+
+    recipeBookButton.addEventListener('click', () => {
+      recipeDialog.showModal();
+    });
+
+    closeRecipeDialog.addEventListener('click', () => {
+      recipeDialog.close();
+    });
+
+    recipeDialog.addEventListener('click', (event) => {
+      const rect = recipeDialog.getBoundingClientRect();
+      const clickedBackdrop = event.clientX < rect.left || event.clientX > rect.right || event.clientY < rect.top || event.clientY > rect.bottom;
+
+      if (clickedBackdrop) {
+        recipeDialog.close();
+      }
+    });
+  </script>
 </body>
 
 </html>
