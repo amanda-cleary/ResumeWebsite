@@ -1,0 +1,18 @@
+/* Color palette and CSS variables */
+:root {
+    --color-bg: #a08b8e;
+    --color-surface: #ffffff;
+    --color-surface-alt: #f5f0ea;
+    --color-surface-alt-hover: #efe4da;
+    --color-brand: #7d2e3b;
+    --color-brand-dark: #5a202a;
+    --color-brand-soft: #af4c4e;
+    --color-text: #111111;
+    --color-text-muted: #555555;
+    --color-border: rgba(125, 46, 59, 0.16);
+    --color-border-strong: rgba(125, 46, 59, 0.18);
+    --color-card-muted: #c7c7c7;
+    --color-track: #e0e0e0;
+    --color-overlay: rgba(25, 17, 18, 0.68);
+    --color-interact-hover: #5a202a;
+}

@@ -1,0 +1,284 @@
+/* Dialogs, recipes, recommendations, and page-specific components */
+
+.dialog-view {
+    display: none;
+}
+
+.dialog-view.is-active {
+    display: block;
+}
+
+/* Recipe Book */
+
+.recipe-dialog {
+    width: min(860px, calc(100vw - 32px));
+    border: none;
+    border-radius: 18px;
+    padding: 20px;
+    background: var(--color-surface);
+    box-shadow: 0 24px 80px rgba(0, 0, 0, 0.24);
+}
+
+.recipe-dialog::backdrop {
+    background: var(--color-overlay);
+    backdrop-filter: blur(3px);
+}
+
+.recipe-dialog-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 16px;
+    margin-bottom: 18px;
+}
+
+.recipe-dialog-header h2 {
+    margin: 0 0 6px;
+    font-family: "Outfit", serif;
+    font-size: 1.8em;
+}
+
+.recipe-dialog-header p {
+    margin: 0;
+}
+
+.recipe-dialog-close {
+    border: none;
+    background: var(--color-brand);
+    color: white;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    font-size: 1.25rem;
+    line-height: 1;
+    cursor: pointer;
+}
+
+.recipe-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 14px;
+}
+
+.recipe-card {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    text-decoration: none;
+    color: inherit;
+    padding: 10px;
+    border-radius: 16px;
+    background: var(--color-surface-alt);
+    border: 1px solid var(--color-border);
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+}
+
+.recipe-card-media {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--recipe-accent, var(--color-brand));
+    color: white;
+    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.18);
+}
+
+.recipe-card-media i {
+    font-size: clamp(2rem, 5vw, 3.2rem);
+}
+
+.recipe-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 14px 24px rgba(0, 0, 0, 0.12);
+    background: var(--color-surface-alt-hover);
+}
+
+.recipe-card img {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    border-radius: 12px;
+    object-fit: cover;
+    display: block;
+}
+
+.recipe-card span {
+    text-align: center;
+    font-family: "Mulish", serif;
+    font-weight: 700;
+}
+
+.recipe-page {
+    display: grid;
+    grid-template-columns: minmax(240px, 320px) minmax(0, 1fr);
+    grid-template-areas:
+        "hero intro"
+        "cards cards";
+    gap: 22px;
+    align-items: center;
+}
+
+.recipe-page .recipe-hero {
+    grid-area: hero;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.recipe-page .recipe-intro {
+    grid-area: intro;
+}
+
+.recipe-page .recipe-columns {
+    grid-area: cards;
+}
+
+.recipe-page .recipe-hero img {
+    width: 100%;
+    border-radius: 14px;
+    border: 2px solid var(--color-border-strong);
+}
+
+.recipe-page .recipe-meta {
+    display: grid;
+    gap: 10px;
+}
+
+.recipe-page .recipe-meta .meta-card {
+    background: var(--color-surface-alt);
+    border-radius: 14px;
+    padding: 12px 14px;
+}
+
+.recipe-page .recipe-columns {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+    margin-top: 16px;
+}
+
+.recipe-page .recipe-columns .colored-card {
+    margin-bottom: 0;
+}
+
+@media (max-width: 900px) {
+    .recipe-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .recommendation-menu {
+        grid-template-columns: 1fr;
+    }
+
+    .recipe-page {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "hero"
+            "intro"
+            "cards";
+    }
+
+    .recipe-page .recipe-columns {
+        grid-template-columns: 1fr;
+    }
+
+    .recipe-page .recipe-hero {
+        justify-content: flex-start;
+    }
+
+    .shelf-item {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Recommendations */
+
+.recommendation-menu {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 14px;
+}
+
+.recommendation-card {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    border: 1px solid var(--color-border);
+    border-radius: 16px;
+    padding: 10px;
+    background: var(--color-surface-alt);
+    color: inherit;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+}
+
+.recommendation-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 14px 24px rgba(0, 0, 0, 0.12);
+    background: var(--color-surface-alt-hover);
+}
+
+.shelf-header {
+    align-items: center;
+}
+
+.shelf-back-button {
+    border: none;
+    background: var(--color-brand);
+    color: white;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    font-size: 1rem;
+    line-height: 1;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 auto;
+}
+
+.shelf-rows {
+    display: grid;
+    gap: 14px;
+}
+
+.shelf-item {
+    display: grid;
+    grid-template-columns: 96px minmax(0, 1fr);
+    gap: 14px;
+    align-items: center;
+    padding: 12px;
+    border-radius: 18px;
+    background: var(--color-surface-alt);
+    border: 1px solid var(--color-border);
+}
+
+.shelf-spine {
+    min-height: 110px;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--shelf-accent, var(--color-brand));
+    color: white;
+    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.18);
+}
+
+.shelf-spine i {
+    font-size: 2rem;
+}
+
+.shelf-item-text h3 {
+    margin: 0 0 6px;
+    font-family: "Outfit", serif;
+}
+
+.shelf-item-text p {
+    margin: 0;
+}
+
+.vertical-spacer {
+    height: 20px;
+}

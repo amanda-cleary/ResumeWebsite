@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
     <header>
       <h1>Amanda Cleary</h1>
       <nav>
-        <a href="${prefix}index.html" class="nav-btn ${currentPage === 'index.html' ? 'is-active' : ''}">Meet Me</a>
+        <a href="${prefix}index.html" class="nav-btn ${currentPage === 'index.html' ? 'is-active' : ''}">About</a>
         <a href="${prefix}experiences.html" class="nav-btn ${currentPage === 'experiences.html' ? 'is-active' : ''}">Experiences</a>
         <a href="${prefix}portfolio.html" class="nav-btn ${currentPage === 'portfolio.html' ? 'is-active' : ''}">Portfolio</a>
       </nav>
