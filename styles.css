@@ -1,29 +1,49 @@
+ :root {
+    --color-bg: #a08b8e;
+    --color-surface: #ffffff;
+    --color-surface-alt: #f5f0ea;
+    --color-surface-alt-hover: #efe4da;
+    --color-brand: #7d2e3b;
+    --color-brand-dark: #5a202a;
+    --color-brand-soft: #af4c4e;
+    --color-text: #111111;
+    --color-text-muted: #555555;
+    --color-border: rgba(125, 46, 59, 0.16);
+    --color-border-strong: rgba(125, 46, 59, 0.18);
+    --color-card-muted: #c7c7c7;
+    --color-track: #e0e0e0;
+    --color-overlay: rgba(25, 17, 18, 0.68);
+    --color-interact-hover: #726466;
+}
+
 /* Header layout */
 header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    background-color: var(--color-brand);
+    color: white;
 }
 
 header h1 {
     font-family: "Outfit", serif;
-    margin-left: 20px;
+    margin-left: 15px;
+    font-size: 1.5em;
 }
 
-/* Nav container */
 nav {
     display: flex;
     gap: 8px;
 }
 
 body {
-    background-color: #f5f5f5;
-    /* or any color you want */
+    background-color: var(--color-bg);
+    margin: 0;
 }
 
 /* Button-style nav items */
 .nav-btn {
-    background-color: #7d2e3b;
+    background-color: var(--color-brand);
     color: white;
     padding: 8px 12px;
     border-radius: 12px;
@@ -33,14 +53,18 @@ body {
     transition: transform 0.2s ease, background-color 0.2s ease;
 }
 
-/* Hover animation */
 .nav-btn:hover {
-    background-color: #5a202a;
-    transform: scale(1.08);
+    background-color: var(--color-brand-dark);
+    transform: scale(1.02);
     cursor: pointer;
 }
 
-/* Main content spacing */
+.nav-btn.is-active {
+    background-color: var(--color-brand-dark);
+    transform: scale(1.02);
+    cursor: pointer;
+}
+
 main {
     padding: 20px;
 }
@@ -72,7 +96,7 @@ main {
 section {
     position: relative;
     /* allows absolute positioning inside */
-    border: 2px solid #7d2e3b;
+    border: 2px solid var(--color-brand);
     border-radius: 12px;
     padding: 30px 20px 20px;
     /* extra top padding so content doesn’t collide with the label */
@@ -85,13 +109,14 @@ section h1 {
     /* pulls the heading upward to overlap the border */
     left: 50%;
     transform: translateX(-50%);
-    background: #f5f5f5;
+    background: var(--color-bg);
     /* covers the border behind the text */
     padding: 0 12px;
     /* adds spacing between border line and text */
     font-size: 1.3em;
     margin: 0;
     font-family: "Outfit", serif;
+    color: var(--color-brand-dark);
 }
 
 p,
@@ -125,7 +150,7 @@ li {
 }
 
 .button {
-    background-color: #7d2e3b;
+    background-color: var(--color-brand);
     color: white;
     padding: 8px 12px;
     border-radius: 12px;
@@ -145,7 +170,7 @@ button.button {
 }
 
 .button:hover {
-    background-color: #5a202a;
+    background-color: var(--color-brand-dark);
     transform: scale(1.04);
     cursor: pointer;
 }
@@ -170,7 +195,7 @@ button.button {
 }
 
 .image-button:hover {
-    background-color: #5a202a;
+    background-color: var(--color-brand-dark);
     transform: scale(1.1);
     cursor: pointer;
     border-radius: 8px;
@@ -188,12 +213,12 @@ button.button {
     border: none;
     border-radius: 18px;
     padding: 20px;
-    background: #fffdf9;
+    background: var(--color-surface);
     box-shadow: 0 24px 80px rgba(0, 0, 0, 0.24);
 }
 
 .recipe-dialog::backdrop {
-    background: rgba(25, 17, 18, 0.68);
+    background: var(--color-overlay);
     backdrop-filter: blur(3px);
 }
 
@@ -217,7 +242,7 @@ button.button {
 
 .recipe-dialog-close {
     border: none;
-    background: #7d2e3b;
+    background: var(--color-brand);
     color: white;
     width: 36px;
     height: 36px;
@@ -245,10 +270,10 @@ button.button {
     display: flex;
     flex-direction: column;
     gap: 10px;
-    border: 1px solid rgba(125, 46, 59, 0.16);
+    border: 1px solid var(--color-border);
     border-radius: 16px;
     padding: 10px;
-    background: #f5f0ea;
+    background: var(--color-surface-alt);
     color: inherit;
     cursor: pointer;
     transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
@@ -257,7 +282,7 @@ button.button {
 .recommendation-card:hover {
     transform: translateY(-3px);
     box-shadow: 0 14px 24px rgba(0, 0, 0, 0.12);
-    background: #efe4da;
+    background: var(--color-surface-alt-hover);
 }
 
 .shelf-header {
@@ -266,7 +291,7 @@ button.button {
 
 .shelf-back-button {
     border: none;
-    background: #7d2e3b;
+    background: var(--color-brand);
     color: white;
     width: 36px;
     height: 36px;
@@ -292,8 +317,8 @@ button.button {
     align-items: center;
     padding: 12px;
     border-radius: 18px;
-    background: #f5f0ea;
-    border: 1px solid rgba(125, 46, 59, 0.16);
+    background: var(--color-surface-alt);
+    border: 1px solid var(--color-border);
 }
 
 .shelf-spine {
@@ -302,7 +327,7 @@ button.button {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: var(--shelf-accent, #7d2e3b);
+    background: var(--shelf-accent, var(--color-brand));
     color: white;
     box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.18);
 }
@@ -334,8 +359,8 @@ button.button {
     color: inherit;
     padding: 10px;
     border-radius: 16px;
-    background: #f5f0ea;
-    border: 1px solid rgba(125, 46, 59, 0.16);
+    background: var(--color-surface-alt);
+    border: 1px solid var(--color-border);
     transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
 }
 
@@ -346,7 +371,7 @@ button.button {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: var(--recipe-accent, #7d2e3b);
+    background: var(--recipe-accent, var(--color-brand));
     color: white;
     box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.18);
 }
@@ -358,7 +383,7 @@ button.button {
 .recipe-card:hover {
     transform: translateY(-3px);
     box-shadow: 0 14px 24px rgba(0, 0, 0, 0.12);
-    background: #efe4da;
+    background: var(--color-surface-alt-hover);
 }
 
 .recipe-card img {
@@ -403,7 +428,7 @@ button.button {
 .recipe-page .recipe-hero img {
     width: 100%;
     border-radius: 14px;
-    border: 2px solid rgba(125, 46, 59, 0.18);
+    border: 2px solid var(--color-border-strong);
 }
 
 .recipe-page .recipe-meta {
@@ -412,7 +437,7 @@ button.button {
 }
 
 .recipe-page .recipe-meta .meta-card {
-    background: #f5f0ea;
+    background: var(--color-surface-alt);
     border-radius: 14px;
     padding: 12px 14px;
 }
@@ -464,7 +489,7 @@ button.button {
 
 /* Rounded-edged cards */
 .hugged-card {
-    background-color: #c7c7c7;
+    background-color: var(--color-card-muted);
     padding: 0px 10px;
     border-radius: 10px;
     width: fit-content;
@@ -495,7 +520,7 @@ button.button {
 }
 
 .colored-card {
-    background-color: white;
+    background-color: var(--color-surface);
     padding: 0px 10px;
     border-radius: 10px;
     width: 100%;
@@ -518,7 +543,7 @@ button.button {
     width: 32px;
     /* forces all icons to align in a column */
     text-align: center;
-    color: #7d2e3b;
+    color: var(--color-brand);
     margin: 5px;
 }
 
@@ -594,7 +619,7 @@ button.button {
 }
 
 .interact-card:hover {
-    background-color: #726466;
+    background-color: var(--color-interact-hover);
     transform: scale(1.08);
     cursor: pointer;
 }
@@ -616,7 +641,7 @@ button.button {
     width: 100%;
     height: auto;
     border-radius: 10px;
-    border: 2px solid #000;
+    border: 2px solid var(--color-text);
 }
 
 .locked::after {
@@ -640,7 +665,7 @@ button.button {
 }
 
 .greeting-card {
-    border: 2px solid #7d2e3b;
+    border: 2px solid var(--color-brand);
     border-radius: 12px;
     padding: 10px 20px;
     background: white;
@@ -819,7 +844,7 @@ button.button {
     width: 32px;
     /* forces all icons to align in a column */
     text-align: center;
-    color: #7d2e3b;
+    color: var(--color-brand);
 }
 
 .glance-text {
@@ -837,7 +862,7 @@ button.button {
     margin: 2px 0 0;
     font-style: italic;
     font-size: 0.9em;
-    color: #555;
+    color: var(--color-text-muted);
 }
 
 .skill-row {
@@ -882,7 +907,7 @@ button.button {
     flex: 1 1 0;
     height: 0.6em;
     /* scales with font size */
-    background: #e0e0e0;
+    background: var(--color-track);
     border-radius: 0.3em;
     overflow: hidden;
     position: relative;
@@ -895,7 +920,7 @@ button.button {
     left: 0;
     height: 100%;
     width: var(--level, 50%);
-    background: linear-gradient(90deg, #af4c4e, #7d2e3b);
+    background: linear-gradient(90deg, var(--color-brand-soft), var(--color-brand));
     border-radius: inherit;
     transition: width 0.3s ease;
 }

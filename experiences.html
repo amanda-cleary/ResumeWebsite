@@ -12,14 +12,7 @@
 </head>
 
 <body>
-    <header>
-        <h1>Amanda Cleary</h1>
-        <nav>
-            <a href="index.html" class="nav-btn">Meet Me</a>
-            <a href="experiences.html" class="nav-btn">Experiences</a>
-            <a href="portfolio.html" class="nav-btn">Portfolio</a>
-        </nav>
-    </header>
+    <div id="site-header"></div>
 
     <main>
         <div class="centered">
@@ -55,11 +48,8 @@
         </div>
 
     </main>
-</body>
-
-</html>
-
-<script>
+    <script src="scripts/site-shell.js"></script>
+    <script>
     const content = {
         ai: `
         <section>
@@ -157,4 +147,7 @@
             document.getElementById('experiences').scrollIntoView({ behavior: 'smooth' });
         });
     });
-</script>
+    </script>
+</body>
+
+</html>

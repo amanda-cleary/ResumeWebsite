@@ -1,5 +1,12 @@
 # ResumeWebsite
 
+## Project layout
+
+- `index.html`, `experiences.html`, and `portfolio.html` are the main top-level pages.
+- `recipes/` contains the recipe pages.
+- `scripts/` holds shared behavior like the reusable site header.
+- `images/` and `files/` store static assets.
+
 ## Run `index.html` on a local server
 
 From the project root, start a simple local HTTP server:
