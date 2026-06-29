@@ -19,27 +19,32 @@
   <div id="site-header"></div>
 
   <main>
+    <div class="greeting-content">
+      <h1 class="greeting">Amanda Cleary</h1>
+      <h2 class="subtitle">Software Developer</h2>
+    </div>
 
-    <div class="grid">
-      <div class="primary-content">
-        <div class="greeting-card">
-          <div class="greeting-card-top">
-            <div class="profile-pic">
-              <img src="images/profile.jpeg" alt="Profile Picture">
-            </div>
-            <div class="greeting-content">
-              <h1 class="greeting">Amanda Cleary</h1>
-              <h2 class="subtitle">Software Developer</h2>
-              <p>Amanda Cleary is 
-                passionate about solving problems and exploring the connections between people, 
-                ideas, and technology. Driven by curiosity and a commitment to 
-                 lifelong learning, she approaches every challenge with creativity, adaptability, 
-                 and a desire to make a meaningful impact. She is excited to explore new opportunities 
-                 in the tech industry as a recent graduate of Computer Science.
-              </p>
-            </div>
+    <div class="bio-section">
+      <div class="bio-card">
+        <div class="bio-top">
+          <div class="bio-image">
+            <img src="images/profile.jpeg" alt="Amanda Cleary headshot">
+          </div>
+          <div class="bio-content">
+            <h2>ABOUT</h2>
+            <p>
+              Amanda Cleary is passionate about solving problems and exploring the connections between people,
+              ideas, and technology. Driven by curiosity and a commitment to lifelong learning, she approaches
+              every challenge with creativity, adaptability, and a desire to make a meaningful impact.
+            </p>
+            <p>
+              She is excited to explore new opportunities in the tech industry as a recent graduate of Computer Science.
+              Outside of work, Amanda enjoys hiking, photography, and discovering new coffee shops.
+            </p>
           </div>
         </div>
+      </div>
+      <div class="bio-glance-wrapper">
         <div class="glance-strip" aria-label="Meet me at a glance">
           <div class="glance-item">
             <i class="fa-solid fa-graduation-cap"></i>
@@ -65,283 +70,287 @@
         </div>
       </div>
     </div>
+    <div class="tab-container">
+      <div class="tab-header">
+        <button class="tab active" data-tab="skills">Skills</button>
+        <button class="tab" data-tab="education">Education</button>
+        <button class="tab" data-tab="interests">Personal</button>
+      </div>
 
-    <section id="skills">
-      <h1>SKILLS</h1>
-      <div class="grid">
-        <div class="even-split">
-          <div class="colored-card">
-            <h2>Technical</h2>
-            <div class="skill-row">
-              <h3>Object-Oriented Programming</h3>
-              <div class="skill-level" style="--level: 85%;" data-level="85%"></div>
-            </div>
-            <div class="skill-row">
-              <h3>Web Development</h3>
-              <div class="skill-level" style="--level: 90%;" data-level="90%"></div>
-            </div>
-            <div class="skill-row">
-              <h3>Mobile Development</h3>
-              <div class="skill-level" style="--level: 90%;" data-level="90%"></div>
-            </div>
-            <div class="skill-row">
-              <h3>Databases</h3>
-              <div class="skill-level" style="--level: 80%;" data-level="80%"></div>
-            </div>
-            <div class="skill-row">
-              <h3>Artificial Intelligence</h3>
-              <div class="skill-level" style="--level: 75%;" data-level="75%"></div>
-            </div>
-            <div class="skill-row">
-              <h3>Front-End Development</h3>
-              <div class="skill-level" style="--level: 90%;" data-level="90%"></div>
-            </div>
-            <div class="skill-row">
-              <h3>Back-End Development</h3>
-              <div class="skill-level" style="--level: 75%;" data-level="75%"></div>
-            </div>
-            <div class="skill-row">
-              <h3>Full-Stack Development</h3>
-              <div class="skill-level" style="--level: 82%;" data-level="82%"></div>
-            </div>
-          </div>
-        </div>
-        <div class="even-split">
-          <div class="colored-card">
-            <h2>Interpersonal</h2>
-            <div class="skill-row">
-              <h3>Communication</h3>
-              <div class="skill-level" style="--level: 88%;" data-level="88%"></div>
-            </div>
-            <div class="skill-row">
-              <h3>Teamwork</h3>
-              <div class="skill-level" style="--level: 87%;" data-level="87%"></div>
-            </div>
-            <div class="skill-row">
-              <h3>Leadership</h3>
-              <div class="skill-level" style="--level: 85%;" data-level="85%"></div>
-            </div>
-            <div class="skill-row">
-              <h3>Adaptability</h3>
-              <div class="skill-level" style="--level: 95%;" data-level="95%"></div>
-            </div>
-            <div class="skill-row">
-              <h3>Rapid Learning</h3>
-              <div class="skill-level" style="--level: 92%;" data-level="92%"></div>
-            </div>
-            <div class="skill-row">
-              <h3>Problem Solving</h3>
-              <div class="skill-level" style="--level: 85%;" data-level="85%"></div>
-            </div>
-            <div class="skill-row">
-              <h3>Transparency</h3>
-              <div class="skill-level" style="--level: 90%;" data-level="90%"></div>
-            </div>
-            <div class="skill-row">
-              <h3>Organization</h3>
-              <div class="skill-level" style="--level: 87%;" data-level="87%"></div>
+      <div class="tab-body active" id="skills">
+        <div class="grid">
+          <div class="even-split">
+            <div class="colored-card">
+              <h2>Technical</h2>
+              <div class="skill-row">
+                <h3>Object-Oriented Programming</h3>
+                <div class="skill-level" style="--level: 85%;" data-level="85%"></div>
+              </div>
+              <div class="skill-row">
+                <h3>Web Development</h3>
+                <div class="skill-level" style="--level: 90%;" data-level="90%"></div>
+              </div>
+              <div class="skill-row">
+                <h3>Mobile Development</h3>
+                <div class="skill-level" style="--level: 90%;" data-level="90%"></div>
+              </div>
+              <div class="skill-row">
+                <h3>Databases</h3>
+                <div class="skill-level" style="--level: 80%;" data-level="80%"></div>
+              </div>
+              <div class="skill-row">
+                <h3>Artificial Intelligence</h3>
+                <div class="skill-level" style="--level: 75%;" data-level="75%"></div>
+              </div>
+              <div class="skill-row">
+                <h3>Front-End Development</h3>
+                <div class="skill-level" style="--level: 90%;" data-level="90%"></div>
+              </div>
+              <div class="skill-row">
+                <h3>Back-End Development</h3>
+                <div class="skill-level" style="--level: 75%;" data-level="75%"></div>
+              </div>
+              <div class="skill-row">
+                <h3>Full-Stack Development</h3>
+                <div class="skill-level" style="--level: 82%;" data-level="82%"></div>
+              </div>
             </div>
           </div>
-        </div>
-        <div class="even-split">
-          <div class="colored-card">
-            <h2>Programming Languages</h2>
-            <div class="skill-row">
-              <h3>Python</h3>
-              <div class="skill-level" style="--level: 80%;" data-level="80%"></div>
-            </div>
-            <div class="skill-row">
-              <h3>Java</h3>
-              <div class="skill-level" style="--level: 75%;" data-level="75%"></div>
-            </div>
-            <div class="skill-row">
-              <h3>C#</h3>
-              <div class="skill-level" style="--level: 85%;" data-level="85%"></div>
-            </div>
-            <div class="skill-row">
-              <h3>C++</h3>
-              <div class="skill-level" style="--level: 63%;" data-level="63%"></div>
-            </div>
-            <div class="skill-row">
-              <h3>C</h3>
-              <div class="skill-level" style="--level: 60%;" data-level="60%"></div>
-            </div>
-            <div class="skill-row">
-              <h3>HTML & CSS</h3>
-              <div class="skill-level" style="--level: 90%;" data-level="90%"></div>
-            </div>
-            <div class="skill-row">
-              <h3>Dart</h3>
-              <div class="skill-level" style="--level: 95%;" data-level="95%"></div>
-            </div>
-            <div class="skill-row">
-              <h3>Kotlin</h3>
-              <div class="skill-level" style="--level: 70%;" data-level="70%"></div>
-            </div>
-            <div class="skill-row">
-              <h3>Assembly</h3>
-              <div class="skill-level" style="--level: 60%;" data-level="60%"></div>
+          <div class="even-split">
+            <div class="colored-card">
+              <h2>Interpersonal</h2>
+              <div class="skill-row">
+                <h3>Communication</h3>
+                <div class="skill-level" style="--level: 88%;" data-level="88%"></div>
+              </div>
+              <div class="skill-row">
+                <h3>Teamwork</h3>
+                <div class="skill-level" style="--level: 87%;" data-level="87%"></div>
+              </div>
+              <div class="skill-row">
+                <h3>Leadership</h3>
+                <div class="skill-level" style="--level: 85%;" data-level="85%"></div>
+              </div>
+              <div class="skill-row">
+                <h3>Adaptability</h3>
+                <div class="skill-level" style="--level: 95%;" data-level="95%"></div>
+              </div>
+              <div class="skill-row">
+                <h3>Rapid Learning</h3>
+                <div class="skill-level" style="--level: 92%;" data-level="92%"></div>
+              </div>
+              <div class="skill-row">
+                <h3>Problem Solving</h3>
+                <div class="skill-level" style="--level: 85%;" data-level="85%"></div>
+              </div>
+              <div class="skill-row">
+                <h3>Transparency</h3>
+                <div class="skill-level" style="--level: 90%;" data-level="90%"></div>
+              </div>
+              <div class="skill-row">
+                <h3>Organization</h3>
+                <div class="skill-level" style="--level: 87%;" data-level="87%"></div>
+              </div>
             </div>
           </div>
-        </div>
-        <div class="even-split-vert">
-          <div class="colored-card">
-            <h2>Foreign Languages</h2>
-            <div class="skill-row">
-              <h3>English</h3>
-              <div class="skill-level" style="--level: 100%;" data-level="100%"></div>
-            </div>
-            <div class="skill-row">
-              <h3>Russian</h3>
-              <div class="skill-level" style="--level: 60%;" data-level="60%"></div>
-            </div>
-            <div class="skill-row">
-              <h3>Spanish</h3>
-              <div class="skill-level" style="--level: 45%;" data-level="45%"></div>
+          <div class="even-split">
+            <div class="colored-card">
+              <h2>Programming Languages</h2>
+              <div class="skill-row">
+                <h3>Python</h3>
+                <div class="skill-level" style="--level: 80%;" data-level="80%"></div>
+              </div>
+              <div class="skill-row">
+                <h3>Java</h3>
+                <div class="skill-level" style="--level: 75%;" data-level="75%"></div>
+              </div>
+              <div class="skill-row">
+                <h3>C#</h3>
+                <div class="skill-level" style="--level: 85%;" data-level="85%"></div>
+              </div>
+              <div class="skill-row">
+                <h3>C++</h3>
+                <div class="skill-level" style="--level: 63%;" data-level="63%"></div>
+              </div>
+              <div class="skill-row">
+                <h3>C</h3>
+                <div class="skill-level" style="--level: 60%;" data-level="60%"></div>
+              </div>
+              <div class="skill-row">
+                <h3>HTML & CSS</h3>
+                <div class="skill-level" style="--level: 90%;" data-level="90%"></div>
+              </div>
+              <div class="skill-row">
+                <h3>Dart</h3>
+                <div class="skill-level" style="--level: 95%;" data-level="95%"></div>
+              </div>
+              <div class="skill-row">
+                <h3>Kotlin</h3>
+                <div class="skill-level" style="--level: 70%;" data-level="70%"></div>
+              </div>
+              <div class="skill-row">
+                <h3>Assembly</h3>
+                <div class="skill-level" style="--level: 60%;" data-level="60%"></div>
+              </div>
             </div>
           </div>
-          <div class="colored-card">
-            <h2>Softwares</h2>
-            <div class="skill-row">
-              <h3>Flutter</h3>
-              <div class="skill-level" style="--level: 95%;" data-level="95%"></div>
+          <div class="even-split-vert">
+            <div class="colored-card">
+              <h2>Foreign Languages</h2>
+              <div class="skill-row">
+                <h3>English</h3>
+                <div class="skill-level" style="--level: 100%;" data-level="100%"></div>
+              </div>
+              <div class="skill-row">
+                <h3>Russian</h3>
+                <div class="skill-level" style="--level: 60%;" data-level="60%"></div>
+              </div>
+              <div class="skill-row">
+                <h3>Spanish</h3>
+                <div class="skill-level" style="--level: 45%;" data-level="45%"></div>
+              </div>
             </div>
-            <div class="skill-row">
-              <h3>Android Studio</h3>
-              <div class="skill-level" style="--level: 85%;" data-level="85%"></div>
-            </div>
-            <div class="skill-row">
-              <h3>Supabase</h3>
-              <div class="skill-level" style="--level: 75%; ;" data-level="75%"></div>
-            </div>
-            <div class="skill-row">
-              <h3>Git</h3>
-              <div class="skill-level" style="--level: 95%; " data-level="95%"></div>
+            <div class="colored-card">
+              <h2>Softwares</h2>
+              <div class="skill-row">
+                <h3>Flutter</h3>
+                <div class="skill-level" style="--level: 95%;" data-level="95%"></div>
+              </div>
+              <div class="skill-row">
+                <h3>Android Studio</h3>
+                <div class="skill-level" style="--level: 85%;" data-level="85%"></div>
+              </div>
+              <div class="skill-row">
+                <h3>Supabase</h3>
+                <div class="skill-level" style="--level: 75%; ;" data-level="75%"></div>
+              </div>
+              <div class="skill-row">
+                <h3>Git</h3>
+                <div class="skill-level" style="--level: 95%; " data-level="95%"></div>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </section>
 
-    <section id="education">
-      <h1>EDUCATION</h1>
-      <div class="grid no-wrap">
-        <div class="colored-card primary-content">
-          <div class="side-panel"><img src="images/uofu.png"></div>
-          <div class="primary-content text-content">
-            <h3>Honors Bachelor of Science in Computer Science</h3>
-            <p>Minor in Russian</p>
-            <p>Spring 2026 Graduate</p>
-          </div>
-        </div>
-        <div class="side-panel">
-          <div class="colored-card centered">
-            <div class="icon-wrapper">
-              <i class="fas fa-graduation-cap"></i>
+      <div class="tab-body" id="education">
+        <div class="grid no-wrap">
+          <div class="colored-card primary-content">
+            <div class="side-panel"><img src="images/uofu.png"></div>
+            <div class="primary-content text-content">
+              <h3>Honors Bachelor of Science in Computer Science</h3>
+              <p>Minor in Russian</p>
+              <p>Spring 2026 Graduate</p>
             </div>
-                <div class="centered">
+          </div>
+          <div class="side-panel">
+            <div class="colored-card centered">
+              <div class="icon-wrapper">
+                <i class="fas fa-graduation-cap"></i>
+              </div>
+              <div class="centered">
                 <h3>Cumulative GPA 3.79</h3>
                 <p class="glance-subtitle">Dean's List: 8 consecutive semesters</p>
                 <div class="vertical-spacer"></div>
-                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="grid">
+          <div class="colored-card">
+            <h2>CS Fundamentals</h2>
+            <div class="centered">
+              <p>Accel. Object-Oriented Programming</p>
+              <p>Intro. to Algorithms & Data Structures</p>
+              <p>Algorithms</p>
+              <p>Discrete Structures</p>
+
+            </div>
+          </div>
+          <div class="colored-card">
+            <h2>Software Development</h2>
+            <div class="centered">
+              <p>Software Practice I & II</p>
+              <p>Mobile App. Development</p>
+              <p>Web Design</p>
+              <p>Capstone Project</p>
+            </div>
+          </div>
+          <div class="colored-card">
+            <h2>Computing Systems & Intelligence</h2>
+            <div class="centered">
+              <p>Databases</p>
+              <p>Computer Organization</p>
+              <p>Foundations of Data Analysis</p>
+              <p>Artificial Intelligence</p>
+            </div>
+          </div>
+          <div class="colored-card">
+            <h2>Math & Science</h2>
+            <div class="centered">
+              <p>Calculus I, II, & III</p>
+              <p>Linear Algebra</p>
+              <p>Probability & Statistics</p>
+              <p>Statics</p>
+              <p>Physics for Science & Engineering I & II</p>
+            </div>
+          </div>
+          <div class="colored-card">
+            <h2>Russian</h2>
+            <div class="centered">
+              <p>Beginner Russian I & II</p>
+              <p>SRAS: Bishkek 2025 Summer Program</p>
+              <p>Third-Year Russian I & II</p>
+              <p>Russia Under the Czars</p>
+              <p>Russian Theatre</p>
+            </div>
           </div>
         </div>
       </div>
-      <div class="grid">
-        <div class="colored-card">
-          <h2>CS Fundamentals</h2>
-          <div class="centered">
-            <p>Accel. Object-Oriented Programming</p>
-            <p>Intro. to Algorithms & Data Structures</p>
-            <p>Algorithms</p>
-            <p>Discrete Structures</p>
 
-          </div>
-        </div>
-        <div class="colored-card">
-          <h2>Software Development</h2>
-          <div class="centered">
-            <p>Software Practice I & II</p>
-            <p>Mobile App. Development</p>
-            <p>Web Design</p>
-            <p>Capstone Project</p>
-          </div>
-        </div>
-        <div class="colored-card">
-          <h2>Computing Systems & Intelligence</h2>
-          <div class="centered">
-            <p>Databases</p>
-            <p>Computer Organization</p>
-            <p>Foundations of Data Analysis</p>
-            <p>Artificial Intelligence</p>
-          </div>
-        </div>
-        <div class="colored-card">
-          <h2>Math & Science</h2>
-          <div class="centered">
-            <p>Calculus I, II, & III</p>
-            <p>Linear Algebra</p>
-            <p>Probability & Statistics</p>
-            <p>Statics</p>
-            <p>Physics for Science & Engineering I & II</p>
-          </div>
-        </div>
-        <div class="colored-card">
-          <h2>Russian</h2>
-          <div class="centered">
-            <p>Beginner Russian I & II</p>
-            <p>SRAS: Bishkek 2025 Summer Program</p>
-            <p>Third-Year Russian I & II</p>
-            <p>Russia Under the Czars</p>
-            <p>Russian Theatre</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="interests">
-      <h1>PERSONAL INTERESTS</h1>
-      <div class="grid">
-        <div class="grid interest-grid interest-container">
-          <div class="colored-card">
-            <h2>Currently Reading</h2>
-            <div class="image-wrapper">
-              <img src="images/book.jpg">
+      <div class="tab-body" id="interests">
+        <div class="grid">
+          <div class="grid interest-grid interest-container">
+            <div class="colored-card">
+              <h2>Currently Reading</h2>
+              <div class="image-wrapper">
+                <img src="images/book.jpg">
+              </div>
             </div>
-          </div>
-          <div class="colored-card">
-            <h2>Currently Watching</h2>
-            <div class="image-wrapper">
-              <img src="images/show.webp">
+            <div class="colored-card">
+              <h2>Currently Watching</h2>
+              <div class="image-wrapper">
+                <img src="images/show.webp">
+              </div>
             </div>
-          </div>
-          <div class="colored-card">
-            <h2>Sports Allegiance</h2>
-            <div class="image-wrapper">
-              <img src="images/sports.png">
+            <div class="colored-card">
+              <h2>Sports Allegiance</h2>
+              <div class="image-wrapper">
+                <img src="images/sports.png">
+              </div>
             </div>
-          </div>
-          <div class="colored-card">
-            <h2>Resources</h2>
-            <div class="button-list">
+            <div class="colored-card">
+              <h2>Resources</h2>
+              <div class="button-list">
                 <button type="button" class="button" id="recipe-book-button">Recipe Book</button>
-              <button type="button" class="button" id="recommendations-button">Recommendations</button>
+                <button type="button" class="button" id="recommendations-button">Recommendations</button>
+              </div>
+            </div>
+          </div>
+          <div class="side-panel">
+            <div class="colored-card">
+              <h2>Recent Highlight</h2>
+              <img src="images/highlight.jpg">
+              <p class="centered">At the beginning of May, I graduated from college, then went on a 5-day road trip with
+                my older brother
+                across the country. Our destination? My sister's wedding! Along the way, we stopped at famous midwest
+                destinations like
+                Mt. Rushmore, the Badlands, and Wall Drug.</p>
             </div>
           </div>
         </div>
-        <div class="side-panel">
-          <div class="colored-card">
-            <h2>Recent Highlight</h2>
-            <img src="images/highlight.jpg">
-            <p class="centered">At the beginning of May, I graduated from college, then went on a 5-day road trip with
-              my older brother
-              across the country. Our destination? My sister's wedding! Along the way, we stopped at famous midwest
-              destinations like
-              Mt. Rushmore, the Badlands, and Wall Drug.</p>
-          </div>
-        </div>
       </div>
-    </section>
+    </div>
   </main>
 
   <dialog id="recipe-dialog" class="recipe-dialog">
@@ -350,7 +359,8 @@
         <h2>Recipe Book</h2>
         <p>Choose a recipe to open its full page.</p>
       </div>
-      <button type="button" class="recipe-dialog-close" id="close-recipe-dialog" aria-label="Close recipe book dialog">x</button>
+      <button type="button" class="recipe-dialog-close" id="close-recipe-dialog"
+        aria-label="Close recipe book dialog">x</button>
     </div>
     <div class="recipe-grid">
       <a class="recipe-card" href="recipes/pancakecookies.html" style="--recipe-accent: #846b77;">
@@ -381,7 +391,8 @@
           <h2>Recommendations</h2>
           <p>Choose a shelf to browse.</p>
         </div>
-        <button type="button" class="recipe-dialog-close" id="close-recommendation-dialog" aria-label="Close recommendations dialog">x</button>
+        <button type="button" class="recipe-dialog-close" id="close-recommendation-dialog"
+          aria-label="Close recommendations dialog">x</button>
       </div>
       <div class="recommendation-menu">
         <button type="button" class="recommendation-card" data-shelf="books" style="--shelf-accent: #8f4c6c;">
@@ -407,14 +418,16 @@
 
     <div class="dialog-view" data-view="shelf">
       <div class="recipe-dialog-header shelf-header">
-        <button type="button" class="shelf-back-button" id="recommendation-back-button" aria-label="Return to recommendations menu">
+        <button type="button" class="shelf-back-button" id="recommendation-back-button"
+          aria-label="Return to recommendations menu">
           <i class="fa-solid fa-arrow-left"></i>
         </button>
         <div>
           <h2 id="recommendation-shelf-title">Shelf</h2>
           <p id="recommendation-shelf-description">Browse a curated shelf of recommendations.</p>
         </div>
-        <button type="button" class="recipe-dialog-close" id="close-recommendation-shelf" aria-label="Close recommendations dialog">x</button>
+        <button type="button" class="recipe-dialog-close" id="close-recommendation-shelf"
+          aria-label="Close recommendations dialog">x</button>
       </div>
       <div class="shelf-rows" id="recommendation-shelf-items"></div>
     </div>
@@ -550,6 +563,48 @@
       if (clickedBackdrop) {
         recommendationDialog.close();
       }
+    });
+
+    // Scroll reveal animation
+    const revealElements = document.querySelectorAll(
+      'section, .colored-card, .greeting-card, .glance-item, .skill-row, .recipe-card, .shelf-item, .interest-grid img, .side-panel'
+    );
+
+    revealElements.forEach(el => el.classList.add('reveal'));
+
+    const observer = new IntersectionObserver(
+      (entries, observer) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target); // animate once
+          }
+        });
+      },
+      {
+        threshold: 0.15
+      }
+    );
+
+    revealElements.forEach(el => observer.observe(el));
+
+    // Tab functionality
+    const tabs = document.querySelectorAll(".tab");
+    const bodies = document.querySelectorAll(".tab-body");
+
+    tabs.forEach(tab => {
+      tab.addEventListener("click", () => {
+
+        tabs.forEach(t => t.classList.remove("active"));
+        bodies.forEach(b => b.classList.remove("active"));
+
+        tab.classList.add("active");
+        document
+          .getElementById(tab.dataset.tab)
+          .classList.add("active");
+
+      });
+
     });
   </script>
 </body>

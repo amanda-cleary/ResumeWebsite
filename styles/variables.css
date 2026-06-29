@@ -1,12 +1,10 @@
 /* Color palette and CSS variables */
 :root {
     --color-bg: #a08b8e;
-    --color-surface: #ffffff;
-    --color-surface-alt: #f5f0ea;
-    --color-surface-alt-hover: #efe4da;
+    --color-surface: #f9efe4;
     --color-brand: #7d2e3b;
     --color-brand-dark: #5a202a;
-    --color-brand-soft: #af4c4e;
+    --color-brand-soft: #825355;
     --color-text: #111111;
     --color-text-muted: #555555;
     --color-border: rgba(125, 46, 59, 0.16);
