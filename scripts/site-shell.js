@@ -33,16 +33,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     footerMount.innerHTML = `
     <footer class="site-footer">
-        <p class="footer-name">© ${new Date().getFullYear()} Amanda Cleary</p>
-        <div class="footer-subtitle">
-            <p>acleary2022@gmail.com</p>
-            <p>
-                <svg width="8" height="8" viewBox="0 0 8 8">
-                    <circle cx="4" cy="4" r="2" fill="var(--color-brand)" />
-                </svg>
-            </p>
-            <p>(484) 888-3919</p>
-        </div>
+        <p class="footer-name">&copy; ${new Date().getFullYear()} Amanda Cleary</p>
         
     </footer>
   `;

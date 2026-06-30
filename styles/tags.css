@@ -1,0 +1,53 @@
+.tag-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+  margin: 16px 0;
+}
+
+.tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px; /* space between icon and text */
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-family: "Outfit", sans-serif;
+  font-size: 0.9rem;
+  font-weight: 500;
+  background: #2b2b2b; /* dark pill background */
+  color: #fff;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+/* Example color accents for specific tags */
+/* HTML5 */
+.tag-html { background: #E34F26; }
+
+/* CSS3 */
+.tag-css { background: #1572B6; }
+
+/* JavaScript */
+.tag-js { background: #F7DF1E; color: #000; }
+
+/* Flutter */
+.tag-fl { background: #02569B; }
+
+/* Python */
+.tag-py { background: #3776AB; }
+
+/* PostgreSQL */
+.tag-psql { background: #336791; }
+
+/* Git */
+.tag-git { background: #F05033; }
+
+/* Supabase */
+.tag-sb { background: #3ECF8E; }
+
+/* Riverpod */
+.tag-rp { background: #42A5F5; }
+
+/* Django */
+.tag-dj { background: #092E20; }

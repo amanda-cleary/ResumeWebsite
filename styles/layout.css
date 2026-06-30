@@ -56,6 +56,15 @@ li {
     justify-content: center;
 }
 
+.contact-row {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    flex: row;
+    justify-content: center;
+    margin: 3px 0;
+}
+
 .column {
     display: flex;
     flex-direction: column;
@@ -129,6 +138,14 @@ li {
     display: flex;
     flex-direction: column;
     justify-content: center;
+}
+
+.bio-content h1 {
+    letter-spacing: 2px;
+    font-size: 1.2em;
+    color: var(--color-brand);
+    text-transform: uppercase;
+    margin: 20px 0 0 0;
 }
 
 .bio-content h2 {
@@ -316,7 +333,6 @@ section h1 {
 
 .portfolio-layout {
     display: flex;
-    gap: 20px;
     align-items: flex-start;
 }
 
@@ -340,6 +356,7 @@ section h1 {
 @media (max-width: 900px) {
     .portfolio-layout {
         flex-direction: column;
+        align-items: center;
     }
 
     .portfolio-intro {
@@ -501,7 +518,7 @@ section h1 {
 }
 
 #site-footer footer {
-    background: var(--color-card-muted);
+    background: var(--color-brand-soft);
     margin: 0;
     padding: 10px 0;
     display: flex;
@@ -513,7 +530,7 @@ section h1 {
 .footer-name {
     font-family: "Outfit", serif;
     font-size: 1em;
-    color: var(--color-text-muted);
+    color: var(--color-surface);
     font-style: italic;
     margin: 5px 0;
 }
@@ -521,7 +538,7 @@ section h1 {
 .footer-subtitle {
     font-family: "Outfit", serif;
     font-size: 1em;
-    color: var(--color-text-muted);
+    color: var(--color-surface);
     display: flex;
     flex-direction: row;
     justify-content: center;
