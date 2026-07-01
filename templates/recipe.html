@@ -44,6 +44,7 @@
     </div>
   </div>
 
+  {% if user.is_authenticated %}
   <div class="row padded" style="margin-top: 1.5rem; flex-wrap: wrap; gap: 0.75rem;">
     <a class="button" href="{% url 'edit_recipe' recipe.slug %}">Edit Recipe</a>
     <form method="post" action="{% url 'delete_recipe' recipe.slug %}" onsubmit="return confirm('Delete this recipe?');">
@@ -51,6 +52,8 @@
       <button type="submit" class="button">Delete Recipe</button>
     </form>
   </div>
+  {% endif %}
 </section>
 {% endblock %}
+
 

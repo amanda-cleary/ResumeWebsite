@@ -13,28 +13,50 @@
 <div class="bio-card">
   <div class="column">
     <div class="bio-content">
-      <h1 class="centered">RECIPES</h1>
+      <div class="row padded">
+        {% if user.is_authenticated %}
+        <h2 class="centered">Authenticated</h2>
+        <div class="centered">
+          <form method="post" action="{% url 'logout' %}">
+          {% csrf_token %}
+          <button type="submit" class="button">Log out</button>
+        </form>
+          </div>
+        {% else %}
+        <a class="button" href="{% url 'login' %}">I'm Amanda</a>
+        {% endif %}
+      </div>
     </div>
     <div class="card-grid-free">
       <div class="recipe-grid">
         {% for recipe in recipes %}
-        <a class="recipe-card" href="{{ recipe.get_absolute_url }}" style="--recipe-accent: {{ recipe.accent }};">
-          <div class="recipe-card-media" aria-hidden="true">
-            <i class="{{ recipe.icon_class }}"></i>
-          </div>
-          <span>{{ recipe.title }}</span>
-        </a>
+        <div class="recipe-card-shell">
+          <a class="recipe-card" href="{{ recipe.get_absolute_url }}" style="--recipe-accent: {{ recipe.accent }};">
+            <div class="recipe-card-media" aria-hidden="true">
+              <i class="{{ recipe.icon_class }}"></i>
+            </div>
+            <span>{{ recipe.title }}</span>
+          </a>
+        </div>
         {% empty %}
         <p class="centered">Recipes will appear here once they are added in Django.</p>
         {% endfor %}
+        {% if user.is_authenticated %}
         <a class="new-recipe-card" href="#" id="open-recipe-create-dialog" aria-label="Create a new recipe">
           <i class="fa-solid fa-plus" aria-hidden="true"></i>
         </a>
+        {% else %}
+        <a class="new-recipe-card" href="#" id="open-recipe-submission-dialog" aria-label="Submit a recipe for consideration">
+          <i class="fa-solid fa-paper-plane" aria-hidden="true"></i>
+          <span>Submit Recipe</span>
+        </a>
+        {% endif %}
       </div>
     </div>
   </div>
 </div>
 
+{% if user.is_authenticated %}
 <dialog id="create-recipe-dialog" class="cute-dialog">
   <div class="cute-dialog-header">
     <h2><span class="cute-icon">🍰</span>Create a New Recipe</h2>
@@ -106,6 +128,27 @@
     </div>
   </form>
 </dialog>
+{% endif %}
+
+{% if not user.is_authenticated %}
+<dialog id="recipe-submission-dialog" class="modal-card">
+  <div>
+    <h2>Submit a Recipe</h2>
+    <div class="modal-close" id="close-recipe-submission-dialog" aria-label="Close">✕</div>
+ </div>
+
+  <p>
+    Recipe submissions are reviewed before they are added to the book.
+    When you continue, you'll be redirected to a Google Form to share your idea for review.
+  </p>
+
+  <div class="row">
+    <a class="button" href="{{ recipe_submission_form_url }}" target="_blank" rel="noopener noreferrer">
+      Continue to Google Form
+    </a>
+  </div>
+</dialog>
+{% endif %}
 {% endblock %}
 
 {% block scripts %}
@@ -130,18 +173,47 @@
   const createRecipeDialog = document.getElementById('create-recipe-dialog');
   const closeCreateRecipeDialog = document.getElementById('close-create-recipe-dialog');
   const cancelCreateRecipe = document.getElementById('cancel-create-recipe');
+  const openRecipeSubmissionDialog = document.getElementById('open-recipe-submission-dialog');
+  const recipeSubmissionDialog = document.getElementById('recipe-submission-dialog');
+  const closeRecipeSubmissionDialog = document.getElementById('close-recipe-submission-dialog');
+  const cancelRecipeSubmission = document.getElementById('cancel-recipe-submission');
 
-  openRecipeCreateDialog.addEventListener('click', (event) => {
-    event.preventDefault();
-    createRecipeDialog.showModal();
-  });
+  if (openRecipeCreateDialog && createRecipeDialog) {
+    openRecipeCreateDialog.addEventListener('click', (event) => {
+      event.preventDefault();
+      createRecipeDialog.showModal();
+    });
+  }
 
-  closeCreateRecipeDialog.addEventListener('click', () => {
-    createRecipeDialog.close();
-  });
+  if (closeCreateRecipeDialog && createRecipeDialog) {
+    closeCreateRecipeDialog.addEventListener('click', () => {
+      createRecipeDialog.close();
+    });
+  }
 
-  cancelCreateRecipe.addEventListener('click', () => {
-    createRecipeDialog.close();
-  });
+  if (cancelCreateRecipe && createRecipeDialog) {
+    cancelCreateRecipe.addEventListener('click', () => {
+      createRecipeDialog.close();
+    });
+  }
+
+  if (openRecipeSubmissionDialog && recipeSubmissionDialog) {
+    openRecipeSubmissionDialog.addEventListener('click', (event) => {
+      event.preventDefault();
+      recipeSubmissionDialog.showModal();
+    });
+  }
+
+  if (closeRecipeSubmissionDialog && recipeSubmissionDialog) {
+    closeRecipeSubmissionDialog.addEventListener('click', () => {
+      recipeSubmissionDialog.close();
+    });
+  }
+
+  if (cancelRecipeSubmission && recipeSubmissionDialog) {
+    cancelRecipeSubmission.addEventListener('click', () => {
+      recipeSubmissionDialog.close();
+    });
+  }
 </script>
 {% endblock %}

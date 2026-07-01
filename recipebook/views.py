@@ -1,5 +1,7 @@
 from django.shortcuts import get_object_or_404, redirect, render
 from django.utils.text import slugify
+from django.contrib.auth.decorators import login_required
+from django.conf import settings
 
 from .forms import RecipeForm
 from .models import Recipe
@@ -39,7 +41,10 @@ def recipes_index(request):
         request,
         'recipes.html',
         active_page='about',
-        extra_context={'recipes': recipes},
+        extra_context={
+            'recipes': recipes,
+            'recipe_submission_form_url': settings.RECIPE_SUBMISSION_FORM_URL,
+        },
     )
 
 
@@ -60,6 +65,7 @@ def recipe_detail(request, slug):
     )
 
 
+@login_required
 def edit_recipe(request, slug):
     recipe = get_object_or_404(Recipe, slug=slug)
     cancel_url = recipe.get_absolute_url()
@@ -87,6 +93,7 @@ def edit_recipe(request, slug):
     )
 
 
+@login_required
 def delete_recipe(request, slug):
     recipe = get_object_or_404(Recipe, slug=slug)
 
@@ -94,7 +101,7 @@ def delete_recipe(request, slug):
         return redirect('edit_recipe', slug=slug)
 
     recipe.delete()
-    return redirect('home')
+    return redirect('recipes')
 
 
 def legacy_recipe_redirect(request, slug):
@@ -119,6 +126,7 @@ def build_unique_slug(title, instance=None):
     return slug
 
 
+@login_required
 def create_recipe(request):
     if request.method != 'POST':
         return redirect('recipes')

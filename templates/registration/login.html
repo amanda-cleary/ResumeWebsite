@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block title %}Log In | Recipe Book{% endblock %}
+
+{% block content %}
+<section class="recipe-page" style="grid-template-columns: minmax(0, 1fr); max-width: 640px; margin: 0 auto;">
+  <div class="recipe-intro">
+    <h2 class="centered">Authenticate</h2>
+    <p class="centered">Log in to create, edit, and delete recipes.</p>
+  </div>
+
+  <form method="post" class="colored-card">
+    {% csrf_token %}
+    {% if form.non_field_errors %}
+    <div class="errorlist">{{ form.non_field_errors }}</div>
+    {% endif %}
+    <label>
+      Username
+      <input type="text" name="username" autofocus required>
+    </label>
+    <label>
+      Password
+      <input type="password" name="password" required>
+    </label>
+    <input type="hidden" name="next" value="{{ next }}">
+    <div class="row padded" style="justify-content: center; gap: 0.75rem; flex-wrap: wrap;">
+      <button type="submit" class="button">Log In</button>
+      <a class="button" href="{% url 'recipes' %}">Back to Recipe Book</a>
+    </div>
+  </form>
+</section>
+{% endblock %}

@@ -1,5 +1,6 @@
 from pathlib import Path
 
+from django.contrib.auth import views as auth_views
 from django.urls import path
 from django.views.static import serve
 
@@ -16,6 +17,8 @@ urlpatterns = [
     path('portfolio.html', views.portfolio, name='portfolio'),
     path('recipes', views.recipes_index, name='recipes'),
     path('recipes/', views.recipes_index, name='recipes-slash'),
+    path('login/', auth_views.LoginView.as_view(template_name='registration/login.html'), name='login'),
+    path('logout/', auth_views.LogoutView.as_view(), name='logout'),
     path('recipes/create/', views.create_recipe, name='create_recipe'),
     path('recipes/<slug:slug>/', views.recipe_detail, name='recipe_detail'),
     path('recipes/<slug:slug>/edit/', views.edit_recipe, name='edit_recipe'),
