@@ -33,6 +33,16 @@ def portfolio(request):
     return render_page(request, 'portfolio.html', active_page='portfolio')
 
 
+def recipes_index(request):
+    recipes = Recipe.objects.all()
+    return render_page(
+        request,
+        'recipes.html',
+        active_page='about',
+        extra_context={'recipes': recipes},
+    )
+
+
 def recipe_detail(request, slug):
     recipe = get_object_or_404(Recipe, slug=slug)
     ingredients = [line.strip() for line in recipe.ingredients.splitlines() if line.strip()]
@@ -111,17 +121,17 @@ def build_unique_slug(title, instance=None):
 
 def create_recipe(request):
     if request.method != 'POST':
-        return redirect('home')
+        return redirect('recipes')
 
     form = RecipeForm(request.POST)
     if not form.is_valid():
-        return redirect('home')
+        return redirect('recipes')
 
     recipe = form.save(commit=False)
     recipe.slug = build_unique_slug(recipe.title)
     if not recipe.slug:
-        return redirect('home')
+        return redirect('recipes')
 
     recipe.save()
 
-    return redirect('home')
+    return redirect('recipes')

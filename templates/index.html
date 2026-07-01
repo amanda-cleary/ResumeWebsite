@@ -176,166 +176,10 @@
         </div>
     </div>
 
-    <div class="bio-card">
-        <div class="column">
-            <div class="bio-content">
-                <h1 class="centered">RECIPE BOOK</h1>
-            </div>
-            <div class="card-grid-free">
-                <div class="recipe-grid">
-                    {% for recipe in recipes %}
-                    <a class="recipe-card" href="{{ recipe.get_absolute_url }}"
-                        style="--recipe-accent: {{ recipe.accent }};">
-                        <div class="recipe-card-media" aria-hidden="true">
-                            <i class="{{ recipe.icon_class }}"></i>
-                        </div>
-                        <span>{{ recipe.title }}</span>
-                    </a>
-                    {% empty %}
-                    <p class="centered">Recipes will appear here once they are added in Django.</p>
-                    {% endfor %}
-                    <a class="new-recipe-card" href="#" id="open-recipe-create-dialog" aria-label="Create a new recipe">
-                        <i class="fa-solid fa-plus" aria-hidden="true"></i>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-<dialog id="create-recipe-dialog" class="cute-dialog">
-    <div class="cute-dialog-header">
-        <h2><span class="cute-icon">🍰</span>Create a New Recipe</h2>
-        <button type="button" class="cute-dialog-close" id="close-create-recipe-dialog" aria-label="Close">✕</button>
-    </div>
-
-    <p class="cute-greeting">Hello Amanda! Let’s whip up something delicious.</p>
-
-    <form class="recipe-create-form" method="post" action="{% url 'create_recipe' %}">
-        {% csrf_token %}
-
-        <!-- BASIC INFO -->
-        <div class="cute-field-group">
-            <label class="cute-label">
-                Recipe Title
-                <input type="text" name="title" class="cute-input" required>
-            </label>
-
-            <label class="cute-label">
-                Short Description
-                <textarea name="description" rows="3" class="cute-textarea"
-                    placeholder="A cozy summary of your recipe…"></textarea>
-            </label>
-
-            <p class="cute-hint">Your recipe page will be created automatically from the title.</p>
-        </div>
-
-        <!-- INGREDIENTS & STEPS -->
-        <div class="cute-field-group">
-            <label class="cute-label">
-                Ingredients
-                <textarea name="ingredients" rows="5" class="cute-textarea"
-                    placeholder="One ingredient per line 🍓"></textarea>
-            </label>
-
-            <label class="cute-label">
-                Steps
-                <textarea name="steps" rows="6" class="cute-textarea" placeholder="One step per line ✨"></textarea>
-            </label>
-        </div>
-
-        <!-- ADVANCED OPTIONS -->
-        <div class="cute-field-group cute-advanced">
-            <h3 class="cute-subheading">Advanced Styling</h3>
-
-            <!-- ICON PICKER -->
-            <label class="cute-label">Choose an Icon</label>
-            <input type="hidden" name="icon_class" id="icon_class">
-
-            <div class="icon-picker">
-                <!-- Add or remove icons as needed -->
-                <button type="button" class="icon-swatch" data-icon="fa-solid fa-cookie"><i
-                        class="fa-solid fa-cookie"></i></button>
-                <button type="button" class="icon-swatch" data-icon="fa-solid fa-apple-whole"><i
-                        class="fa-solid fa-apple-whole"></i></button>
-                <button type="button" class="icon-swatch" data-icon="fa-solid fa-carrot"><i
-                        class="fa-solid fa-carrot"></i></button>
-                <button type="button" class="icon-swatch" data-icon="fa-solid fa-bread-slice"><i
-                        class="fa-solid fa-bread-slice"></i></button>
-                <button type="button" class="icon-swatch" data-icon="fa-solid fa-ice-cream"><i
-                        class="fa-solid fa-ice-cream"></i></button>
-                <button type="button" class="icon-swatch" data-icon="fa-solid fa-pepper-hot"><i
-                        class="fa-solid fa-pepper-hot"></i></button>
-            </div>
-
-            <!-- COLOR PICKER -->
-            <label class="cute-label">Accent Color</label>
-            <input type="hidden" name="accent" id="accent">
-
-            <div class="color-picker">
-                <button type="button" class="color-swatch" data-color="#f7c6d0" style="background:#f7c6d0"></button>
-                <button type="button" class="color-swatch" data-color="#ffd9e8" style="background:#ffd9e8"></button>
-                <button type="button" class="color-swatch" data-color="#ffe8c2" style="background:#ffe8c2"></button>
-                <button type="button" class="color-swatch" data-color="#c9e4de" style="background:#c9e4de"></button>
-                <button type="button" class="color-swatch" data-color="#bcd4ff" style="background:#bcd4ff"></button>
-                <button type="button" class="color-swatch" data-color="#e8c6ff" style="background:#e8c6ff"></button>
-            </div>
-
-        </div>
-
-        <!-- ACTIONS -->
-        <div class="cute-actions">
-            <button type="submit" class="cute-button primary">Save Recipe ✨</button>
-            <button type="button" class="cute-button" id="cancel-create-recipe">Cancel</button>
-        </div>
-    </form>
-</dialog>
-
-
 {% endblock %}
 
 {% block scripts %}
 <script>
-    // ICON PICKER
-    document.querySelectorAll('.icon-swatch').forEach(btn => {
-        btn.addEventListener('click', () => {
-            document.getElementById('icon_class').value = btn.dataset.icon;
-
-            // highlight selected
-            document.querySelectorAll('.icon-swatch').forEach(b => b.classList.remove('selected'));
-            btn.classList.add('selected');
-        });
-    });
-
-    // COLOR PICKER
-    document.querySelectorAll('.color-swatch').forEach(btn => {
-        btn.addEventListener('click', () => {
-            document.getElementById('accent').value = btn.dataset.color;
-
-            // highlight selected
-            document.querySelectorAll('.color-swatch').forEach(b => b.classList.remove('selected'));
-            btn.classList.add('selected');
-        });
-    });
-
-    const openRecipeCreateDialog = document.getElementById('open-recipe-create-dialog');
-    const createRecipeDialog = document.getElementById('create-recipe-dialog');
-    const closeCreateRecipeDialog = document.getElementById('close-create-recipe-dialog');
-    const cancelCreateRecipe = document.getElementById('cancel-create-recipe');
-
-    openRecipeCreateDialog.addEventListener('click', (event) => {
-        event.preventDefault();
-        createRecipeDialog.showModal();
-    });
-
-    closeCreateRecipeDialog.addEventListener('click', () => {
-        createRecipeDialog.close();
-    });
-
-    cancelCreateRecipe.addEventListener('click', () => {
-        createRecipeDialog.close();
-    });
-
     const filterButtons = document.querySelectorAll('.filter-btn');
     const skillTags = document.querySelectorAll('.skill-tag');
 
@@ -358,7 +202,7 @@
     });
 
     const revealElements = document.querySelectorAll(
-        'section, .colored-card, .greeting-card, .glance-item, .skill-row, .recipe-card, .shelf-item, .interest-grid img, .side-panel, .new-recipe-card'
+        'section, .colored-card, .greeting-card, .glance-item, .skill-row, .recipe-card, .shelf-item, .interest-grid img, .side-panel'
     );
 
     revealElements.forEach(el => el.classList.add('reveal'));
