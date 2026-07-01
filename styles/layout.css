@@ -549,3 +549,77 @@ section h1 {
   margin: 0;
   padding: 0;
 }
+
+.skills-section {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font-family: "Outfit", sans-serif;
+  width: 90%;
+  margin: 0 auto;
+  padding: 20px;
+  border-radius: 12px;
+  background-color: var(--color-track);
+}
+
+.skills-category h3 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 12px;
+  color: var(--color-brand-dark);
+}
+
+.skills-filter {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.skills-filter p {
+  margin: 0;
+  font-weight: 500;
+  color: var(--color-surface);
+}
+
+.filter-btn {
+  padding: 4px 8px;
+  border-radius: 10px;
+  border: none;
+  background: var(--color-surface);
+  color: var(--color-text);
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.2s ease;
+  font-family: "Outfit", sans-serif;
+}
+
+.filter-btn.active {
+  background: var(--color-brand-dark);
+  color: #fff;
+}
+
+.filter-btn:hover {
+  transform: translateY(-2px);
+}
+
+.skills-cloud {
+  width: 100%;
+  font-family: "Outfit", sans-serif;
+}
+
+.skill-tag {
+  display: inline-block;
+  margin: 6px 3px; 
+  padding: 10px 16px;
+  border-radius: 999px;
+  background: var(--color-card-muted);
+  font-weight: 500;
+}
+
+.skill-tag:hover {
+  background: var(--color-brand-soft);
+  cursor: default;
+  color: var(--color-surface);
+}
