@@ -71,7 +71,7 @@ a.button {
 /* Cards */
 
 .colored-card {
-    background-color: var(--color-surface);
+    background-color: var(--color-brand-soft);
     padding: 10px 10px;
     border-radius: 10px;
     width: 100%;
@@ -82,7 +82,7 @@ a.button {
 }
 
 .colored-card img {
-    width: 100%;
+    width: 50%;
     height: auto;
     object-fit: cover;
     border-radius: 10px;
@@ -152,9 +152,22 @@ a.button {
   border: 2px solid var(--color-border);
 }
 
+.card-grid-free {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+  padding: 20px;
+  margin: 0 auto;
+  border: 2px solid var(--color-border);
+}
+
 @media (min-width: 700px) {
   .card-grid {
     grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  }
+
+  .card-grid-free {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   }
 }
 

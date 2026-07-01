@@ -71,16 +71,33 @@
       </div>
     </div>
 
+    <div class="glance-strip">
+      <div class="education-flex">
+        <div class="bio-content edu-text">
+          <h2>EDUCATION</h2>
+          <p>
+            Amanda Cleary completed an <b>Honors Bachelor of Science</b> in <b>Computer Science</b> with a minor in
+            Russian at the
+            University of Utah in <b>May 2026</b>. She graduated with a cumulative <b>GPA of 3.79</b> and 8 consecutive
+            semesters as a <b>Dean's List</b> student.
+          </p>
+        </div>
+        <div class="edu-image">
+          <img src="images/uofu.png" alt="University of Utah">
+        </div>
+      </div>
+    </div>
+
+
     <div class="tab-container">
       <div class="tab-header">
         <button class="tab active" data-tab="skills">Skills</button>
-        <button class="tab" data-tab="education">Education</button>
-        <button class="tab" data-tab="interests">Personal</button>
+        <button class="tab" data-tab="education">Coursework</button>
       </div>
 
       <div class="tab-body active" id="skills">
         <div class="skills-filter">
-          <p>Filter by category:</p>
+          <p>Filter Skills by Category:</p>
           <button data-category="all" class="filter-btn active">All</button>
           <button data-category="languages" class="filter-btn">Programming Languages</button>
           <button data-category="frontend" class="filter-btn">Front-End</button>
@@ -89,6 +106,7 @@
           <button data-category="mobile" class="filter-btn">Mobile Development</button>
           <button data-category="web" class="filter-btn">Web Development</button>
           <button data-category="expertise" class="filter-btn">Expertise</button>
+          <button data-category="interpersonal" class="filter-btn">Interpersonal</button>
         </div>
 
         <div class="skills-cloud centered">
@@ -128,124 +146,102 @@
           <span class="skill-tag" data-category="expertise">UX/UI Design</span>
           <span class="skill-tag" data-category="expertise">User Research</span>
           <span class="skill-tag" data-category="expertise">Software Documentation</span>
+
+          <span class="skill-tag" data-category="interpersonal">Collaboration</span>
+          <span class="skill-tag" data-category="interpersonal">Communication</span>
+          <span class="skill-tag" data-category="interpersonal">Problem-Solving</span>
+          <span class="skill-tag" data-category="interpersonal">Adaptability</span>
+          <span class="skill-tag" data-category="interpersonal">Commitment</span>
         </div>
+      </div>
+
+      <div class="tab-body" id="education">
+        <div class="skills-filter">
+          <p>Filter Courses by Category:</p>
+          <button data-category="all" class="filter-btn active">All</button>
+          <button data-category="fundies" class="filter-btn">Fundamentals</button>
+          <button data-category="dev" class="filter-btn">Software Development</button>
+          <button data-category="intel" class="filter-btn">Computing Systems & Intelligence</button>
+          <button data-category="math" class="filter-btn">Math & Science</button>
+          <button data-category="russian" class="filter-btn">Russian</button>
         </div>
 
-        <div class="tab-body" id="education">
-          <div class="grid no-wrap">
-            <div class="colored-card primary-content">
-              <div class="side-panel"><img src="images/uofu.png"></div>
-              <div class="primary-content text-content">
-                <h3>Honors Bachelor of Science in Computer Science</h3>
-                <p>Minor in Russian</p>
-                <p>Spring 2026 Graduate</p>
-              </div>
-            </div>
-            <div class="side-panel">
-              <div class="colored-card centered">
-                <div class="icon-wrapper">
-                  <i class="fas fa-graduation-cap"></i>
-                </div>
-                <div class="centered">
-                  <h3>Cumulative GPA 3.79</h3>
-                  <p class="glance-subtitle">Dean's List: 8 consecutive semesters</p>
-                  <div class="vertical-spacer"></div>
-                </div>
-              </div>
+        <div class="skills-cloud centered">
+          <span class="skill-tag" data-category="fundies">Accel. Object-Oriented Programming</span>
+          <span class="skill-tag" data-category="fundies">Intro. to Algorithms & Data Structures</span>
+          <span class="skill-tag" data-category="fundies">Algorithms</span>
+          <span class="skill-tag" data-category="fundies">Discrete Structures</span>
+          <span class="skill-tag" data-category="fundies dev">Software Practice I & II</span>
+          <span class="skill-tag" data-category="dev">Mobile App. Development</span>
+          <span class="skill-tag" data-category="dev">Web Design</span>
+          <span class="skill-tag" data-category="dev">Capstone Project</span>
+          <span class="skill-tag" data-category="intel">Databases</span>
+          <span class="skill-tag" data-category="fundies intel">Computer Organization</span>
+          <span class="skill-tag" data-category="intel math">Foundations of Data Analysis</span>
+          <span class="skill-tag" data-category="intel">Artificial Intelligence</span>
+          <span class="skill-tag" data-category="fundies math">Calculus I, II, & III</span>
+          <span class="skill-tag" data-category="fundies math">Linear Algebra</span>
+          <span class="skill-tag" data-category="math">Probability & Statistics</span>
+          <span class="skill-tag" data-category="math">Statics</span>
+          <span class="skill-tag" data-category="math">Physics for Science & Engineering I & II</span>
+          <span class="skill-tag" data-category="russian">Beginner Russian I & II</span>
+          <span class="skill-tag" data-category="russian">SRAS: Bishkek 2025 Summer Program</span>
+          <span class="skill-tag" data-category="russian">Third-Year Russian I & II</span>
+          <span class="skill-tag" data-category="russian">Russia Under the Czars</span>
+          <span class="skill-tag" data-category="russian">Russian Theatre</span>
+        </div>
+      </div>
+
+      <!-- <div class="tab-body" id="interests">
+      <div class="grid">
+        <div class="grid interest-grid interest-container">
+          <div class="colored-card">
+            <h2>Currently Reading</h2>
+            <div class="image-wrapper">
+              <img src="images/book.jpg">
             </div>
           </div>
-          <div class="grid">
-            <div class="colored-card">
-              <h2>CS Fundamentals</h2>
-              <div class="centered">
-                <p>Accel. Object-Oriented Programming</p>
-                <p>Intro. to Algorithms & Data Structures</p>
-                <p>Algorithms</p>
-                <p>Discrete Structures</p>
-
-              </div>
+          <div class="colored-card">
+            <h2>Currently Watching</h2>
+            <div class="image-wrapper">
+              <img src="images/show.webp">
             </div>
-            <div class="colored-card">
-              <h2>Software Development</h2>
-              <div class="centered">
-                <p>Software Practice I & II</p>
-                <p>Mobile App. Development</p>
-                <p>Web Design</p>
-                <p>Capstone Project</p>
-              </div>
+          </div>
+          <div class="colored-card">
+            <h2>Sports Allegiance</h2>
+            <div class="image-wrapper">
+              <img src="images/sports.png">
             </div>
-            <div class="colored-card">
-              <h2>Computing Systems & Intelligence</h2>
-              <div class="centered">
-                <p>Databases</p>
-                <p>Computer Organization</p>
-                <p>Foundations of Data Analysis</p>
-                <p>Artificial Intelligence</p>
-              </div>
-            </div>
-            <div class="colored-card">
-              <h2>Math & Science</h2>
-              <div class="centered">
-                <p>Calculus I, II, & III</p>
-                <p>Linear Algebra</p>
-                <p>Probability & Statistics</p>
-                <p>Statics</p>
-                <p>Physics for Science & Engineering I & II</p>
-              </div>
-            </div>
-            <div class="colored-card">
-              <h2>Russian</h2>
-              <div class="centered">
-                <p>Beginner Russian I & II</p>
-                <p>SRAS: Bishkek 2025 Summer Program</p>
-                <p>Third-Year Russian I & II</p>
-                <p>Russia Under the Czars</p>
-                <p>Russian Theatre</p>
-              </div>
+          </div>
+          <div class="colored-card">
+            <h2>Resources</h2>
+            <div class="button-list">
+              <button type="button" class="button" id="recipe-book-button">Recipe Book</button>
+              <button type="button" class="button" id="recommendations-button">Recommendations</button>
             </div>
           </div>
         </div>
-
-        <div class="tab-body" id="interests">
-          <div class="grid">
-            <div class="grid interest-grid interest-container">
-              <div class="colored-card">
-                <h2>Currently Reading</h2>
-                <div class="image-wrapper">
-                  <img src="images/book.jpg">
-                </div>
-              </div>
-              <div class="colored-card">
-                <h2>Currently Watching</h2>
-                <div class="image-wrapper">
-                  <img src="images/show.webp">
-                </div>
-              </div>
-              <div class="colored-card">
-                <h2>Sports Allegiance</h2>
-                <div class="image-wrapper">
-                  <img src="images/sports.png">
-                </div>
-              </div>
-              <div class="colored-card">
-                <h2>Resources</h2>
-                <div class="button-list">
-                  <button type="button" class="button" id="recipe-book-button">Recipe Book</button>
-                  <button type="button" class="button" id="recommendations-button">Recommendations</button>
-                </div>
-              </div>
-            </div>
-            <div class="side-panel">
-              <div class="colored-card">
-                <h2>Recent Highlight</h2>
-                <img src="images/highlight.jpg">
-                <p class="centered">At the beginning of May, I graduated from college, then went on a 5-day road trip
-                  with
-                  my older brother
-                  across the country. Our destination? My sister's wedding! Along the way, we stopped at famous midwest
-                  destinations like
-                  Mt. Rushmore, the Badlands, and Wall Drug.</p>
-              </div>
+        <div class="side-panel">
+          <div class="colored-card">
+            <h2>Recent Highlight</h2>
+            <img src="images/highlight.jpg">
+            <p class="centered">At the beginning of May, I graduated from college, then went on a 5-day road trip
+              with
+              my older brother
+              across the country. Our destination? My sister's wedding! Along the way, we stopped at famous midwest
+              destinations like
+              Mt. Rushmore, the Badlands, and Wall Drug.</p>
+          </div>
+        </div>
+      </div>
+    </div> -->
+      <div class="bio-card">
+        <div class="column">
+          <div class="bio-content">
+            <h1 class="centered">RECIPES</h1>
+          </div>
+          <div class="card-grid-free">
+            <div class="recipe-grid">
             </div>
           </div>
         </div>
@@ -358,135 +354,135 @@
     });
 
 
-    const recipeBookButton = document.getElementById('recipe-book-button');
-    const recipeDialog = document.getElementById('recipe-dialog');
-    const closeRecipeDialog = document.getElementById('close-recipe-dialog');
-    const recommendationsButton = document.getElementById('recommendations-button');
-    const recommendationDialog = document.getElementById('recommendation-dialog');
-    const closeRecommendationDialog = document.getElementById('close-recommendation-dialog');
-    const closeRecommendationShelf = document.getElementById('close-recommendation-shelf');
-    const recommendationBackButton = document.getElementById('recommendation-back-button');
-    const recommendationShelfTitle = document.getElementById('recommendation-shelf-title');
-    const recommendationShelfDescription = document.getElementById('recommendation-shelf-description');
-    const recommendationShelfItems = document.getElementById('recommendation-shelf-items');
+    // const recipeBookButton = document.getElementById('recipe-book-button');
+    // const recipeDialog = document.getElementById('recipe-dialog');
+    // const closeRecipeDialog = document.getElementById('close-recipe-dialog');
+    // const recommendationsButton = document.getElementById('recommendations-button');
+    // const recommendationDialog = document.getElementById('recommendation-dialog');
+    // const closeRecommendationDialog = document.getElementById('close-recommendation-dialog');
+    // const closeRecommendationShelf = document.getElementById('close-recommendation-shelf');
+    // const recommendationBackButton = document.getElementById('recommendation-back-button');
+    // const recommendationShelfTitle = document.getElementById('recommendation-shelf-title');
+    // const recommendationShelfDescription = document.getElementById('recommendation-shelf-description');
+    // const recommendationShelfItems = document.getElementById('recommendation-shelf-items');
 
-    const recommendationShelves = {
-      books: {
-        title: 'Bookshelf',
-        accent: '#8f4c6c',
-        items: [
-          { icon: 'fa-book-open', title: 'Atlas Shrugged', note: 'Ayn Rand, often considered controversial, writes a gripping political and economic intrigue set in the influential sphere of American railroad systems.' },
-          { icon: 'fa-feather-pointed', title: 'Jamilia', note: 'Chingiz Aitmatov, a famous Kyrgyz writer, tells a powerful, albeit brief, love story.' },
-          { icon: 'fa-book', title: 'Mistborn', note: 'Brandon Sanderson, a leader in fantasy literature, creates a compelling world wherein a revolution stirs against a magical despot.' }
-        ]
-      },
-      watch: {
-        title: 'Watchlist',
-        accent: '#d98d54',
-        items: [
-          { icon: 'fa-film', title: 'Awakenings', note: 'A sobering and touching story of a neurologist and his patients with a rare condition thought to be incurable.' },
-          { icon: 'fa-tv', title: 'Merlin', note: 'A highly rewatchable fantasy series that adapts the classic Arthurian legend. Each season is more gripping than the last.' },
-          { icon: 'fa-clapperboard', title: 'Чебурашка (Cheburashka)', note: 'A heartful animated film about the loveable Soviet-era creature Cheburashka.' }
-        ]
-      },
-      music: {
-        title: 'Listening Shelf',
-        accent: '#4b7489',
-        items: [
-          { icon: 'fa-music', title: 'Dog Parade', note: 'A relatively unknown band that deserves way more recognition for their sound. Check out my favorite song, "Seismograph"!' },
-          { icon: 'fa-compact-disc', title: 'Vulfpeck', note: 'The jazz-funk band whose hit "Dean Town" once made an entire audience sing along without any lyrics.' },
-          { icon: 'fa-guitar', title: 'The Gray Havens', note: 'A poetically narrative band that explores faith with references to classic literature. Listening to "Ghost of a King" live at their concert was a dream come true.' }
-        ]
-      }
-    };
+    // const recommendationShelves = {
+    //   books: {
+    //     title: 'Bookshelf',
+    //     accent: '#8f4c6c',
+    //     items: [
+    //       { icon: 'fa-book-open', title: 'Atlas Shrugged', note: 'Ayn Rand, often considered controversial, writes a gripping political and economic intrigue set in the influential sphere of American railroad systems.' },
+    //       { icon: 'fa-feather-pointed', title: 'Jamilia', note: 'Chingiz Aitmatov, a famous Kyrgyz writer, tells a powerful, albeit brief, love story.' },
+    //       { icon: 'fa-book', title: 'Mistborn', note: 'Brandon Sanderson, a leader in fantasy literature, creates a compelling world wherein a revolution stirs against a magical despot.' }
+    //     ]
+    //   },
+    //   watch: {
+    //     title: 'Watchlist',
+    //     accent: '#d98d54',
+    //     items: [
+    //       { icon: 'fa-film', title: 'Awakenings', note: 'A sobering and touching story of a neurologist and his patients with a rare condition thought to be incurable.' },
+    //       { icon: 'fa-tv', title: 'Merlin', note: 'A highly rewatchable fantasy series that adapts the classic Arthurian legend. Each season is more gripping than the last.' },
+    //       { icon: 'fa-clapperboard', title: 'Чебурашка (Cheburashka)', note: 'A heartful animated film about the loveable Soviet-era creature Cheburashka.' }
+    //     ]
+    //   },
+    //   music: {
+    //     title: 'Listening Shelf',
+    //     accent: '#4b7489',
+    //     items: [
+    //       { icon: 'fa-music', title: 'Dog Parade', note: 'A relatively unknown band that deserves way more recognition for their sound. Check out my favorite song, "Seismograph"!' },
+    //       { icon: 'fa-compact-disc', title: 'Vulfpeck', note: 'The jazz-funk band whose hit "Dean Town" once made an entire audience sing along without any lyrics.' },
+    //       { icon: 'fa-guitar', title: 'The Gray Havens', note: 'A poetically narrative band that explores faith with references to classic literature. Listening to "Ghost of a King" live at their concert was a dream come true.' }
+    //     ]
+    //   }
+    // };
 
-    function openDialog(dialog) {
-      dialog.showModal();
-    }
+    // function openDialog(dialog) {
+    //   dialog.showModal();
+    // }
 
-    function closeDialog(dialog) {
-      dialog.close();
-    }
+    // function closeDialog(dialog) {
+    //   dialog.close();
+    // }
 
-    function showRecommendationMenu() {
-      recommendationDialog.querySelector('[data-view="menu"]').classList.add('is-active');
-      recommendationDialog.querySelector('[data-view="shelf"]').classList.remove('is-active');
-    }
+    // function showRecommendationMenu() {
+    //   recommendationDialog.querySelector('[data-view="menu"]').classList.add('is-active');
+    //   recommendationDialog.querySelector('[data-view="shelf"]').classList.remove('is-active');
+    // }
 
-    function renderRecommendationShelf(shelfKey) {
-      const shelf = recommendationShelves[shelfKey];
+    // function renderRecommendationShelf(shelfKey) {
+    //   const shelf = recommendationShelves[shelfKey];
 
-      if (!shelf) {
-        return;
-      }
+    //   if (!shelf) {
+    //     return;
+    //   }
 
-      recommendationShelfTitle.textContent = shelf.title;
-      recommendationShelfDescription.textContent = shelf.description;
-      recommendationShelfItems.innerHTML = shelf.items.map((item) => `
-        <div class="shelf-item" style="--shelf-accent: ${shelf.accent};">
-          <div class="shelf-spine" aria-hidden="true">
-            <i class="fa-solid ${item.icon}"></i>
-          </div>
-          <div class="shelf-item-text">
-            <h3>${item.title}</h3>
-            <p>${item.note}</p>
-          </div>
-        </div>
-      `).join('');
+    //   recommendationShelfTitle.textContent = shelf.title;
+    //   recommendationShelfDescription.textContent = shelf.description;
+    //   recommendationShelfItems.innerHTML = shelf.items.map((item) => `
+    //     <div class="shelf-item" style="--shelf-accent: ${shelf.accent};">
+    //       <div class="shelf-spine" aria-hidden="true">
+    //         <i class="fa-solid ${item.icon}"></i>
+    //       </div>
+    //       <div class="shelf-item-text">
+    //         <h3>${item.title}</h3>
+    //         <p>${item.note}</p>
+    //       </div>
+    //     </div>
+    //   `).join('');
 
-      recommendationDialog.querySelector('[data-view="menu"]').classList.remove('is-active');
-      recommendationDialog.querySelector('[data-view="shelf"]').classList.add('is-active');
-    }
+    //   recommendationDialog.querySelector('[data-view="menu"]').classList.remove('is-active');
+    //   recommendationDialog.querySelector('[data-view="shelf"]').classList.add('is-active');
+    // }
 
-    recipeBookButton.addEventListener('click', () => {
-      openDialog(recipeDialog);
-    });
+    // recipeBookButton.addEventListener('click', () => {
+    //   openDialog(recipeDialog);
+    // });
 
-    recommendationsButton.addEventListener('click', () => {
-      showRecommendationMenu();
-      openDialog(recommendationDialog);
-    });
+    // recommendationsButton.addEventListener('click', () => {
+    //   showRecommendationMenu();
+    //   openDialog(recommendationDialog);
+    // });
 
-    closeRecipeDialog.addEventListener('click', () => {
-      closeDialog(recipeDialog);
-    });
+    // closeRecipeDialog.addEventListener('click', () => {
+    //   closeDialog(recipeDialog);
+    // });
 
-    closeRecommendationDialog.addEventListener('click', () => {
-      closeDialog(recommendationDialog);
-    });
+    // closeRecommendationDialog.addEventListener('click', () => {
+    //   closeDialog(recommendationDialog);
+    // });
 
-    closeRecommendationShelf.addEventListener('click', () => {
-      closeDialog(recommendationDialog);
-    });
+    // closeRecommendationShelf.addEventListener('click', () => {
+    //   closeDialog(recommendationDialog);
+    // });
 
-    recommendationBackButton.addEventListener('click', (event) => {
-      event.stopPropagation();
-      showRecommendationMenu();
-    });
+    // recommendationBackButton.addEventListener('click', (event) => {
+    //   event.stopPropagation();
+    //   showRecommendationMenu();
+    // });
 
-    recommendationDialog.querySelectorAll('[data-shelf]').forEach((button) => {
-      button.addEventListener('click', () => {
-        renderRecommendationShelf(button.dataset.shelf);
-      });
-    });
+    // recommendationDialog.querySelectorAll('[data-shelf]').forEach((button) => {
+    //   button.addEventListener('click', () => {
+    //     renderRecommendationShelf(button.dataset.shelf);
+    //   });
+    // });
 
-    recipeDialog.addEventListener('click', (event) => {
-      const rect = recipeDialog.getBoundingClientRect();
-      const clickedBackdrop = event.clientX < rect.left || event.clientX > rect.right || event.clientY < rect.top || event.clientY > rect.bottom;
+    // recipeDialog.addEventListener('click', (event) => {
+    //   const rect = recipeDialog.getBoundingClientRect();
+    //   const clickedBackdrop = event.clientX < rect.left || event.clientX > rect.right || event.clientY < rect.top || event.clientY > rect.bottom;
 
-      if (clickedBackdrop) {
-        recipeDialog.close();
-      }
-    });
+    //   if (clickedBackdrop) {
+    //     recipeDialog.close();
+    //   }
+    // });
 
-    recommendationDialog.addEventListener('click', (event) => {
-      const rect = recommendationDialog.getBoundingClientRect();
-      const clickedBackdrop = event.clientX < rect.left || event.clientX > rect.right || event.clientY < rect.top || event.clientY > rect.bottom;
+    // recommendationDialog.addEventListener('click', (event) => {
+    //   const rect = recommendationDialog.getBoundingClientRect();
+    //   const clickedBackdrop = event.clientX < rect.left || event.clientX > rect.right || event.clientY < rect.top || event.clientY > rect.bottom;
 
-      if (clickedBackdrop) {
-        recommendationDialog.close();
-      }
-    });
+    //   if (clickedBackdrop) {
+    //     recommendationDialog.close();
+    //   }
+    // });
 
     // Scroll reveal animation
     const revealElements = document.querySelectorAll(

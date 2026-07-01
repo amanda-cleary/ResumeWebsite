@@ -623,3 +623,30 @@ section h1 {
   cursor: default;
   color: var(--color-surface);
 }
+
+.education-flex {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  width: 100%;
+  padding: 20px;
+}
+
+.edu-image {
+  flex: 1;                 /* 1/3 width */
+  display: flex;
+  justify-content: center;
+}
+
+.edu-image img {
+  width: 100%;
+  height: auto;
+}
+
+.edu-text {
+  flex: 2;                 /* 2/3 width */
+  display: flex;
+  flex-direction: column;
+  padding: 0 10px;
+}
+
