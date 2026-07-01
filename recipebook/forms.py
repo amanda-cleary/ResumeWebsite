@@ -8,7 +8,6 @@ class RecipeForm(forms.ModelForm):
         super().__init__(*args, **kwargs)
         self.fields['icon_class'].required = False
         self.fields['accent'].required = False
-        self.fields['order'].required = False
 
     class Meta:
         model = Recipe
@@ -19,8 +18,6 @@ class RecipeForm(forms.ModelForm):
             'steps',
             'icon_class',
             'accent',
-            'order',
-            'published',
         ]
         widgets = {
             'description': forms.Textarea(attrs={'rows': 3}),
@@ -33,6 +30,3 @@ class RecipeForm(forms.ModelForm):
 
     def clean_accent(self):
         return self.cleaned_data.get('accent') or '#8f4c6c'
-
-    def clean_order(self):
-        return self.cleaned_data.get('order') if self.cleaned_data.get('order') is not None else 0

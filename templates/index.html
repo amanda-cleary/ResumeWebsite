@@ -4,326 +4,392 @@
 
 {% block content %}
 <div class="banner-box">
-  <div class="greeting-content">
-    <h1 class="greeting">Amanda Cleary</h1>
-    <h2 class="subtitle">Software Developer</h2>
-  </div>
+    <div class="greeting-content">
+        <h1 class="greeting">Amanda Cleary</h1>
+        <h2 class="subtitle">Software Developer</h2>
+    </div>
 </div>
 
 <div class="glance-strip" aria-label="Meet me at a glance">
-  <div class="glance-item">
-    <i class="fa-solid fa-graduation-cap"></i>
-    <div class="glance-text">
-      <h3>HBS Computer Science</h3>
-      <p class="glance-subtitle">minor in Russian</p>
+    <div class="glance-item">
+        <i class="fa-solid fa-graduation-cap"></i>
+        <div class="glance-text">
+            <h3>HBS Computer Science</h3>
+            <p class="glance-subtitle">minor in Russian</p>
+        </div>
     </div>
-  </div>
-  <div class="glance-item">
-    <i class="fa-solid fa-award"></i>
-    <div class="glance-text">
-      <h3>Dean's List Student</h3>
-      <p class="glance-subtitle">8 consecutive semesters</p>
+    <div class="glance-item">
+        <i class="fa-solid fa-award"></i>
+        <div class="glance-text">
+            <h3>Dean's List Student</h3>
+            <p class="glance-subtitle">8 consecutive semesters</p>
+        </div>
     </div>
-  </div>
-  <div class="glance-item">
-    <i class="fa-solid fa-trophy"></i>
-    <div class="glance-text">
-      <h3>Gold Medalist</h3>
-      <p class="glance-subtitle">ACTR National Post-Secondary Russian Essay Contest</p>
+    <div class="glance-item">
+        <i class="fa-solid fa-trophy"></i>
+        <div class="glance-text">
+            <h3>Gold Medalist</h3>
+            <p class="glance-subtitle">ACTR National Post-Secondary Russian Essay Contest</p>
+        </div>
     </div>
-  </div>
 </div>
 
 <div class="bio-card">
-  <div class="bio-top">
-    <div class="bio-image">
-      <img src="{{ asset_prefix }}images/profile.jpeg" alt="Amanda Cleary headshot">
+    <div class="bio-top">
+        <div class="bio-image">
+            <img src="{{ asset_prefix }}images/profile.jpeg" alt="Amanda Cleary headshot">
+        </div>
+        <div class="bio-content">
+            <h2>ABOUT</h2>
+            <p>
+                Amanda Cleary is passionate about solving problems and exploring the connections between people,
+                ideas, and technology. Driven by curiosity and a commitment to lifelong learning, she approaches
+                every challenge with creativity, adaptability, and a desire to make a meaningful impact.
+            </p>
+            <p>
+                She is excited to explore new opportunities in the tech industry as a recent graduate of Computer
+                Science.
+                Outside of work, Amanda enjoys hiking, photography, and discovering new coffee shops.
+            </p>
+        </div>
     </div>
-    <div class="bio-content">
-      <h2>ABOUT</h2>
-      <p>
-        Amanda Cleary is passionate about solving problems and exploring the connections between people,
-        ideas, and technology. Driven by curiosity and a commitment to lifelong learning, she approaches
-        every challenge with creativity, adaptability, and a desire to make a meaningful impact.
-      </p>
-      <p>
-        She is excited to explore new opportunities in the tech industry as a recent graduate of Computer Science.
-        Outside of work, Amanda enjoys hiking, photography, and discovering new coffee shops.
-      </p>
-    </div>
-  </div>
 </div>
 
 <div class="glance-strip">
-  <div class="education-flex">
-    <div class="bio-content edu-text">
-      <h2>EDUCATION</h2>
-      <p>
-        Amanda Cleary completed an <b>Honors Bachelor of Science</b> in <b>Computer Science</b> with a minor in
-        Russian at the
-        University of Utah in <b>May 2026</b>. She graduated with a cumulative <b>GPA of 3.79</b> and 8 consecutive
-        semesters as a <b>Dean's List</b> student.
-      </p>
+    <div class="education-flex">
+        <div class="bio-content edu-text">
+            <h2>EDUCATION</h2>
+            <p>
+                Amanda Cleary completed an <b>Honors Bachelor of Science</b> in <b>Computer Science</b> with a minor in
+                Russian at the
+                University of Utah in <b>May 2026</b>. She graduated with a cumulative <b>GPA of 3.79</b> and 8
+                consecutive
+                semesters as a <b>Dean's List</b> student.
+            </p>
+        </div>
+        <div class="edu-image">
+            <img src="{{ asset_prefix }}images/uofu.png" alt="University of Utah">
+        </div>
     </div>
-    <div class="edu-image">
-      <img src="{{ asset_prefix }}images/uofu.png" alt="University of Utah">
-    </div>
-  </div>
 </div>
 
 <div class="tab-container">
-  <div class="tab-header">
-    <button class="tab active" data-tab="skills">Skills</button>
-    <button class="tab" data-tab="education">Coursework</button>
-  </div>
-
-  <div class="tab-body active" id="skills">
-    <div class="skills-filter">
-      <p>Filter Skills by Category:</p>
-      <button data-category="all" class="filter-btn active">All</button>
-      <button data-category="languages" class="filter-btn">Programming Languages</button>
-      <button data-category="frontend" class="filter-btn">Front-End</button>
-      <button data-category="backend" class="filter-btn">Back-End</button>
-      <button data-category="systems" class="filter-btn">Systems</button>
-      <button data-category="mobile" class="filter-btn">Mobile Development</button>
-      <button data-category="web" class="filter-btn">Web Development</button>
-      <button data-category="expertise" class="filter-btn">Expertise</button>
-      <button data-category="interpersonal" class="filter-btn">Interpersonal</button>
+    <div class="tab-header">
+        <button class="tab active" data-tab="skills">Skills</button>
+        <button class="tab" data-tab="education">Coursework</button>
     </div>
 
-    <div class="skills-cloud centered">
-      <span class="skill-tag" data-category="languages backend"><i class="fab fa-python"></i> Python</span>
-      <span class="skill-tag" data-category="languages backend"><i class="fab fa-java"></i> Java</span>
-      <span class="skill-tag" data-category="languages backend">C#</span>
-      <span class="skill-tag" data-category="languages backend">C++</span>
-
-      <span class="skill-tag" data-category="frontend mobile"><i class="fa-brands fa-flutter"></i> Flutter</span>
-      <span class="skill-tag" data-category="languages frontend web"><i class="fab fa-html5"></i> HTML</span>
-      <span class="skill-tag" data-category="languages frontend web"><i class="fab fa-css3-alt"></i> CSS</span>
-      <span class="skill-tag" data-category="languages frontend web"><i class="fab fa-js-square"></i>
-        JavaScript</span>
-      <span class="skill-tag" data-category="languages frontend mobile">Kotlin</span>
-      <span class="skill-tag" data-category="languages frontend mobile">Dart</span>
-
-      <span class="skill-tag" data-category="backend web">Django</span>
-      <span class="skill-tag" data-category="backend"><i class="fa-brands fa-postgresql"></i> PostgreSQL</span>
-      <span class="skill-tag" data-category="languages backend">SQL</span>
-      <span class="skill-tag" data-category="backend">REST APIs</span>
-      <span class="skill-tag" data-category="systems">Supabase</span>
-
-      <span class="skill-tag" data-category="systems"><i class="fab fa-git-alt"></i> Git</span>
-      <span class="skill-tag" data-category="systems"><i class="fab fa-github"></i> GitHub</span>
-      <span class="skill-tag" data-category="systems"><i class="fab fa-windows"></i> Windows</span>
-      <span class="skill-tag" data-category="systems">VS Code</span>
-      <span class="skill-tag" data-category="systems frontend mobile"><i class="fab fa-android"></i> Android
-        Studio</span>
-      <span class="skill-tag" data-category="systems mobile">Firebase</span>
-      <span class="skill-tag" data-category="systems web">AWS</span>
-
-      <span class="skill-tag" data-category="expertise">Software Development</span>
-      <span class="skill-tag" data-category="expertise">Web Development</span>
-      <span class="skill-tag" data-category="expertise">Mobile Development</span>
-      <span class="skill-tag" data-category="expertise">Object-Oriented Programming</span>
-      <span class="skill-tag" data-category="expertise">Database Design</span>
-      <span class="skill-tag" data-category="expertise">UX/UI Design</span>
-      <span class="skill-tag" data-category="expertise">User Research</span>
-      <span class="skill-tag" data-category="expertise">Software Documentation</span>
-
-      <span class="skill-tag" data-category="interpersonal">Collaboration</span>
-      <span class="skill-tag" data-category="interpersonal">Communication</span>
-      <span class="skill-tag" data-category="interpersonal">Problem-Solving</span>
-      <span class="skill-tag" data-category="interpersonal">Adaptability</span>
-      <span class="skill-tag" data-category="interpersonal">Commitment</span>
-    </div>
-  </div>
-
-  <div class="tab-body" id="education">
-    <div class="skills-filter">
-      <p>Filter Courses by Category:</p>
-      <button data-category="all" class="filter-btn active">All</button>
-      <button data-category="fundies" class="filter-btn">Fundamentals</button>
-      <button data-category="dev" class="filter-btn">Software Development</button>
-      <button data-category="intel" class="filter-btn">Computing Systems & Intelligence</button>
-      <button data-category="math" class="filter-btn">Math & Science</button>
-      <button data-category="russian" class="filter-btn">Russian</button>
-    </div>
-
-    <div class="skills-cloud centered">
-      <span class="skill-tag" data-category="fundies">Accel. Object-Oriented Programming</span>
-      <span class="skill-tag" data-category="fundies">Intro. to Algorithms & Data Structures</span>
-      <span class="skill-tag" data-category="fundies">Algorithms</span>
-      <span class="skill-tag" data-category="fundies">Discrete Structures</span>
-      <span class="skill-tag" data-category="fundies dev">Software Practice I & II</span>
-      <span class="skill-tag" data-category="dev">Mobile App. Development</span>
-      <span class="skill-tag" data-category="dev">Web Design</span>
-      <span class="skill-tag" data-category="dev">Capstone Project</span>
-      <span class="skill-tag" data-category="intel">Databases</span>
-      <span class="skill-tag" data-category="fundies intel">Computer Organization</span>
-      <span class="skill-tag" data-category="intel math">Foundations of Data Analysis</span>
-      <span class="skill-tag" data-category="intel">Artificial Intelligence</span>
-      <span class="skill-tag" data-category="fundies math">Calculus I, II, & III</span>
-      <span class="skill-tag" data-category="fundies math">Linear Algebra</span>
-      <span class="skill-tag" data-category="math">Probability & Statistics</span>
-      <span class="skill-tag" data-category="math">Statics</span>
-      <span class="skill-tag" data-category="math">Physics for Science & Engineering I & II</span>
-      <span class="skill-tag" data-category="russian">Beginner Russian I & II</span>
-      <span class="skill-tag" data-category="russian">SRAS: Bishkek 2025 Summer Program</span>
-      <span class="skill-tag" data-category="russian">Third-Year Russian I & II</span>
-      <span class="skill-tag" data-category="russian">Russia Under the Czars</span>
-      <span class="skill-tag" data-category="russian">Russian Theatre</span>
-    </div>
-  </div>
-
-  <div class="bio-card">
-    <div class="column">
-      <div class="bio-content">
-        <h1 class="centered">RECIPES</h1>
-        <div class="centered" style="margin-top: 1rem;">
-          <button type="button" class="button" id="open-recipe-create-dialog">Create Custom Recipe</button>
+    <div class="tab-body active" id="skills">
+        <div class="skills-filter">
+            <p>Filter Skills by Category:</p>
+            <button data-category="all" class="filter-btn active">All</button>
+            <button data-category="languages" class="filter-btn">Programming Languages</button>
+            <button data-category="frontend" class="filter-btn">Front-End</button>
+            <button data-category="backend" class="filter-btn">Back-End</button>
+            <button data-category="systems" class="filter-btn">Systems</button>
+            <button data-category="mobile" class="filter-btn">Mobile Development</button>
+            <button data-category="web" class="filter-btn">Web Development</button>
+            <button data-category="expertise" class="filter-btn">Expertise</button>
+            <button data-category="interpersonal" class="filter-btn">Interpersonal</button>
         </div>
-      </div>
-      <div class="card-grid-free">
-        <div class="recipe-grid">
-          {% for recipe in recipes %}
-          <a class="recipe-card" href="{{ recipe.get_absolute_url }}" style="--recipe-accent: {{ recipe.accent }};">
-            <div class="recipe-card-media" aria-hidden="true">
-              <i class="{{ recipe.icon_class }}"></i>
+
+        <div class="skills-cloud centered">
+            <span class="skill-tag" data-category="languages backend"><i class="fab fa-python"></i> Python</span>
+            <span class="skill-tag" data-category="languages backend"><i class="fab fa-java"></i> Java</span>
+            <span class="skill-tag" data-category="languages backend">C#</span>
+            <span class="skill-tag" data-category="languages backend">C++</span>
+
+            <span class="skill-tag" data-category="frontend mobile"><i class="fa-brands fa-flutter"></i> Flutter</span>
+            <span class="skill-tag" data-category="languages frontend web"><i class="fab fa-html5"></i> HTML</span>
+            <span class="skill-tag" data-category="languages frontend web"><i class="fab fa-css3-alt"></i> CSS</span>
+            <span class="skill-tag" data-category="languages frontend web"><i class="fab fa-js-square"></i>
+                JavaScript</span>
+            <span class="skill-tag" data-category="languages frontend mobile">Kotlin</span>
+            <span class="skill-tag" data-category="languages frontend mobile">Dart</span>
+
+            <span class="skill-tag" data-category="backend web">Django</span>
+            <span class="skill-tag" data-category="backend"><i class="fa-brands fa-postgresql"></i> PostgreSQL</span>
+            <span class="skill-tag" data-category="languages backend">SQL</span>
+            <span class="skill-tag" data-category="backend">REST APIs</span>
+            <span class="skill-tag" data-category="systems">Supabase</span>
+
+            <span class="skill-tag" data-category="systems"><i class="fab fa-git-alt"></i> Git</span>
+            <span class="skill-tag" data-category="systems"><i class="fab fa-github"></i> GitHub</span>
+            <span class="skill-tag" data-category="systems"><i class="fab fa-windows"></i> Windows</span>
+            <span class="skill-tag" data-category="systems">VS Code</span>
+            <span class="skill-tag" data-category="systems frontend mobile"><i class="fab fa-android"></i> Android
+                Studio</span>
+            <span class="skill-tag" data-category="systems mobile">Firebase</span>
+            <span class="skill-tag" data-category="systems web">AWS</span>
+
+            <span class="skill-tag" data-category="expertise">Software Development</span>
+            <span class="skill-tag" data-category="expertise">Web Development</span>
+            <span class="skill-tag" data-category="expertise">Mobile Development</span>
+            <span class="skill-tag" data-category="expertise">Object-Oriented Programming</span>
+            <span class="skill-tag" data-category="expertise">Database Design</span>
+            <span class="skill-tag" data-category="expertise">UX/UI Design</span>
+            <span class="skill-tag" data-category="expertise">User Research</span>
+            <span class="skill-tag" data-category="expertise">Software Documentation</span>
+
+            <span class="skill-tag" data-category="interpersonal">Collaboration</span>
+            <span class="skill-tag" data-category="interpersonal">Communication</span>
+            <span class="skill-tag" data-category="interpersonal">Problem-Solving</span>
+            <span class="skill-tag" data-category="interpersonal">Adaptability</span>
+            <span class="skill-tag" data-category="interpersonal">Commitment</span>
+        </div>
+    </div>
+
+    <div class="tab-body" id="education">
+        <div class="skills-filter">
+            <p>Filter Courses by Category:</p>
+            <button data-category="all" class="filter-btn active">All</button>
+            <button data-category="fundies" class="filter-btn">Fundamentals</button>
+            <button data-category="dev" class="filter-btn">Software Development</button>
+            <button data-category="intel" class="filter-btn">Computing Systems & Intelligence</button>
+            <button data-category="math" class="filter-btn">Math & Science</button>
+            <button data-category="russian" class="filter-btn">Russian</button>
+        </div>
+
+        <div class="skills-cloud centered">
+            <span class="skill-tag" data-category="fundies">Accel. Object-Oriented Programming</span>
+            <span class="skill-tag" data-category="fundies">Intro. to Algorithms & Data Structures</span>
+            <span class="skill-tag" data-category="fundies">Algorithms</span>
+            <span class="skill-tag" data-category="fundies">Discrete Structures</span>
+            <span class="skill-tag" data-category="fundies dev">Software Practice I & II</span>
+            <span class="skill-tag" data-category="dev">Mobile App. Development</span>
+            <span class="skill-tag" data-category="dev">Web Design</span>
+            <span class="skill-tag" data-category="dev">Capstone Project</span>
+            <span class="skill-tag" data-category="intel">Databases</span>
+            <span class="skill-tag" data-category="fundies intel">Computer Organization</span>
+            <span class="skill-tag" data-category="intel math">Foundations of Data Analysis</span>
+            <span class="skill-tag" data-category="intel">Artificial Intelligence</span>
+            <span class="skill-tag" data-category="fundies math">Calculus I, II, & III</span>
+            <span class="skill-tag" data-category="fundies math">Linear Algebra</span>
+            <span class="skill-tag" data-category="math">Probability & Statistics</span>
+            <span class="skill-tag" data-category="math">Statics</span>
+            <span class="skill-tag" data-category="math">Physics for Science & Engineering I & II</span>
+            <span class="skill-tag" data-category="russian">Beginner Russian I & II</span>
+            <span class="skill-tag" data-category="russian">SRAS: Bishkek 2025 Summer Program</span>
+            <span class="skill-tag" data-category="russian">Third-Year Russian I & II</span>
+            <span class="skill-tag" data-category="russian">Russia Under the Czars</span>
+            <span class="skill-tag" data-category="russian">Russian Theatre</span>
+        </div>
+    </div>
+
+    <div class="bio-card">
+        <div class="column">
+            <div class="bio-content">
+                <h1 class="centered">RECIPE BOOK</h1>
             </div>
-            <span>{{ recipe.title }}</span>
-          </a>
-          {% empty %}
-          <p class="centered">Recipes will appear here once they are added in Django.</p>
-          {% endfor %}
+            <div class="card-grid-free">
+                <div class="recipe-grid">
+                    {% for recipe in recipes %}
+                    <a class="recipe-card" href="{{ recipe.get_absolute_url }}"
+                        style="--recipe-accent: {{ recipe.accent }};">
+                        <div class="recipe-card-media" aria-hidden="true">
+                            <i class="{{ recipe.icon_class }}"></i>
+                        </div>
+                        <span>{{ recipe.title }}</span>
+                    </a>
+                    {% empty %}
+                    <p class="centered">Recipes will appear here once they are added in Django.</p>
+                    {% endfor %}
+                    <a class="new-recipe-card" href="#" id="open-recipe-create-dialog" aria-label="Create a new recipe">
+                        <i class="fa-solid fa-plus" aria-hidden="true"></i>
+                    </a>
+                </div>
+            </div>
         </div>
-      </div>
     </div>
-  </div>
 </div>
 
-<dialog id="create-recipe-dialog" class="recipe-dialog">
-  <div class="recipe-dialog-header">
-    <div>
-      <h2>Create Recipe</h2>
-      <p>Add a custom recipe card to the database.</p>
+<dialog id="create-recipe-dialog" class="cute-dialog">
+    <div class="cute-dialog-header">
+        <h2><span class="cute-icon">🍰</span>Create a New Recipe</h2>
+        <button type="button" class="cute-dialog-close" id="close-create-recipe-dialog" aria-label="Close">✕</button>
     </div>
-    <button type="button" class="recipe-dialog-close" id="close-create-recipe-dialog" aria-label="Close create recipe dialog">x</button>
-  </div>
-  <form class="recipe-create-form" method="post" action="{% url 'create_recipe' %}">
-    {% csrf_token %}
-    <label>
-      Title
-      <input type="text" name="title" required>
-    </label>
-    <label>
-      Description
-      <textarea name="description" rows="3" placeholder="Write a short summary of the recipe."></textarea>
-    </label>
-    <p class="centered">The recipe page will be created automatically from the title.</p>
-    <label>
-      Ingredients
-      <textarea name="ingredients" rows="5" placeholder="One ingredient per line."></textarea>
-    </label>
-    <label>
-      Steps
-      <textarea name="steps" rows="6" placeholder="One step per line."></textarea>
-    </label>
-    <label>
-      Icon Class
-      <input type="text" name="icon_class" placeholder="fa-solid fa-cookie">
-    </label>
-    <label>
-      Accent Color
-      <input type="text" name="accent" placeholder="#8f4c6c">
-    </label>
-    <label>
-      Display Order
-      <input type="number" name="order" min="0" step="1" value="99">
-    </label>
-    <label class="checkbox-row">
-      <input type="checkbox" name="published" checked>
-      Published
-    </label>
-    <div class="row padded">
-      <button type="submit" class="button">Save Recipe</button>
-      <button type="button" class="button" id="cancel-create-recipe">Cancel</button>
-    </div>
-  </form>
+
+    <p class="cute-greeting">Hello Amanda! Let’s whip up something delicious.</p>
+
+    <form class="recipe-create-form" method="post" action="{% url 'create_recipe' %}">
+        {% csrf_token %}
+
+        <!-- BASIC INFO -->
+        <div class="cute-field-group">
+            <label class="cute-label">
+                Recipe Title
+                <input type="text" name="title" class="cute-input" required>
+            </label>
+
+            <label class="cute-label">
+                Short Description
+                <textarea name="description" rows="3" class="cute-textarea"
+                    placeholder="A cozy summary of your recipe…"></textarea>
+            </label>
+
+            <p class="cute-hint">Your recipe page will be created automatically from the title.</p>
+        </div>
+
+        <!-- INGREDIENTS & STEPS -->
+        <div class="cute-field-group">
+            <label class="cute-label">
+                Ingredients
+                <textarea name="ingredients" rows="5" class="cute-textarea"
+                    placeholder="One ingredient per line 🍓"></textarea>
+            </label>
+
+            <label class="cute-label">
+                Steps
+                <textarea name="steps" rows="6" class="cute-textarea" placeholder="One step per line ✨"></textarea>
+            </label>
+        </div>
+
+        <!-- ADVANCED OPTIONS -->
+        <div class="cute-field-group cute-advanced">
+            <h3 class="cute-subheading">Advanced Styling</h3>
+
+            <!-- ICON PICKER -->
+            <label class="cute-label">Choose an Icon</label>
+            <input type="hidden" name="icon_class" id="icon_class">
+
+            <div class="icon-picker">
+                <!-- Add or remove icons as needed -->
+                <button type="button" class="icon-swatch" data-icon="fa-solid fa-cookie"><i
+                        class="fa-solid fa-cookie"></i></button>
+                <button type="button" class="icon-swatch" data-icon="fa-solid fa-apple-whole"><i
+                        class="fa-solid fa-apple-whole"></i></button>
+                <button type="button" class="icon-swatch" data-icon="fa-solid fa-carrot"><i
+                        class="fa-solid fa-carrot"></i></button>
+                <button type="button" class="icon-swatch" data-icon="fa-solid fa-bread-slice"><i
+                        class="fa-solid fa-bread-slice"></i></button>
+                <button type="button" class="icon-swatch" data-icon="fa-solid fa-ice-cream"><i
+                        class="fa-solid fa-ice-cream"></i></button>
+                <button type="button" class="icon-swatch" data-icon="fa-solid fa-pepper-hot"><i
+                        class="fa-solid fa-pepper-hot"></i></button>
+            </div>
+
+            <!-- COLOR PICKER -->
+            <label class="cute-label">Accent Color</label>
+            <input type="hidden" name="accent" id="accent">
+
+            <div class="color-picker">
+                <button type="button" class="color-swatch" data-color="#f7c6d0" style="background:#f7c6d0"></button>
+                <button type="button" class="color-swatch" data-color="#ffd9e8" style="background:#ffd9e8"></button>
+                <button type="button" class="color-swatch" data-color="#ffe8c2" style="background:#ffe8c2"></button>
+                <button type="button" class="color-swatch" data-color="#c9e4de" style="background:#c9e4de"></button>
+                <button type="button" class="color-swatch" data-color="#bcd4ff" style="background:#bcd4ff"></button>
+                <button type="button" class="color-swatch" data-color="#e8c6ff" style="background:#e8c6ff"></button>
+            </div>
+
+        </div>
+
+        <!-- ACTIONS -->
+        <div class="cute-actions">
+            <button type="submit" class="cute-button primary">Save Recipe ✨</button>
+            <button type="button" class="cute-button" id="cancel-create-recipe">Cancel</button>
+        </div>
+    </form>
 </dialog>
+
+
 {% endblock %}
 
 {% block scripts %}
 <script>
-  const openRecipeCreateDialog = document.getElementById('open-recipe-create-dialog');
-  const createRecipeDialog = document.getElementById('create-recipe-dialog');
-  const closeCreateRecipeDialog = document.getElementById('close-create-recipe-dialog');
-  const cancelCreateRecipe = document.getElementById('cancel-create-recipe');
+    // ICON PICKER
+    document.querySelectorAll('.icon-swatch').forEach(btn => {
+        btn.addEventListener('click', () => {
+            document.getElementById('icon_class').value = btn.dataset.icon;
 
-  openRecipeCreateDialog.addEventListener('click', () => {
-    createRecipeDialog.showModal();
-  });
-
-  closeCreateRecipeDialog.addEventListener('click', () => {
-    createRecipeDialog.close();
-  });
-
-  cancelCreateRecipe.addEventListener('click', () => {
-    createRecipeDialog.close();
-  });
-
-  const filterButtons = document.querySelectorAll('.filter-btn');
-  const skillTags = document.querySelectorAll('.skill-tag');
-
-  filterButtons.forEach(btn => {
-    btn.addEventListener('click', () => {
-      filterButtons.forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-
-      const category = btn.dataset.category;
-
-      skillTags.forEach(tag => {
-        const categories = tag.dataset.category.split(/\s+/);
-
-        tag.style.display =
-          category === 'all' || categories.includes(category)
-            ? 'inline-block'
-            : 'none';
-      });
+            // highlight selected
+            document.querySelectorAll('.icon-swatch').forEach(b => b.classList.remove('selected'));
+            btn.classList.add('selected');
+        });
     });
-  });
 
-  const revealElements = document.querySelectorAll(
-    'section, .colored-card, .greeting-card, .glance-item, .skill-row, .recipe-card, .shelf-item, .interest-grid img, .side-panel'
-  );
+    // COLOR PICKER
+    document.querySelectorAll('.color-swatch').forEach(btn => {
+        btn.addEventListener('click', () => {
+            document.getElementById('accent').value = btn.dataset.color;
 
-  revealElements.forEach(el => el.classList.add('reveal'));
+            // highlight selected
+            document.querySelectorAll('.color-swatch').forEach(b => b.classList.remove('selected'));
+            btn.classList.add('selected');
+        });
+    });
 
-  const observer = new IntersectionObserver(
-    (entries, observer) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-          observer.unobserve(entry.target);
+    const openRecipeCreateDialog = document.getElementById('open-recipe-create-dialog');
+    const createRecipeDialog = document.getElementById('create-recipe-dialog');
+    const closeCreateRecipeDialog = document.getElementById('close-create-recipe-dialog');
+    const cancelCreateRecipe = document.getElementById('cancel-create-recipe');
+
+    openRecipeCreateDialog.addEventListener('click', (event) => {
+        event.preventDefault();
+        createRecipeDialog.showModal();
+    });
+
+    closeCreateRecipeDialog.addEventListener('click', () => {
+        createRecipeDialog.close();
+    });
+
+    cancelCreateRecipe.addEventListener('click', () => {
+        createRecipeDialog.close();
+    });
+
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const skillTags = document.querySelectorAll('.skill-tag');
+
+    filterButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+            filterButtons.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+
+            const category = btn.dataset.category;
+
+            skillTags.forEach(tag => {
+                const categories = tag.dataset.category.split(/\s+/);
+
+                tag.style.display =
+                    category === 'all' || categories.includes(category)
+                        ? 'inline-block'
+                        : 'none';
+            });
+        });
+    });
+
+    const revealElements = document.querySelectorAll(
+        'section, .colored-card, .greeting-card, .glance-item, .skill-row, .recipe-card, .shelf-item, .interest-grid img, .side-panel, .new-recipe-card'
+    );
+
+    revealElements.forEach(el => el.classList.add('reveal'));
+
+    const observer = new IntersectionObserver(
+        (entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        },
+        {
+            threshold: 0.15
         }
-      });
-    },
-    {
-      threshold: 0.15
-    }
-  );
+    );
 
-  revealElements.forEach(el => observer.observe(el));
+    revealElements.forEach(el => observer.observe(el));
 
-  const tabs = document.querySelectorAll('.tab');
-  const bodies = document.querySelectorAll('.tab-body');
+    const tabs = document.querySelectorAll('.tab');
+    const bodies = document.querySelectorAll('.tab-body');
 
-  tabs.forEach(tab => {
-    tab.addEventListener('click', () => {
-      tabs.forEach(t => t.classList.remove('active'));
-      bodies.forEach(b => b.classList.remove('active'));
+    tabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+            tabs.forEach(t => t.classList.remove('active'));
+            bodies.forEach(b => b.classList.remove('active'));
 
-      tab.classList.add('active');
-      document.getElementById(tab.dataset.tab).classList.add('active');
+            tab.classList.add('active');
+            document.getElementById(tab.dataset.tab).classList.add('active');
+        });
     });
-  });
 </script>
 {% endblock %}

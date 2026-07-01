@@ -77,6 +77,24 @@ dialog:not([open]) {
     transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
 }
 
+.new-recipe-card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: var(--color-text);
+    /* aspect-ratio: 4 / 3; */
+    padding: 0;
+    border-radius: 16px;
+    background: var(--color-silver);
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+}
+
+.new-recipe-card i {
+    font-size: clamp(4rem, 9vw, 6rem);
+    line-height: 1;
+}
+
 .recipe-card-media {
     width: 100%;
     aspect-ratio: 4 / 3;
@@ -380,4 +398,207 @@ dialog:not([open]) {
 .project-modal::backdrop {
   background: rgba(0,0,0,0.55);
   backdrop-filter: blur(4px);
+}
+
+.cute-dialog {
+  border: none;
+  padding: 0;
+  /* border-radius: 18px; */
+  background: #fff7f9;
+  box-shadow: 0 8px 28px rgba(0,0,0,0.15);
+  max-width: 540px;
+  width: 90%;
+  animation: popIn 0.25s ease;
+  scrollbar-gutter: stable;
+}
+
+@keyframes popIn {
+  from { transform: scale(0.95); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+.cute-dialog-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #ffe3ec;
+  padding: 16px 20px;
+  /* border-radius: 18px 18px 0 0; */
+}
+
+.cute-dialog-header h2 {
+  margin: 0;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #8f4c6c;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.cute-icon {
+  font-size: 1.6rem;
+}
+
+.cute-dialog-close {
+  background: transparent;
+  border: none;
+  font-size: 1.4rem;
+  color: #8f4c6c;
+  cursor: pointer;
+  padding: 4px;
+}
+
+.cute-greeting {
+  margin: 16px 20px;
+  color: #7a3e5a;
+  font-size: 0.95rem;
+}
+
+.cute-field-group {
+  padding: 0 20px 20px;
+}
+
+.cute-label {
+  display: block;
+  margin-bottom: 14px;
+  font-weight: 600;
+  color: #7a3e5a;
+}
+
+.cute-input,
+.cute-textarea {
+  width: 95%;
+  margin-top: 6px;
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: 2px solid #f3c6d4;
+  background: #fff;
+  font-size: 0.95rem;
+}
+
+.cute-input:focus,
+.cute-textarea:focus {
+  outline: none;
+  border-color: #e08fb0;
+  box-shadow: 0 0 0 3px #ffe3ec;
+}
+
+.cute-hint {
+  font-size: 0.85rem;
+  color: #a06b85;
+  text-align: center;
+  margin-top: -4px;
+  margin-bottom: 20px;
+}
+
+.cute-subheading {
+  font-size: 1rem;
+  margin-bottom: 10px;
+  color: #8f4c6c;
+}
+
+.cute-checkbox {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.cute-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  padding: 20px;
+  background: #fff0f6;
+  border-radius: 0 0 18px 18px;
+}
+
+.cute-button {
+  padding: 10px 18px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  background: #f3c6d4;
+  color: #7a3e5a;
+  font-weight: 600;
+  transition: background 0.2s ease;
+}
+
+.cute-button:hover {
+  background: #e8b3c5;
+}
+
+.cute-button.primary {
+  background: #e08fb0;
+  color: white;
+}
+
+.cute-button.primary:hover {
+  background: #d47aa0;
+}
+
+.icon-picker,
+.color-picker {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.icon-swatch,
+.color-swatch {
+  width: 42px;
+  height: 42px;
+  border-radius: 10px;
+  border: 2px solid #f3c6d4;
+  background: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: transform 0.15s ease, border-color 0.2s ease;
+}
+
+.icon-swatch i {
+  font-size: 1.2rem;
+  color: #8f4c6c;
+}
+
+.icon-swatch:hover,
+.color-swatch:hover {
+  transform: translateY(-2px);
+  border-color: #e08fb0;
+}
+
+.icon-swatch.selected,
+.color-swatch.selected {
+  border-color: #d47aa0;
+  box-shadow: 0 0 0 3px #ffe3ec;
+}
+
+/* Cute scrollbar INSIDE the rounded dialog */
+#create-recipe-dialog::-webkit-scrollbar {
+  width: 10px;
+}
+
+#create-recipe-dialog::-webkit-scrollbar-track {
+  background: #ffe3ec;
+  border-radius: 10px;
+}
+
+#create-recipe-dialog::-webkit-scrollbar-thumb {
+  background: #e08fb0;
+  border-radius: 10px;
+  border: 2px solid #ffe3ec;
+}
+
+#create-recipe-dialog::-webkit-scrollbar-thumb:hover {
+  background: #d47aa0;
+}
+
+/* Firefox */
+#create-recipe-dialog {
+  scrollbar-width: thin;
+  scrollbar-color: #e08fb0 #ffe3ec;
 }

@@ -1,5 +1,4 @@
 from django.shortcuts import get_object_or_404, redirect, render
-from django.urls import reverse
 from django.utils.text import slugify
 
 from .forms import RecipeForm
@@ -17,7 +16,7 @@ def render_page(request, template_name, active_page, asset_prefix='', extra_cont
 
 
 def home(request):
-    recipes = Recipe.objects.filter(published=True)
+    recipes = Recipe.objects.all()
     return render_page(
         request,
         'index.html',
@@ -35,7 +34,7 @@ def portfolio(request):
 
 
 def recipe_detail(request, slug):
-    recipe = get_object_or_404(Recipe, slug=slug, published=True)
+    recipe = get_object_or_404(Recipe, slug=slug)
     ingredients = [line.strip() for line in recipe.ingredients.splitlines() if line.strip()]
     steps = [line.strip() for line in recipe.steps.splitlines() if line.strip()]
     return render_page(
@@ -53,7 +52,7 @@ def recipe_detail(request, slug):
 
 def edit_recipe(request, slug):
     recipe = get_object_or_404(Recipe, slug=slug)
-    cancel_url = recipe.get_absolute_url() if recipe.published else reverse('home')
+    cancel_url = recipe.get_absolute_url()
 
     if request.method == 'POST':
         form = RecipeForm(request.POST, instance=recipe)
@@ -61,9 +60,7 @@ def edit_recipe(request, slug):
             updated_recipe = form.save(commit=False)
             updated_recipe.slug = build_unique_slug(updated_recipe.title, instance=recipe)
             updated_recipe.save()
-            if updated_recipe.published:
-                return redirect(updated_recipe.get_absolute_url())
-            return redirect('edit_recipe', slug=updated_recipe.slug)
+            return redirect(updated_recipe.get_absolute_url())
     else:
         form = RecipeForm(instance=recipe)
 

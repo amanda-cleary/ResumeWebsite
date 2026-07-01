@@ -10,11 +10,9 @@ class Recipe(models.Model):
     steps = models.TextField(blank=True, default='')
     icon_class = models.CharField(max_length=100)
     accent = models.CharField(max_length=32)
-    order = models.PositiveIntegerField(default=0)
-    published = models.BooleanField(default=True)
 
     class Meta:
-        ordering = ['order', 'title']
+        ordering = ['title']
 
     def __str__(self):
         return self.title
