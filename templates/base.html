@@ -1,0 +1,36 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>{% block title %}Cleary Resume{% endblock %}</title>
+  <link rel="stylesheet" href="{{ asset_prefix }}styles.css">
+  <script src="https://kit.fontawesome.com/63b42a2c0b.js" crossorigin="anonymous"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Outfit:wght@100..900&display=swap"
+    rel="stylesheet">
+</head>
+
+<body>
+  <header>
+    <h1>Amanda Cleary</h1>
+    <nav>
+      <a href="{{ asset_prefix }}index.html" class="nav-btn{% if active_page == 'about' %} is-active{% endif %}">About</a>
+      <a href="{{ asset_prefix }}experiences.html" class="nav-btn{% if active_page == 'experiences' %} is-active{% endif %}">Experiences</a>
+      <a href="{{ asset_prefix }}portfolio.html" class="nav-btn{% if active_page == 'portfolio' %} is-active{% endif %}">Portfolio</a>
+    </nav>
+  </header>
+
+  <main>
+    {% block content %}{% endblock %}
+  </main>
+
+  <footer class="site-footer">
+    <p class="footer-name">&copy; {% now 'Y' %} Amanda Cleary</p>
+  </footer>
+
+  {% block scripts %}{% endblock %}
+</body>
+
+</html>
