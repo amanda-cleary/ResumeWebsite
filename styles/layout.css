@@ -89,7 +89,7 @@ li {
 }
 
 .image-wrapper-phone img {
-    width: 100%;
+    width: 60%;
     height: auto;
     border-radius: 10px;
     border: 2px solid var(--color-text);
