@@ -90,6 +90,30 @@
                         class="fa-solid fa-ice-cream"></i></button>
                 <button type="button" class="icon-swatch" data-icon="fa-solid fa-pepper-hot"><i
                         class="fa-solid fa-pepper-hot"></i></button>
+                <button type="button" class="icon-swatch" data-icon="fa-solid fa-bowl-food"><i
+                        class="fa-solid fa-bowl-food"></i></button>
+                <button type="button" class="icon-swatch" data-icon="fa-solid fa-cake-candles"><i
+                        class="fa-solid fa-cake-candles"></i></button>
+                <button type="button" class="icon-swatch" data-icon="fa-solid fa-mug-hot"><i
+                        class="fa-solid fa-mug-hot"></i></button>
+                <button type="button" class="icon-swatch" data-icon="fa-solid fa-burger"><i
+                        class="fa-solid fa-burger"></i></button>
+                <button type="button" class="icon-swatch" data-icon="fa-solid fa-fish"><i
+                        class="fa-solid fa-fish"></i></button>
+                <button type="button" class="icon-swatch" data-icon="fa-solid fa-pizza-slice"><i
+                        class="fa-solid fa-pizza-slice"></i></button>
+                <button type="button" class="icon-swatch" data-icon="fa-solid fa-blender"><i
+                        class="fa-solid fa-blender"></i></button>
+                <button type="button" class="icon-swatch" data-icon="fa-solid fa-egg"><i
+                        class="fa-solid fa-egg"></i></button>
+                <button type="button" class="icon-swatch" data-icon="fa-solid fa-candy-cane"><i
+                        class="fa-solid fa-candy-cane"></i></button>
+                <button type="button" class="icon-swatch" data-icon="fa-solid fa-seedling"><i
+                        class="fa-solid fa-seedling"></i></button>
+                <button type="button" class="icon-swatch" data-icon="fa-solid fa-drumstick-bite"><i
+                        class="fa-solid fa-drumstick-bite"></i></button>
+                <button type="button" class="icon-swatch" data-icon="fa-solid fa-cheese"><i
+                        class="fa-solid fa-cheese"></i></button>
             </div>
 
             <label class="cute-label">Accent Color</label>
@@ -123,17 +147,18 @@
 {% if not user.is_authenticated %}
 <dialog id="recipe-submission-dialog" class="modal-card">
     <div>
-        <h2>Submit a Recipe</h2>
+        <h2 class="recipe-view-title">Submit a Recipe</h2>
         <div class="modal-close" id="close-recipe-submission-dialog" aria-label="Close">✕</div>
     </div>
 
-    <p>
+    <p class="recipe-view-description">
         Recipe submissions are reviewed before they are added to the book.
         When you continue, you'll be redirected to a Google Form to share your idea for review.
     </p>
-
+    
+    <div class="vertical-spacer"></div>
     <div class="row">
-        <a class="button" href="{{ recipe_submission_form_url }}" target="_blank" rel="noopener noreferrer">
+        <a class="cute-button" href="{{ recipe_submission_form_url }}" target="_blank" rel="noopener noreferrer">
             Continue to Google Form
         </a>
     </div>

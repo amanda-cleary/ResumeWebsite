@@ -1,59 +1,50 @@
-{% extends 'base.html' %}
-
-{% block title %}{{ recipe.title }}{% endblock %}
+{% extends "recipe_base.html" %}
 
 {% block content %}
-<section class="recipe-page">
-  <div class="recipe-hero">
-    <h1>Recipe</h1>
-    <div style="--recipe-accent: {{ recipe.accent }};">
-      <div class="recipe-card-media column" aria-hidden="true">
-        <i class="{{ recipe.icon_class }}"></i>
-        <span>{{ recipe.title }}</span>
+<div class="recipe-page">
+
+  <div class="recipe-view-card">
+
+    <!-- Icon + Title -->
+    <div class="recipe-view-header">
+      <div class="recipe-view-icon-wrapper" style="--recipe-accent: {{recipe.accent}}; --recipe-border: {{recipe.border}};">
+        <div class="recipe-view-icon">
+        <i class="{{ recipe.icon_class }} recipe-icon"></i>
+        </div>
       </div>
+
+      <h2 class="recipe-view-title">{{ recipe.title }}</h2>
+      {% if recipe.description %}
+      <p class="recipe-view-description">{{ recipe.description }}</p>
+      {% endif %}
     </div>
-  </div>
 
-  <div class="recipe-intro">
-    <h2 class="centered">{{ recipe.title }}</h2>
-    {% if recipe.description %}
-    <p class="centered">{{ recipe.description }}</p>
-    {% endif %}
-  </div>
-
-  <div class="recipe-columns">
-    <div class="colored-card">
-      <h2>Ingredients</h2>
-      <ul>
-        {% for ingredient in recipe_ingredients %}
-        <li>{{ ingredient }}</li>
-        {% empty %}
-        <li>No ingredients added yet.</li>
+    <!-- Ingredients -->
+    <div class="recipe-section">
+      <h3 class="recipe-section-title">Ingredients</h3>
+      <ul class="recipe-ingredients">
+        {% for item in recipe.ingredients.splitlines %}
+        <li>{{ item }}</li>
         {% endfor %}
       </ul>
     </div>
-    <div class="colored-card">
-      <h2>Steps</h2>
-      <ol>
-        {% for step in recipe_steps %}
+
+    <!-- Steps -->
+    <div class="recipe-section">
+      <h3 class="recipe-section-title">Steps</h3>
+      <ol class="recipe-steps">
+        {% for step in recipe.steps.splitlines %}
         <li>{{ step }}</li>
-        {% empty %}
-        <li>No steps added yet.</li>
         {% endfor %}
       </ol>
     </div>
+
+    <!-- Actions -->
+    <div class="recipe-view-actions">
+      <a href="{% url 'recipes' %}" class="cute-button">← Back to Recipes</a>
+    </div>
+
   </div>
 
-  {% if user.is_authenticated %}
-  <div class="row padded" style="margin-top: 1.5rem; flex-wrap: wrap; gap: 0.75rem;">
-    <a class="button" href="{% url 'edit_recipe' recipe.slug %}">Edit Recipe</a>
-    <form method="post" action="{% url 'delete_recipe' recipe.slug %}" onsubmit="return confirm('Delete this recipe?');">
-      {% csrf_token %}
-      <button type="submit" class="button">Delete Recipe</button>
-    </form>
-  </div>
-  {% endif %}
-</section>
+</div>
 {% endblock %}
-
-
