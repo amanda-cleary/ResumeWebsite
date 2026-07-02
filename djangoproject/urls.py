@@ -3,6 +3,9 @@ from pathlib import Path
 from django.contrib.auth import views as auth_views
 from django.urls import path
 from django.views.static import serve
+from django.contrib import admin
+from django.urls import path, include
+
 
 from recipebook import views
 
@@ -11,6 +14,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 
 urlpatterns = [
+    path('admin/', admin.site.urls),
     path('', views.home, name='home'),
     path('index.html', views.home, name='index'),
     path('experiences.html', views.experiences, name='experiences'),

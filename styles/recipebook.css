@@ -1,0 +1,271 @@
+/* Header */
+.auth-header {
+    text-align: center;
+}
+
+.auth-header h2 {
+    font-family: "Outfit", serif;
+    font-size: 2rem;
+    margin-bottom: 6px;
+    color: #8f4c6c;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+}
+
+/* Card */
+.auth-card {
+    padding: 26px;
+    margin: 10%;
+    border-radius: 18px;
+    background: #fff7f9;
+    box-shadow: 0 8px 28px rgba(0, 0, 0, 0.12);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Labels + Inputs */
+.auth-label {
+    display: flex;
+    flex-direction: column;
+    font-weight: 600;
+    color: #7a3e5a;
+}
+
+.auth-input {
+    margin-top: 6px;
+    padding: 10px 12px;
+    border-radius: 10px;
+    border: 2px solid #f3c6d4;
+    background: white;
+    font-size: 1rem;
+}
+
+.auth-input:focus {
+    outline: none;
+    border-color: #e08fb0;
+    box-shadow: 0 0 0 3px #ffe3ec;
+}
+
+/* Actions */
+.auth-actions {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-top: 10px;
+}
+
+/* Cute Buttons */
+.cute-button {
+    border-radius: 10px;
+    background: #f3c6d4;
+    color: #7a3e5a;
+    font-weight: 600;
+    padding: 10px 18px;
+    transition: background 0.2s ease, transform 0.15s ease;
+}
+
+.cute-button:hover {
+    background: #e8b3c5;
+    transform: translateY(-2px);
+}
+
+.cute-button.primary {
+    background: #e08fb0;
+    color: white;
+}
+
+.cute-button.primary:hover {
+    background: #d47aa0;
+}
+
+.recipe-header {
+    position: fixed;
+    top: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 14px 20px;
+    background: var(--color-recipe-highlight);
+    border-bottom: 2px solid var(--color-recipe-border);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+
+    border-radius: 0 0 18px 18px;
+}
+
+.recipe-header h1 {
+    margin: 0;
+    font-size: 1.6rem;
+    color: var(--color-recipe-h-text);
+    font-family: "Outfit", serif;
+}
+
+/* Header button */
+.cute-header-button {
+    background: var(--color-recipe-highlight-muted);
+    color: var(--color-recipe-h-text-muted);
+    padding: 8px 14px;
+    margin-right: 30px;
+    border-radius: 10px;
+    font-weight: 600;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    transition: background 0.2s ease, transform 0.15s ease;
+}
+
+.cute-header-button:hover {
+    background: var(--color-recipe-highlight-hover);
+    transform: translateY(-2px);
+}
+
+.header-auth {
+    margin: 0;
+}
+
+.recipe-page {
+    background: var(--color-recipe-bg);
+    padding-bottom: 40px;
+}
+
+.recipe-page-wrapper {
+    background: var(--color-recipe-bg);
+    min-height: 100vh;
+    padding-bottom: 40px;
+    padding-top: 80px;
+}
+
+.recipe-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 14px;
+    padding: 30px;
+}
+
+@media (max-width: 1200px) {
+    .recipe-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
+
+.recipe-card-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.recipe-card-actions form {
+    margin: 0;
+}
+
+.recipe-card {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    background: var(--recipe-accent, var(--color-recipe-var1));
+    border: 2px solid var(--recipe-border, var(--color-recipe-var1-dark));
+    color: var(--recipe-border, white);
+    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.18);
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+    text-decoration: none;
+}
+
+.recipe-card:hover {
+    background: var(--recipe-border, var(--color-recipe-var1-dark));
+    color: var(--recipe-surface, white);
+    transform: translateY(-6px);
+    box-shadow: 0 14px 24px rgba(0, 0, 0, 0.12);
+}
+
+.recipe-card span {
+    text-align: center;
+    font-family: "Outfit", sans-serif;
+    font-weight: 700;
+    margin-top: 6px;
+}
+
+.recipe-icon {
+    font-size: clamp(9vw, 9vw, 9vw);
+    line-height: 1;
+}
+
+.new-recipe-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: var(--color-text);
+    gap: 0.5rem;
+    padding: 1rem;
+    border-radius: 16px;
+    background: var(--color-silver);
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+    text-align: center;
+}
+
+.new-recipe-card i {
+    font-size: clamp(9vw, 9vw, 9vw);
+    line-height: 1;
+}
+
+.new-recipe-card span {
+    font-family: "Outfit", sans-serif;
+    font-weight: 700;
+}
+
+.new-recipe-card:hover {
+    background: var(--color-silver-dark);
+    transform: translateY(-6px);
+    box-shadow: 0 14px 24px rgba(0, 0, 0, 0.12);
+}
+
+.icon-picker,
+.color-picker {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 16px;
+}
+
+.icon-swatch,
+.color-swatch {
+    width: 42px;
+    height: 42px;
+    border-radius: 10px;
+    border: 2px solid var(--recipe-border, #f3c6d4);
+    background: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: transform 0.15s ease, border-color 0.2s ease;
+}
+
+.icon-swatch i {
+    font-size: 1.2rem;
+    color: #8f4c6c;
+}
+
+.icon-swatch:hover,
+.color-swatch:hover {
+    transform: translateY(-2px);
+    border-color: var(--recipe-border, #e08fb0);
+}
+
+.icon-swatch.selected,
+.color-swatch.selected {
+    transform: translateY(-2px);
+    border-color: var(--recipe-border, #d47aa0);
+    box-shadow: 0 0 0 3px var(--recipe-border, #ffe3ec);
+}

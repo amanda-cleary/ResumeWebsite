@@ -11,7 +11,28 @@
     --color-border-strong: rgba(125, 46, 59, 0.18);
     --color-card-muted: #f9efe4;
     --color-track: #eddccb;
-    --color-silver: #c0c0c0;
     --color-overlay: rgba(25, 17, 18, 0.68);
     --color-interact-hover: #5a202a;
+
+    --color-silver: #ecdbe0;
+    --color-silver-dark: #d9cbcf;
+
+    --color-recipe-bg: #ffe8e3;
+    --color-recipe-card: #ffebf1;
+    --color-recipe-card-hover: #d6bfc6;
+    --color-recipe-highlight: #ffe3ec;
+    --color-recipe-h-text: #8f4c6c;
+    --color-recipe-border: #f3c6d4;
+    --color-recipe-highlight-muted: #f3c6d4;
+    --color-recipe-h-text-muted: #7a3e5a;
+    --color-recipe-highlight-hover: #e8b3c5;
+
+    --color-recipe-var1: #faffe3;
+    --color-recipe-var1-dark: #d6e0bf; /*#d2d6bf*/
+    --color-recipe-var2: #e3fff6;
+    --color-recipe-var2-dark: #bfd6cf;
+    --color-recipe-var3: #e8e3ff;
+    --color-recipe-var3-dark: #c3bfd6;
+    --color-recipe-var4: #e3faff;
+    --color-recipe-var4-dark: #bfd6cf;
 }

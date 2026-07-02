@@ -4,7 +4,7 @@
 
 <head>
   <title>{% block title %}Cleary Resume{% endblock %}</title>
-  <link rel="stylesheet" href="{{ asset_prefix }}styles.css">
+  <link rel="stylesheet" href="/styles.css">
   <script src="https://kit.fontawesome.com/63b42a2c0b.js" crossorigin="anonymous"></script>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
   <link
@@ -16,9 +16,9 @@
   <header>
     <h1>Amanda Cleary</h1>
     <nav>
-      <a href="{{ asset_prefix }}index.html" class="nav-btn{% if active_page == 'about' %} is-active{% endif %}">About</a>
-      <a href="{{ asset_prefix }}experiences.html" class="nav-btn{% if active_page == 'experiences' %} is-active{% endif %}">Experiences</a>
-      <a href="{{ asset_prefix }}portfolio.html" class="nav-btn{% if active_page == 'portfolio' %} is-active{% endif %}">Portfolio</a>
+      <a href="{% url 'home' %}" class="nav-btn{% if active_page == 'about' %} is-active{% endif %}">About</a>
+      <a href="{% url 'experiences' %}" class="nav-btn{% if active_page == 'experiences' %} is-active{% endif %}">Experiences</a>
+      <a href="{% url 'portfolio' %}" class="nav-btn{% if active_page == 'portfolio' %} is-active{% endif %}">Portfolio</a>
     </nav>
   </header>
 

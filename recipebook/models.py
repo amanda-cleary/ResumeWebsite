@@ -10,6 +10,7 @@ class Recipe(models.Model):
     steps = models.TextField(blank=True, default='')
     icon_class = models.CharField(max_length=100)
     accent = models.CharField(max_length=32)
+    border = models.CharField(max_length=32)
 
     class Meta:
         ordering = ['title']

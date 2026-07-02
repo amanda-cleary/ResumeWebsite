@@ -58,100 +58,12 @@ dialog:not([open]) {
     cursor: pointer;
 }
 
-.recipe-grid {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 14px;
-}
-
-.recipe-card-shell {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-.recipe-card-actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-}
-
-.recipe-card-actions form {
-  margin: 0;
-}
-
-.recipe-card {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    text-decoration: none;
-    color: inherit;
-    padding: 10px;
-    border-radius: 16px;
-    background: var(--color-surface-alt);
-    border: 1px solid var(--color-border);
-    transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
-}
-
-.new-recipe-card {
-    display: flex;
-  flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-decoration: none;
-    color: var(--color-text);
-  gap: 0.5rem;
-  padding: 1rem;
-    border-radius: 16px;
-    background: var(--color-silver);
-    transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
-  text-align: center;
-}
-
-.new-recipe-card i {
-    font-size: clamp(4rem, 9vw, 6rem);
-    line-height: 1;
-}
-
-.new-recipe-card span {
-  font-family: "Mulish", serif;
-  font-weight: 700;
-}
-
-.recipe-card-media {
-    width: 100%;
-    aspect-ratio: 4 / 3;
-    border-radius: 12px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: var(--recipe-accent, var(--color-brand));
-    color: white;
-    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.18);
-}
-
-.recipe-card-media i {
-    font-size: clamp(2rem, 5vw, 3.2rem);
-}
-
-.recipe-card:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 14px 24px rgba(0, 0, 0, 0.12);
-    background: var(--color-surface-alt-hover);
-}
-
 .recipe-card img {
     width: 100%;
     aspect-ratio: 4 / 3;
     border-radius: 12px;
     object-fit: cover;
     display: block;
-}
-
-.recipe-card span {
-    text-align: center;
-    font-family: "Mulish", serif;
-    font-weight: 700;
 }
 
 .recipe-page {
@@ -561,46 +473,6 @@ dialog:not([open]) {
   background: #d47aa0;
 }
 
-.icon-picker,
-.color-picker {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin-bottom: 16px;
-}
-
-.icon-swatch,
-.color-swatch {
-  width: 42px;
-  height: 42px;
-  border-radius: 10px;
-  border: 2px solid #f3c6d4;
-  background: white;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
-  transition: transform 0.15s ease, border-color 0.2s ease;
-}
-
-.icon-swatch i {
-  font-size: 1.2rem;
-  color: #8f4c6c;
-}
-
-.icon-swatch:hover,
-.color-swatch:hover {
-  transform: translateY(-2px);
-  border-color: #e08fb0;
-}
-
-.icon-swatch.selected,
-.color-swatch.selected {
-  border-color: #d47aa0;
-  box-shadow: 0 0 0 3px #ffe3ec;
-}
-
-/* Cute scrollbar INSIDE the rounded dialog */
 #create-recipe-dialog::-webkit-scrollbar {
   width: 10px;
 }
