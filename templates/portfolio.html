@@ -42,8 +42,8 @@
         </div>
         <div class="project" data-modal="modal-recipe-book">
           <h2>Recipe Book</h2>
-          <h3>Personal Project</h3>
-          <p class="centered">A living collection of recipes managed through Django.</p>
+          <h3>Independent Project</h3>
+          <p class="centered">A recipe management system built through Django to reinforce web development concepts.</p>
           <div class="tag-row">
             <span class="tag tag-html"><i class="fa-brands fa-html5"></i> HTML</span>
             <span class="tag tag-css"><i class="fa-brands fa-css"></i> CSS</span>
@@ -96,7 +96,7 @@
 
 {% block scripts %}
 <dialog id="modal-consoom" class="project-modal">
-  <div class="modal-bg"></div>
+  <div class="modal-bg" style="--project-image-url: url('../images/exploreview.png');"></div>
 
   <div class="modal-card">
     <button class="modal-close" type="button" onclick="this.closest('dialog').close()">
@@ -146,7 +146,7 @@
 </dialog>
 
 <dialog id="modal-recipe-book" class="project-modal">
-  <div class="modal-bg"></div>
+  <div class="modal-bg" style="--project-image-url: url('../images/recipebook.png');"></div>
 
   <div class="modal-card">
     <button class="modal-close" type="button" onclick="this.closest('dialog').close()">
@@ -158,7 +158,7 @@
 
     <ul>
       <li>Create new recipes directly in the browser.</li>
-      <li>Edit recipe titles, descriptions, ingredients, and steps.
+      <li>Edit recipe titles, descriptions, ingredients, and steps.</li>
       <li>Delete recipes when they are no longer needed.</li>
       <li>Browse recipes from a dedicated listing page.</li>
     </ul>
@@ -178,7 +178,7 @@
 </dialog>
 
 <dialog id="modal-website" class="project-modal">
-  <div class="modal-bg"></div>
+  <div class="modal-bg" style="--project-image-url: url('../images/resume-website.png');"></div>
 
   <div class="modal-card">
     <button class="modal-close" type="button" onclick="this.closest('dialog').close()">
