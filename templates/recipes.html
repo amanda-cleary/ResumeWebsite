@@ -1,52 +1,36 @@
-<head>
-    <link rel="stylesheet" href="/styles.css">
-    <script src="https://kit.fontawesome.com/63b42a2c0b.js" crossorigin="anonymous"></script>
-</head>
+{% extends 'recipe_base.html' %}
 
 {% block content %}
 
-<main class="recipe-page-wrapper">
-    <header class="recipe-header">
-        <h1>Recipe Book</h1>
-
-        {% if user.is_authenticated %}
-        <form method="post" action="{% url 'logout' %}" class="header-auth">
-            {% csrf_token %}
-            <button type="submit" class="cute-header-button">Log out</button>
-        </form>
-        {% else %}
-        <a class="cute-header-button" href="{% url 'login' %}">I'm Amanda</a>
-        {% endif %}
-    </header>
-
-    <div class="column">
-        <div class="recipe-grid">
-            {% if user.is_authenticated %}
-            <a class="new-recipe-card" href="#" id="open-recipe-create-dialog" aria-label="Create a new recipe">
-                <i class="fa-solid fa-plus" aria-hidden="true"></i>
-            </a>
-            {% else %}
-            <a class="new-recipe-card" href="#" id="open-recipe-submission-dialog"
-                aria-label="Submit a recipe for consideration">
-                <i class="fa-solid fa-paper-plane" aria-hidden="true"></i>
-                <span>Submit Recipe</span>
-            </a>
-            {% endif %}
-            {% for recipe in recipes %}
-            <div class="recipe-card-shell">
-                <a class="recipe-card" href="{{ recipe.get_absolute_url }}"
-                    style="--recipe-accent: {{ recipe.accent }}; --recipe-border: {{ recipe.border }};">
-                    <!-- <div class="recipe-icon">🍪</div> -->
-                    <i class="{{ recipe.icon_class }} recipe-icon"></i>
-                    <span>{{recipe.title}}</span>
-                </a>
-            </div>
-            {% endfor %}
-            
-        </div>
+<div class="recipe-grid">
+    {% if user.is_authenticated %}
+    <a class="recipe-card" href="#" id="open-recipe-create-dialog" aria-label="Create a new recipe"
+        style="--recipe-accent: var(--color-silver); --recipe-border: var(--color-silver-dark);">
+        <i class="fa-solid fa-plus recipe-icon" aria-hidden="true"></i>
+    </a>
+    {% else %}
+    <a class="recipe-card" href="#" id="open-recipe-submission-dialog" aria-label="Submit a recipe for consideration"
+        style="--recipe-accent: var(--color-silver); --recipe-border: var(--color-silver-dark);">
+        <i class="fa-solid fa-paper-plane recipe-icon" aria-hidden="true"></i>
+        <span>Submit Recipe</span>
+    </a>
+    {% endif %}
+    {% for recipe in recipes %}
+    <div class="recipe-card-shell">
+        <a class="recipe-card" href="{{ recipe.get_absolute_url }}"
+            style="--recipe-accent: {{ recipe.accent }}; --recipe-border: {{ recipe.border }};">
+            <i class="{{ recipe.icon_class }} recipe-icon"></i>
+            <span>{{recipe.title}}</span>
+        </a>
     </div>
-</main>
+    {% endfor %}
 
+</div>
+
+
+{% endblock %}
+
+{% block dialogs %}
 {% if user.is_authenticated %}
 <dialog id="create-recipe-dialog" class="cute-dialog">
     <div class="cute-dialog-header">
