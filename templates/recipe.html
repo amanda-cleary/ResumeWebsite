@@ -7,9 +7,10 @@
 
     <!-- Icon + Title -->
     <div class="recipe-view-header">
-      <div class="recipe-view-icon-wrapper" style="--recipe-accent: {{recipe.accent}}; --recipe-border: {{recipe.border}};">
+      <div class="recipe-view-icon-wrapper"
+        style="--recipe-accent: {{recipe.accent}}; --recipe-border: {{recipe.border}};">
         <div class="recipe-view-icon">
-        <i class="{{ recipe.icon_class }} recipe-icon"></i>
+          <i class="{{ recipe.icon_class }} recipe-icon"></i>
         </div>
       </div>
 
@@ -18,6 +19,18 @@
       <p class="recipe-view-description">{{ recipe.description }}</p>
       {% endif %}
     </div>
+
+    <!-- Edit / Delete Buttons -->
+    {% if user.is_authenticated %}
+    <div class="recipe-view-actions">
+      <a href="{% url 'edit_recipe' recipe.slug %}" class="cute-button">Edit Recipe</a>
+      <form action="{% url 'delete_recipe' recipe.slug %}" method="POST" style="display:inline;">
+        {% csrf_token %}
+        <button class="cute-button danger">Delete Recipe</button>
+      </form>
+
+    </div>
+    {% endif %}
 
     <!-- Ingredients -->
     <div class="recipe-section">

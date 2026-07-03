@@ -178,7 +178,7 @@
     display: grid;
     grid-template-columns: repeat(4, minmax(0, 1fr));
     gap: 14px;
-    padding: 20px 30px;
+    padding: 20px 30px 80px 30px;
 }
 
 @media (max-width: 1200px) {
@@ -323,6 +323,7 @@
   margin-bottom: 14px;
   font-weight: 600;
   color: #7a3e5a;
+  font-family: "Chiron GoRound TC";
 }
 
 .cute-input,
@@ -334,6 +335,7 @@
   border: 2px solid #f3c6d4;
   background: #fff;
   font-size: 0.95rem;
+  font-family: "Chiron GoRound TC";
 }
 
 .cute-input:focus,
@@ -489,3 +491,30 @@
     margin-top: 30px;
     text-align: center;
 }
+
+.recipe-edit-page {
+    max-width: 900px;
+    margin: 2rem auto;
+    padding: 2rem;
+}
+
+.cute-page-title {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.recipe-edit-form {
+    background: var(--color-silver-light);
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.recipe-edit-form textarea,
+.recipe-edit-form input[type="text"] {
+    width: 100%;
+}
+

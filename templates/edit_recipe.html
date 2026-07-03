@@ -1,0 +1,108 @@
+{% extends "recipe_base.html" %}
+{% load static %}
+
+{% block content %}
+<div class="recipe-edit-page">
+
+    <h1 class="cute-page-title">
+        <span class="cute-icon">📝</span>
+        Edit Recipe
+    </h1>
+
+    <p class="cute-greeting">Hello Amanda! Let's freshen up this recipe.</p>
+
+    <form class="recipe-edit-form" method="post" action="">
+        {% csrf_token %}
+
+        <div class="cute-field-group">
+            <label class="cute-label">
+                Recipe Title
+                <input type="text" id="title" name="title" class="cute-input" required value="{{recipe.title}}">
+            </label>
+
+            <label class="cute-label">
+                Short Description
+                <textarea rows="3" id="description" name="description" class="cute-textarea">{{recipe.description}}</textarea>
+            </label>
+
+            <p class="cute-hint">Updating the title will also update the recipe URL.</p>
+        </div>
+
+        <div class="cute-field-group">
+            <label class="cute-label">
+                Ingredients
+                <textarea rows="3" id="ingredients" name="ingredients" class="cute-textarea">{{recipe.ingredients}}</textarea>
+            </label>
+
+            <label class="cute-label">
+                Steps
+                <textarea rows="3" id="steps" name="steps" class="cute-textarea">{{recipe.steps}}</textarea>
+            </label>
+        </div>
+
+        <div class="cute-field-group cute-advanced">
+            <label class="cute-label">Choose an Icon</label>
+            <input type="hidden" id="icon_class" name="icon_class" value="{{recipe.icon_class}}">
+            <div class="icon-picker">
+                {% for icon in icon_choices %}
+                <button type="button" class="icon-swatch {% if recipe.icon_class == icon %}selected{% endif %}" data-icon="{{ icon }}">
+                    <i class="{{ icon }}"></i>
+                </button>
+                {% endfor %}
+            </div>
+
+            <label class="cute-label">Pick a Color</label>
+
+            <input type="hidden" id="accent" name="accent" value="{{recipe.accent}}">
+            <input type="hidden" id="border" name="border" value="{{recipe.border}}">
+
+            <div class="color-picker">
+                {% for color, border in color_choices %}
+                <button type="button" class="color-swatch {% if recipe.accent == color %}selected{% endif %}"
+                    data-color="{{ color }}" data-border="{{ border }}">
+                </button>
+                {% endfor %}
+            </div>
+        </div>
+
+        <div class="cute-actions">
+            <button type="submit" class="cute-button primary">Save Changes</button>
+            <a href="{{ cancel_url }}" class="cute-button">Cancel</a>
+        </div>
+    </form>
+
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+    // ⭐ Apply colors on page load
+    document.querySelectorAll('.color-swatch').forEach(btn => {
+        const color = btn.dataset.color;
+        const border = btn.dataset.border;
+
+        btn.style.background = color;
+        btn.style.border = `2px solid ${border}`;
+    });
+
+    // ⭐ Handle color selection
+    document.querySelectorAll('.color-swatch').forEach(btn => {
+        btn.addEventListener('click', () => {
+            document.getElementById('accent').value = btn.dataset.color;
+            document.getElementById('border').value = btn.dataset.border;
+
+            document.querySelectorAll('.color-swatch').forEach(b => b.classList.remove('selected'));
+            btn.classList.add('selected');
+        });
+    });
+
+    // ⭐ Handle icon selection
+    document.querySelectorAll('.icon-swatch').forEach(btn => {
+        btn.addEventListener('click', () => {
+            document.getElementById('icon_class').value = btn.dataset.icon;
+            document.querySelectorAll('.icon-swatch').forEach(b => b.classList.remove('selected'));
+            btn.classList.add('selected');
+        });
+    });
+</script>
+{% endblock %}

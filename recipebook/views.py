@@ -70,6 +70,34 @@ def edit_recipe(request, slug):
     recipe = get_object_or_404(Recipe, slug=slug)
     cancel_url = recipe.get_absolute_url()
 
+    icon_choices = [
+        "fa-solid fa-cookie",
+        "fa-solid fa-apple-whole",
+        "fa-solid fa-carrot",
+        "fa-solid fa-bread-slice",
+        "fa-solid fa-ice-cream",
+        "fa-solid fa-pepper-hot",
+        "fa-solid fa-bowl-food",
+        "fa-solid fa-cake-candles",
+        "fa-solid fa-mug-hot",
+        "fa-solid fa-burger",
+        "fa-solid fa-fish",
+        "fa-solid fa-pizza-slice",
+        "fa-solid fa-blender",
+        "fa-solid fa-egg",
+        "fa-solid fa-candy-cane",
+        "fa-solid fa-seedling",
+        "fa-solid fa-drumstick-bite",
+        "fa-solid fa-cheese",
+    ]
+
+    color_choices = [
+        ("var(--color-recipe-var1)", "var(--color-recipe-var1-dark)"),
+        ("var(--color-recipe-var2)", "var(--color-recipe-var2-dark)"),
+        ("var(--color-recipe-var3)", "var(--color-recipe-var3-dark)"),
+        ("var(--color-recipe-var4)", "var(--color-recipe-var4-dark)"),
+    ]
+
     if request.method == 'POST':
         form = RecipeForm(request.POST, instance=recipe)
         if form.is_valid():
@@ -82,15 +110,18 @@ def edit_recipe(request, slug):
 
     return render_page(
         request,
-        'recipe_form.html',
+        'edit_recipe.html',
         active_page='about',
         asset_prefix='../',
         extra_context={
             'recipe': recipe,
             'form': form,
             'cancel_url': cancel_url,
+            'icon_choices': icon_choices,      
+            'color_choices': color_choices,    
         },
     )
+
 
 
 @login_required
@@ -98,7 +129,7 @@ def delete_recipe(request, slug):
     recipe = get_object_or_404(Recipe, slug=slug)
 
     if request.method != 'POST':
-        return redirect('edit_recipe', slug=slug)
+        return redirect('recipes')
 
     recipe.delete()
     return redirect('recipes')
