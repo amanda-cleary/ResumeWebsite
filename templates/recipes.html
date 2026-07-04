@@ -2,163 +2,173 @@
 
 {% block content %}
 
-<div class="recipe-grid">
+<main class="recipe-grid">
+
+    <!-- Default Create/Submit New Recipe Card -->
+
     {% if user.is_authenticated %}
-    <a class="recipe-card" href="#" id="open-recipe-create-dialog" aria-label="Create a new recipe"
+    <button class="recipe-card" id="open-recipe-create-dialog" aria-label="Create a new recipe"
         style="--recipe-accent: var(--color-silver); --recipe-border: var(--color-silver-dark);">
         <i class="fa-solid fa-plus recipe-icon" aria-hidden="true"></i>
-    </a>
+    </button>
     {% else %}
-    <a class="recipe-card" href="#" id="open-recipe-submission-dialog" aria-label="Submit a recipe for consideration"
+    <button class="recipe-card" id="open-recipe-submission-dialog" aria-label="Submit a recipe"
         style="--recipe-accent: var(--color-silver); --recipe-border: var(--color-silver-dark);">
         <i class="fa-solid fa-paper-plane recipe-icon" aria-hidden="true"></i>
         <span>Submit Recipe</span>
-    </a>
+    </button>
     {% endif %}
+
+    <!-- Recipe Cards -->
+
     {% for recipe in recipes %}
-    <div class="recipe-card-shell">
-        <a class="recipe-card" href="{{ recipe.get_absolute_url }}"
-            style="--recipe-accent: {{ recipe.accent }}; --recipe-border: {{ recipe.border }};">
-            <i class="{{ recipe.icon_class }} recipe-icon"></i>
-            <span>{{recipe.title}}</span>
-        </a>
-    </div>
+    <a class="recipe-card" href="{{ recipe.get_absolute_url }}"
+        style="--recipe-accent: {{ recipe.accent }}; --recipe-border: {{ recipe.border }};">
+        <i class="{{ recipe.icon_class }} recipe-icon"></i>
+        <span>{{recipe.title}}</span>
+    </a>
     {% endfor %}
 
-</div>
+</main>
 
 
 {% endblock %}
 
 {% block dialogs %}
+
+<!-- Create Recipe Dialog -->
 {% if user.is_authenticated %}
-<dialog id="create-recipe-dialog" class="cute-dialog">
-    <div class="cute-dialog-header">
-        <h2><span class="cute-icon">🍰</span>Create a New Recipe</h2>
-        <button type="button" class="cute-dialog-close" id="close-create-recipe-dialog" aria-label="Close">✕</button>
-    </div>
+<dialog id="create-recipe-dialog" class="create-dialog">
 
-    <p class="cute-greeting">Hello Amanda! Let's whip up something delicious.</p>
-
-    <form class="recipe-create-form" method="post" action="{% url 'create_recipe' %}">
+    <form method="post" action="{% url 'create_recipe' %}">
         {% csrf_token %}
 
-        <div class="cute-field-group">
-            <label class="cute-label">
-                Recipe Title
-                <input type="text" name="title" class="cute-input" required>
-            </label>
+        <!-- Header -->
+        <header>
+            <h2>Create a New Recipe</h2>
+            <button type="button" id="close-create-recipe-dialog" aria-label="Close">✕</button>
+        </header>
 
-            <label class="cute-label">
-                Short Description
-                <textarea name="description" rows="3" class="cute-textarea"
-                    placeholder="A cozy summary of your recipe…"></textarea>
-            </label>
+        <!-- Scrollable Area for Form Fields -->
+        <article>
 
-            <p class="cute-hint">Your recipe page will be created automatically from the title.</p>
-        </div>
+            <!-- Name & Description -->
+            <fieldset>
+                <label for="title">
+                    Name Your Recipe
+                    <input type="text" name="title" id="title" required>
+                </label>
 
-        <div class="cute-field-group">
-            <label class="cute-label">
-                Ingredients
-                <textarea name="ingredients" rows="5" class="cute-textarea"
-                    placeholder="One ingredient per line 🍓"></textarea>
-            </label>
+                <label for="description">
+                    Describe Your Recipe
+                    <textarea name="description" id="description" rows="3"></textarea>
+                </label>
+            </fieldset>
 
-            <label class="cute-label">
-                Steps
-                <textarea name="steps" rows="6" class="cute-textarea" placeholder="One step per line ✨"></textarea>
-            </label>
-        </div>
+            <!-- Ingredients & Steps -->
+            <fieldset>
+                <label for="ingredients">
+                    Ingredients
+                    <textarea name="ingredients" id="ingredients" rows="5" placeholder="One ingredient per line"></textarea>
+                </label>
 
-        <div class="cute-field-group cute-advanced">
-            <h3 class="cute-subheading">Advanced Styling</h3>
+                <label for="steps">
+                    Steps
+                    <textarea name="steps" id="steps" rows="6" placeholder="One step per line"></textarea>
+                </label>
+            </fieldset>
 
-            <label class="cute-label">Choose an Icon</label>
-            <input type="hidden" name="icon_class" id="icon_class">
+            <!-- Icon & Color -->
+            <fieldset>
 
-            <div class="icon-picker">
-                <button type="button" class="icon-swatch" data-icon="fa-solid fa-cookie"><i
-                        class="fa-solid fa-cookie"></i></button>
-                <button type="button" class="icon-swatch" data-icon="fa-solid fa-apple-whole"><i
-                        class="fa-solid fa-apple-whole"></i></button>
-                <button type="button" class="icon-swatch" data-icon="fa-solid fa-carrot"><i
-                        class="fa-solid fa-carrot"></i></button>
-                <button type="button" class="icon-swatch" data-icon="fa-solid fa-bread-slice"><i
-                        class="fa-solid fa-bread-slice"></i></button>
-                <button type="button" class="icon-swatch" data-icon="fa-solid fa-ice-cream"><i
-                        class="fa-solid fa-ice-cream"></i></button>
-                <button type="button" class="icon-swatch" data-icon="fa-solid fa-pepper-hot"><i
-                        class="fa-solid fa-pepper-hot"></i></button>
-                <button type="button" class="icon-swatch" data-icon="fa-solid fa-bowl-food"><i
-                        class="fa-solid fa-bowl-food"></i></button>
-                <button type="button" class="icon-swatch" data-icon="fa-solid fa-cake-candles"><i
-                        class="fa-solid fa-cake-candles"></i></button>
-                <button type="button" class="icon-swatch" data-icon="fa-solid fa-mug-hot"><i
-                        class="fa-solid fa-mug-hot"></i></button>
-                <button type="button" class="icon-swatch" data-icon="fa-solid fa-burger"><i
-                        class="fa-solid fa-burger"></i></button>
-                <button type="button" class="icon-swatch" data-icon="fa-solid fa-fish"><i
-                        class="fa-solid fa-fish"></i></button>
-                <button type="button" class="icon-swatch" data-icon="fa-solid fa-pizza-slice"><i
-                        class="fa-solid fa-pizza-slice"></i></button>
-                <button type="button" class="icon-swatch" data-icon="fa-solid fa-blender"><i
-                        class="fa-solid fa-blender"></i></button>
-                <button type="button" class="icon-swatch" data-icon="fa-solid fa-egg"><i
-                        class="fa-solid fa-egg"></i></button>
-                <button type="button" class="icon-swatch" data-icon="fa-solid fa-candy-cane"><i
-                        class="fa-solid fa-candy-cane"></i></button>
-                <button type="button" class="icon-swatch" data-icon="fa-solid fa-seedling"><i
-                        class="fa-solid fa-seedling"></i></button>
-                <button type="button" class="icon-swatch" data-icon="fa-solid fa-drumstick-bite"><i
-                        class="fa-solid fa-drumstick-bite"></i></button>
-                <button type="button" class="icon-swatch" data-icon="fa-solid fa-cheese"><i
-                        class="fa-solid fa-cheese"></i></button>
-            </div>
+                <label for="icon_class">Choose an Icon</label>
+                <input type="hidden" name="icon_class" id="icon_class">
 
-            <label class="cute-label">Accent Color</label>
-            <input type="hidden" name="accent" id="accent">
-            <input type="hidden" name="border" id="border">
+                <div class="icon-picker">
+                    <button type="button" class="icon-swatch" data-icon="fa-solid fa-cookie"><i
+                            class="fa-solid fa-cookie"></i></button>
+                    <button type="button" class="icon-swatch" data-icon="fa-solid fa-apple-whole"><i
+                            class="fa-solid fa-apple-whole"></i></button>
+                    <button type="button" class="icon-swatch" data-icon="fa-solid fa-carrot"><i
+                            class="fa-solid fa-carrot"></i></button>
+                    <button type="button" class="icon-swatch" data-icon="fa-solid fa-bread-slice"><i
+                            class="fa-solid fa-bread-slice"></i></button>
+                    <button type="button" class="icon-swatch" data-icon="fa-solid fa-ice-cream"><i
+                            class="fa-solid fa-ice-cream"></i></button>
+                    <button type="button" class="icon-swatch" data-icon="fa-solid fa-pepper-hot"><i
+                            class="fa-solid fa-pepper-hot"></i></button>
+                    <button type="button" class="icon-swatch" data-icon="fa-solid fa-bowl-food"><i
+                            class="fa-solid fa-bowl-food"></i></button>
+                    <button type="button" class="icon-swatch" data-icon="fa-solid fa-cake-candles"><i
+                            class="fa-solid fa-cake-candles"></i></button>
+                    <button type="button" class="icon-swatch" data-icon="fa-solid fa-mug-hot"><i
+                            class="fa-solid fa-mug-hot"></i></button>
+                    <button type="button" class="icon-swatch" data-icon="fa-solid fa-burger"><i
+                            class="fa-solid fa-burger"></i></button>
+                    <button type="button" class="icon-swatch" data-icon="fa-solid fa-fish"><i
+                            class="fa-solid fa-fish"></i></button>
+                    <button type="button" class="icon-swatch" data-icon="fa-solid fa-pizza-slice"><i
+                            class="fa-solid fa-pizza-slice"></i></button>
+                    <button type="button" class="icon-swatch" data-icon="fa-solid fa-blender"><i
+                            class="fa-solid fa-blender"></i></button>
+                    <button type="button" class="icon-swatch" data-icon="fa-solid fa-egg"><i
+                            class="fa-solid fa-egg"></i></button>
+                    <button type="button" class="icon-swatch" data-icon="fa-solid fa-candy-cane"><i
+                            class="fa-solid fa-candy-cane"></i></button>
+                    <button type="button" class="icon-swatch" data-icon="fa-solid fa-seedling"><i
+                            class="fa-solid fa-seedling"></i></button>
+                    <button type="button" class="icon-swatch" data-icon="fa-solid fa-drumstick-bite"><i
+                            class="fa-solid fa-drumstick-bite"></i></button>
+                    <button type="button" class="icon-swatch" data-icon="fa-solid fa-cheese"><i
+                            class="fa-solid fa-cheese"></i></button>
+                </div>
 
-            <div class="color-picker">
-                <button type="button" class="color-swatch" data-color="var(--color-recipe-var1)"
-                    data-border="var(--color-recipe-var1-dark)"
-                    style="background:var(--color-recipe-var1); border: 2px solid var(--color-recipe-var1-dark)"></button>
-                <button type="button" class="color-swatch" data-color="var(--color-recipe-var2)"
-                    data-border="var(--color-recipe-var2-dark)"
-                    style="background:var(--color-recipe-var2); border: 2px solid var(--color-recipe-var2-dark)"></button>
-                <button type="button" class="color-swatch" data-color="var(--color-recipe-var3)"
-                    data-border="var(--color-recipe-var3-dark)"
-                    style="background:var(--color-recipe-var3); border: 2px solid var(--color-recipe-var3-dark)"></button>
-                <button type="button" class="color-swatch" data-color="var(--color-recipe-var4)"
-                    data-border="var(--color-recipe-var4-dark)"
-                    style="background:var(--color-recipe-var4); border: 2px solid var(--color-recipe-var4-dark)"></button>
-            </div>
-        </div>
+                <label for="accent">Choose a Color</label>
+                <input type="hidden" name="accent" id="accent">
+                <input type="hidden" name="border" id="border">
 
-        <div class="cute-actions">
-            <button type="submit" class="cute-button primary">Save Recipe</button>
-            <button type="button" class="cute-button" id="cancel-create-recipe">Cancel</button>
-        </div>
+                <div class="color-picker">
+                    <button type="button" data-color="var(--color-recipe-var1)"
+                        data-border="var(--color-recipe-var1-dark)"
+                        style="background:var(--color-recipe-var1); border: 2px solid var(--color-recipe-var1-dark)"></button>
+                    <button type="button" data-color="var(--color-recipe-var2)"
+                        data-border="var(--color-recipe-var2-dark)"
+                        style="background:var(--color-recipe-var2); border: 2px solid var(--color-recipe-var2-dark)"></button>
+                    <button type="button" data-color="var(--color-recipe-var3)"
+                        data-border="var(--color-recipe-var3-dark)"
+                        style="background:var(--color-recipe-var3); border: 2px solid var(--color-recipe-var3-dark)"></button>
+                    <button type="button" data-color="var(--color-recipe-var4)"
+                        data-border="var(--color-recipe-var4-dark)"
+                        style="background:var(--color-recipe-var4); border: 2px solid var(--color-recipe-var4-dark)"></button>
+                </div>
+            </fieldset>
+        </article>
+
+        <!-- Footer -->
+        <footer>
+            <button type="submit" class="recipe-button primary">Save Recipe</button>
+            <button type="button" class="recipe-button" id="cancel-create-recipe">Cancel</button>
+        </footer>
     </form>
 </dialog>
 {% endif %}
 
+<!-- Submit Recipe Dialog -->
 {% if not user.is_authenticated %}
-<dialog id="recipe-submission-dialog" class="modal-card">
+<dialog id="recipe-submission-dialog" class="submit-dialog">
     <div>
-        <h2 class="recipe-view-title">Submit a Recipe</h2>
-        <div class="modal-close" id="close-recipe-submission-dialog" aria-label="Close">✕</div>
+        <h2>Submit a Recipe</h2>
+        <button class="modal-close" id="close-recipe-submission-dialog" aria-label="Close">✕</button>
     </div>
 
-    <p class="recipe-view-description">
+    <p>
         Recipe submissions are reviewed before they are added to the book.
         When you continue, you'll be redirected to a Google Form to share your idea for review.
     </p>
-    
+
     <div class="vertical-spacer"></div>
     <div class="row">
-        <a class="cute-button" href="{{ recipe_submission_form_url }}" target="_blank" rel="noopener noreferrer">
+        <a class="recipe-button" href="{{ recipe_submission_form_url }}" target="_blank" rel="noopener noreferrer">
             Continue to Google Form
         </a>
     </div>
@@ -168,28 +178,27 @@
 
 {% block scripts %}
 <script>
-    document.querySelectorAll('.icon-swatch').forEach(btn => {
+    // Handle icon selection
+    document.querySelectorAll('.icon-picker button').forEach(btn => {
         btn.addEventListener('click', () => {
             document.getElementById('icon_class').value = btn.dataset.icon;
-            document.querySelectorAll('.icon-swatch').forEach(b => b.classList.remove('selected'));
+            document.querySelectorAll('.icon-picker button').forEach(b => b.classList.remove('selected'));
             btn.classList.add('selected');
         });
     });
 
-    document.querySelectorAll('.color-swatch').forEach(btn => {
+    // Handle color selection (and, implicitly, border)
+    document.querySelectorAll('.color-picker button').forEach(btn => {
         btn.addEventListener('click', () => {
-
-            // Set accent + border values
             document.getElementById('accent').value = btn.dataset.color;
             document.getElementById('border').value = btn.dataset.border;
-
-            // Update selected state
-            document.querySelectorAll('.color-swatch').forEach(b => b.classList.remove('selected'));
+            document.querySelectorAll('.color-picker button').forEach(b => b.classList.remove('selected'));
             btn.classList.add('selected');
         });
     });
 
 
+    // Handle opening and closing of dialogs
     const openRecipeCreateDialog = document.getElementById('open-recipe-create-dialog');
     const createRecipeDialog = document.getElementById('create-recipe-dialog');
     const closeCreateRecipeDialog = document.getElementById('close-create-recipe-dialog');

@@ -23,10 +23,10 @@
     <!-- Edit / Delete Buttons -->
     {% if user.is_authenticated %}
     <div class="recipe-view-actions">
-      <a href="{% url 'edit_recipe' recipe.slug %}" class="cute-button">Edit Recipe</a>
+      <a href="{% url 'edit_recipe' recipe.slug %}" class="recipe-button">Edit Recipe</a>
       <form action="{% url 'delete_recipe' recipe.slug %}" method="POST" style="display:inline;">
         {% csrf_token %}
-        <button class="cute-button danger">Delete Recipe</button>
+        <button class="recipe-button danger">Delete Recipe</button>
       </form>
 
     </div>
@@ -54,7 +54,7 @@
 
     <!-- Actions -->
     <div class="recipe-view-actions">
-      <a href="{% url 'recipes' %}" class="cute-button">← Back to Recipes</a>
+      <a href="{% url 'recipes' %}" class="recipe-button">← Back to Recipes</a>
     </div>
 
   </div>
