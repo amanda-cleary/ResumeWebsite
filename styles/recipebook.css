@@ -85,7 +85,7 @@
     background: #d47aa0;
 }
 
-.recipe-header {
+.recipe-page-wrapper>header {
     position: fixed;
     top: 0;
 
@@ -99,7 +99,7 @@
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
 
-.recipe-header h1 {
+.recipe-page-wrapper>header>h1 {
     margin: 0;
     font-size: 1.6rem;
     color: var(--color-recipe-h-text);
@@ -126,7 +126,7 @@
     transform: translateY(-2px);
 }
 
-.header-auth {
+form {
     margin: 0;
 }
 
@@ -159,7 +159,7 @@
     scrollbar-width: thin;
     scrollbar-color: var(--color-recipe-highlight-muted) transparent;
     overflow-y: auto;
-    height: 100%;
+    height: 82%;
 }
 
 .recipe-page {

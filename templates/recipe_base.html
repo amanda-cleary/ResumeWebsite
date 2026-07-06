@@ -1,4 +1,5 @@
 <head>
+    <title>{% block title %}{% endblock %}Amanda's Recipe Book</title>
     <link rel="stylesheet" href="/styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -7,21 +8,25 @@
 </head>
 
 <body class="recipe-page-wrapper">
-    <header class="recipe-header">
-        <h1>Recipe Book</h1>
-
-        {% if user.is_authenticated %}
-        <form method="post" action="{% url 'logout' %}" class="header-auth">
-            {% csrf_token %}
-            <button type="submit" class="auth-button">Log out</button>
-        </form>
-        {% else %}
-        <a class="auth-button" href="{% url 'login' %}">I'm Amanda</a>
-        {% endif %}
+    <!-- Standard Recipe Header -->
+    <header>
+        <h1>Amanda's Recipe Book</h1>
+        <!-- Admin Authentication -->
+        <nav>
+            {% if user.is_authenticated %}
+            <form method="post" action="{% url 'logout' %}">
+                {% csrf_token %}
+                <button type="submit" class="auth-button">Log out</button>
+            </form>
+            {% else %}
+            <a class="auth-button" href="{% url 'login' %}">I'm Amanda</a>
+            {% endif %}
+        </nav>
     </header>
-    <div class="scroll-area">
+    <!-- Scrollable Content -->
+    <main class="scroll-area">
         {% block content %}{% endblock %}
-    </div>
+    </main>
 </body>
 
 {% block dialogs %}{% endblock %}
