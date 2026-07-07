@@ -6,18 +6,19 @@
 <form method="post" class="auth-card">
     {% csrf_token %}
 
-    <label class="auth-label">
+    <label>
         Username
-        <input type="text" name="username" autofocus required class="auth-input">
+        <input type="text" name="username" autofocus required aria-label="Input username">
     </label>
 
-    <label class="auth-label">
+    <label>
         Password
-        <input type="password" name="password" required class="auth-input">
+        <input type="password" name="password" required aria-label="Input password">
     </label>
 
-    <div class="auth-actions">
-        <button type="submit" class="recipe-button">Log In</button>
-    </div>
+    <nav>
+        <a href="{% url 'recipes' %}" class="recipe-button">← Back to Recipes</a>
+        <button type="submit" class="recipe-button primary">Log In</button>
+    </nav>
 </form>
 {% endblock %}
