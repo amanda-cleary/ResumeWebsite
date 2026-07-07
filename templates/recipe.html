@@ -3,63 +3,60 @@
 {% block title %}{{ recipe.title }} - {% endblock %}
 
 {% block content %}
-<div class="recipe-page">
+<main class="recipe-view">
 
-  <div class="recipe-view-card">
+  <article>
 
     <!-- Icon + Title -->
-    <div class="recipe-view-header">
-      <div class="recipe-view-icon-wrapper"
+    <header>
+      <figure
         style="--recipe-accent: {{recipe.accent}}; --recipe-border: {{recipe.border}};">
-        <div class="recipe-view-icon">
-          <i class="{{ recipe.icon_class }} recipe-icon"></i>
-        </div>
-      </div>
+          <i class="{{ recipe.icon_class }} recipe-view-icon recipe-icon"></i>
+      </figure>
 
-      <h2 class="recipe-view-title">{{ recipe.title }}</h2>
+      <h2>{{ recipe.title }}</h2>
       {% if recipe.description %}
-      <p class="recipe-view-description">{{ recipe.description }}</p>
+      <p>{{ recipe.description }}</p>
       {% endif %}
-    </div>
+    </header>
 
     <!-- Edit / Delete Buttons -->
     {% if user.is_authenticated %}
-    <div class="recipe-view-actions">
+    <nav>
       <a href="{% url 'edit_recipe' recipe.slug %}" class="recipe-button">Edit Recipe</a>
-      <form action="{% url 'delete_recipe' recipe.slug %}" method="POST" style="display:inline;">
+      <form action="{% url 'delete_recipe' recipe.slug %}" method="POST" onsubmit="return confirm('Are you sure you want to delete this recipe?');">
         {% csrf_token %}
-        <button class="recipe-button danger">Delete Recipe</button>
+        <button class="recipe-button">Delete Recipe</button>
       </form>
-
-    </div>
+    </nav>
     {% endif %}
 
     <!-- Ingredients -->
-    <div class="recipe-section">
-      <h3 class="recipe-section-title">Ingredients</h3>
+    <section>
+      <h3>Ingredients</h3>
       <ul class="recipe-ingredients">
         {% for item in recipe.ingredients.splitlines %}
         <li>{{ item }}</li>
         {% endfor %}
       </ul>
-    </div>
+    </section>
 
     <!-- Steps -->
-    <div class="recipe-section">
-      <h3 class="recipe-section-title">Steps</h3>
+    <section>
+      <h3>Steps</h3>
       <ol class="recipe-steps">
         {% for step in recipe.steps.splitlines %}
         <li>{{ step }}</li>
         {% endfor %}
       </ol>
-    </div>
+    </section>
 
     <!-- Actions -->
-    <div class="recipe-view-actions">
+    <nav>
       <a href="{% url 'recipes' %}" class="recipe-button">← Back to Recipes</a>
-    </div>
+    </nav>
 
-  </div>
+  </article>
 
-</div>
+</main>
 {% endblock %}
