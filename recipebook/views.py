@@ -39,7 +39,7 @@ def recipes_index(request):
     recipes = Recipe.objects.all()
     return render_page(
         request,
-        'recipes.html',
+        'recipebook/recipes.html',
         active_page='about',
         extra_context={
             'recipes': recipes,
@@ -54,7 +54,7 @@ def recipe_detail(request, slug):
     steps = [line.strip() for line in recipe.steps.splitlines() if line.strip()]
     return render_page(
         request,
-        'recipe.html',
+        'recipebook/recipe.html',
         active_page='about',
         asset_prefix='../',
         extra_context={
@@ -110,7 +110,7 @@ def edit_recipe(request, slug):
 
     return render_page(
         request,
-        'edit_recipe.html',
+        'recipebook/edit_recipe.html',
         active_page='about',
         asset_prefix='../',
         extra_context={
