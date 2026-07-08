@@ -4,63 +4,62 @@
 {% block content %}
 <main class="recipe-view">
 
-    <article>
-        <form method="post" action="">
+    <article class="recipe-article">
+        <form method="post" action="" class="recipe-form">
             {% csrf_token %}
 
-            <section>
-                <label for="title">
+            <section class="recipe-section">
+                <label for="title" class="recipe-label">
                     Recipe Title
                     <input type="text" id="title" name="title" required value="{{recipe.title}}">
                 </label>
 
-                <label for="description">
+                <label for="description" class="recipe-label">
                     Short Description
                     <textarea rows="3" id="description" name="description">{{recipe.description}}</textarea>
                 </label>
             </section>
 
-            <section>
-                <label for="ingredients">
+            <section class="recipe-section">
+                <label for="ingredients" class="recipe-label">
                     Ingredients
                     <textarea rows="3" id="ingredients" name="ingredients">{{recipe.ingredients}}</textarea>
                 </label>
 
-                <label for="steps">
+                <label for="steps" class="recipe-label">
                     Steps
                     <textarea rows="3" id="steps" name="steps">{{recipe.steps}}</textarea>
                 </label>
             </section>
 
-            <section>
-                <label for="icon_class">Choose an Icon</label>
-                
+            <section class="recipe-section">
+                <label for="icon_class" class="recipe-label">Choose an Icon</label>
                 <input type="hidden" id="icon_class" name="icon_class" value="{{recipe.icon_class}}">
 
                 <div class="icon-picker">
                     {% for icon in icon_choices %}
-                    <button type="button" class="icon-swatch {% if recipe.icon_class == icon %}selected{% endif %}"
+                    <button type="button" class="icon-picker-button {% if recipe.icon_class == icon %}selected{% endif %}"
                         data-icon="{{ icon }}">
-                        <i class="{{ icon }}"></i>
+                        <i class="{{ icon }} icon-picker-button-i"></i>
                     </button>
                     {% endfor %}
                 </div>
 
-                <label for="accent">Pick a Color</label>
+                <label for="accent" class="recipe-label">Pick a Color</label>
 
                 <input type="hidden" id="accent" name="accent" value="{{recipe.accent}}">
                 <input type="hidden" id="border" name="border" value="{{recipe.border}}">
 
                 <div class="color-picker">
                     {% for color, border in color_choices %}
-                    <button type="button" class="color-swatch {% if recipe.accent == color %}selected{% endif %}"
+                    <button type="button" class="color-picker-button {% if recipe.accent == color %}selected{% endif %}"
                         data-color="{{ color }}" data-border="{{ border }}">
                     </button>
                     {% endfor %}
                 </div>
             </section>
 
-            <nav>
+            <nav class="recipe-nav">
                 <button type="submit" class="recipe-button primary">Save Changes</button>
                 <a href="{{ cancel_url }}" class="recipe-button">Cancel</a>
             </nav>
@@ -72,7 +71,7 @@
 {% block scripts %}
 <script>
     // Apply colors on page load
-    document.querySelectorAll('.color-swatch').forEach(btn => {
+    document.querySelectorAll('.color-picker-button').forEach(btn => {
         const color = btn.dataset.color;
         const border = btn.dataset.border;
 
@@ -81,21 +80,21 @@
     });
 
     // Handle color selection
-    document.querySelectorAll('.color-swatch').forEach(btn => {
+    document.querySelectorAll('.color-picker-button').forEach(btn => {
         btn.addEventListener('click', () => {
             document.getElementById('accent').value = btn.dataset.color;
             document.getElementById('border').value = btn.dataset.border;
 
-            document.querySelectorAll('.color-swatch').forEach(b => b.classList.remove('selected'));
+            document.querySelectorAll('.color-picker-button').forEach(b => b.classList.remove('selected'));
             btn.classList.add('selected');
         });
     });
 
     // Handle icon selection
-    document.querySelectorAll('.icon-swatch').forEach(btn => {
+    document.querySelectorAll('.icon-picker-button').forEach(btn => {
         btn.addEventListener('click', () => {
             document.getElementById('icon_class').value = btn.dataset.icon;
-            document.querySelectorAll('.icon-swatch').forEach(b => b.classList.remove('selected'));
+            document.querySelectorAll('.icon-picker-button').forEach(b => b.classList.remove('selected'));
             btn.classList.add('selected');
         });
     });

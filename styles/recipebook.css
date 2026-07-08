@@ -1,4 +1,4 @@
-.recipe-page-wrapper > main{
+.recipe-main{
     padding: 0;
 }
 
@@ -74,7 +74,7 @@ nav button.recipe-button {
 
 /* Recipe Page Styles */
 
-.recipe-page-wrapper>header {
+.recipe-header {
     position: fixed;
     top: 0;
 
@@ -88,7 +88,7 @@ nav button.recipe-button {
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
 
-.recipe-page-wrapper>header>h1 {
+.recipe-h1 {
     margin: 0;
     font-size: 1.6rem;
     color: var(--color-recipe-h-text);
@@ -115,32 +115,32 @@ nav button.recipe-button {
     transform: translateY(-2px);
 }
 
-form {
+.recipe-form {
     margin: 0;
 }
 
 /* width */
-.scroll-area::-webkit-scrollbar {
+.recipe-scroll-area::-webkit-scrollbar {
     width: 10px;
 }
 
 /* Track */
-.scroll-area::-webkit-scrollbar-track {
+.recipe-scroll-area::-webkit-scrollbar-track {
     background: var(--color-recipe-highlight-muted);
 }
 
 /* Handle */
-.scroll-area::-webkit-scrollbar-thumb {
+.recipe-scroll-area::-webkit-scrollbar-thumb {
     background: var(--color-recipe-highlight-muted);
     border-radius: 999px;
 }
 
 /* Handle on hover */
-.scroll-area::-webkit-scrollbar-thumb:hover {
+.recipe-scroll-area::-webkit-scrollbar-thumb:hover {
     background: var(--color-recipe-highlight-muted);
 }
 
-.scroll-area {
+.recipe-scroll-area {
     overflow-y: auto;
     max-height: calc(91vh);
     margin: 0;
@@ -198,7 +198,7 @@ form {
     box-shadow: 0 14px 24px rgba(0, 0, 0, 0.12);
 }
 
-.recipe-card span {
+.recipe-card-text {
     text-align: center;
     font-family: "Chiron GoRound TC";
     font-weight: 700;
@@ -220,8 +220,8 @@ form {
     margin-bottom: 16px;
 }
 
-.icon-picker button,
-.color-picker button {
+.icon-picker-button,
+.color-picker-button {
     width: 42px;
     height: 42px;
     border-radius: 10px;
@@ -234,19 +234,19 @@ form {
     transition: transform 0.15s ease, border-color 0.2s ease;
 }
 
-.icon-picker button i {
+.icon-picker-button-i {
     font-size: 1.2rem;
     color: #8f4c6c;
 }
 
-.icon-picker button:hover,
-.color-picker button:hover {
+.icon-picker-button:hover,
+.color-picker-button:hover {
     transform: translateY(-2px);
     border-color: var(--recipe-border, #e08fb0);
 }
 
-.icon-picker button.selected,
-.color-picker button.selected {
+.icon-picker-button.selected,
+.color-picker-button.selected {
     transform: translateY(-2px);
     border-color: var(--recipe-border, #d47aa0);
     box-shadow: 0 0 0 3px var(--recipe-border, #ffe3ec);
@@ -266,13 +266,13 @@ form {
     overflow: hidden;
 }
 
-.create-dialog form >article {
+.create-dialog-article {
     overflow-y: auto;
     max-height: calc(90vh - 100px);
     margin: 0;
 }
 
-.create-dialog form header {
+.create-dialog-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -283,7 +283,7 @@ form {
     box-shadow: none;
 }
 
-.create-dialog form header>h2 {
+.create-dialog-h2 {
     margin: 0;
     font-size: 1.4rem;
     font-weight: 700;
@@ -294,7 +294,7 @@ form {
     font-family: "Chiron GoRound TC";
 }
 
-.create-dialog form footer {
+.create-dialog-footer {
     display: flex;
     justify-content: flex-end;
     gap: 12px;
@@ -304,7 +304,7 @@ form {
     margin: 0px;
 }
 
-.create-dialog form header button {
+.create-dialog-close-button {
     background: transparent;
     border: none;
     font-size: 1.4rem;
@@ -318,7 +318,7 @@ form {
     border: none;
 }
 
-.recipe-page-wrapper label {
+.recipe-label {
     display: flex;
     flex-direction: column;
     margin-bottom: 14px;
@@ -400,7 +400,7 @@ form {
     padding: 0;
 }
 
-.recipe-view > article{
+.recipe-article{
     background: #fff7f9;
     border-radius: 18px;
     padding: 30px 34px;
@@ -409,7 +409,7 @@ form {
     box-shadow: 0 8px 28px rgba(0, 0, 0, 0.12);
 }
 
-.recipe-view > article > header {
+.recipe-article-header {
     position: static;      /* override global fixed */
     top: auto;             /* remove fixed positioning */
     width: auto;           /* size naturally */
@@ -423,7 +423,7 @@ form {
 }
 
 
-figure {
+.recipe-figure {
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -439,20 +439,20 @@ figure {
     color: var(--recipe-accent, var(--color-recipe-var1));
 }
 
-.recipe-page-wrapper h2 {
+.recipe-h2 {
     font-family: "Chiron GoRound TC";
     font-size: 2rem;
     color: #8f4c6c;
     margin: 10px 0 6px;
 }
 
-.recipe-page-wrapper p {
+.recipe-p {
     color: #7a3e5a;
     font-size: 1rem;
     font-family: "Chiron GoRound TC";
 }
 
-.recipe-page-wrapper section {
+.recipe-section {
     background: transparent;     /* remove brand background */
     border: none;                /* remove brand border */
     border-radius: 0;            /* remove rounded corners */
@@ -463,7 +463,7 @@ figure {
 }
 
 
-.recipe-view > article > section h3 {
+.recipe-section-h3 {
     font-size: 1.3rem;
     font-weight: 700;
     color: #8f4c6c;
@@ -478,7 +478,7 @@ figure {
     color: #7a3e5a;
 }
 
-.recipe-page-wrapper nav {
+.recipe-nav {
     display: flex;
     justify-content: center;
     gap: 12px;

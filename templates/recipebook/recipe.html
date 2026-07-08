@@ -5,26 +5,26 @@
 {% block content %}
 <main class="recipe-view">
 
-  <article>
+  <article class="recipe-article">
 
     <!-- Icon + Title -->
-    <header>
-      <figure
+    <header class="recipe-article-header">
+      <figure class="recipe-figure"
         style="--recipe-accent: {{recipe.accent}}; --recipe-border: {{recipe.border}};">
           <i class="{{ recipe.icon_class }} recipe-view-icon recipe-icon"></i>
       </figure>
 
-      <h2>{{ recipe.title }}</h2>
+      <h2 class="recipe-h2">{{ recipe.title }}</h2>
       {% if recipe.description %}
-      <p>{{ recipe.description }}</p>
+      <p class="recipe-p">{{ recipe.description }}</p>
       {% endif %}
     </header>
 
     <!-- Edit / Delete Buttons -->
     {% if user.is_authenticated %}
-    <nav>
+    <nav class="recipe-nav">
       <a href="{% url 'edit_recipe' recipe.slug %}" class="recipe-button">Edit Recipe</a>
-      <form action="{% url 'delete_recipe' recipe.slug %}" method="POST" onsubmit="return confirm('This recipe will be permanently deleted.');">
+      <form class="recipe-form" action="{% url 'delete_recipe' recipe.slug %}" method="POST" onsubmit="return confirm('This recipe will be permanently deleted.');">
         {% csrf_token %}
         <button class="recipe-button">Delete Recipe</button>
       </form>
@@ -32,8 +32,8 @@
     {% endif %}
 
     <!-- Ingredients -->
-    <section>
-      <h3>Ingredients</h3>
+    <section class="recipe-section">
+      <h3 class="recipe-section-h3">Ingredients</h3>
       <ul class="recipe-ingredients">
         {% for item in recipe.ingredients.splitlines %}
         <li>{{ item }}</li>
@@ -42,8 +42,8 @@
     </section>
 
     <!-- Steps -->
-    <section>
-      <h3>Steps</h3>
+    <section class="recipe-section">
+      <h3 class="recipe-section-h3">Steps</h3>
       <ol class="recipe-steps">
         {% for step in recipe.steps.splitlines %}
         <li>{{ step }}</li>
@@ -52,7 +52,7 @@
     </section>
 
     <!-- Actions -->
-    <nav>
+    <nav class="recipe-nav">
       <a href="{% url 'recipes' %}" class="recipe-button">← Back to Recipes</a>
     </nav>
 

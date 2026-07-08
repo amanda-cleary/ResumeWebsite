@@ -9,12 +9,12 @@
 
 <body class="recipe-page-wrapper">
     <!-- Standard Recipe Header -->
-    <header>
-        <h1>Amanda's Recipe Book</h1>
+    <header class="recipe-header">
+        <h1 class="recipe-h1">Amanda's Recipe Book</h1>
         <!-- Admin Authentication -->
-        <nav>
+        <nav class="recipe-nav">
             {% if user.is_authenticated %}
-            <form method="post" action="{% url 'logout' %}">
+            <form method="post" action="{% url 'logout' %}" class="recipe-form">
                 {% csrf_token %}
                 <button type="submit" class="auth-button">Log out</button>
             </form>
@@ -24,7 +24,7 @@
         </nav>
     </header>
     <!-- Scrollable Content -->
-    <main class="scroll-area">
+    <main class="recipe-main recipe-scroll-area">
         {% block content %}{% endblock %}
     </main>
 </body>
